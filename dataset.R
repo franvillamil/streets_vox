@@ -36,6 +36,7 @@ fs$fs_rm_2016s2_2018s2 = with(fs, fs_rm_2016s2 + fs_rm_2017s1 +
 fs$fs_rm_2016s2_2019s1 = with(fs, fs_rm_2016s2 + fs_rm_2017s1 +
   fs_rm_2017s2 + fs_rm_2018s1 + fs_rm_2018s2 + fs_rm_2019s1)
 fs$fs_rm_2019s1_2019s2 = with(fs, fs_rm_2019s1 + fs_rm_2019s2)
+
 # Turn to binary
 fs$fs_rm_2001s2_2015s2_bin = ifelse(fs$fs_rm_2001s2_2015s2 > 0, 1, 0)
 fs$fs_rm_2001s2_2018s2_bin = ifelse(fs$fs_rm_2001s2_2018s2 > 0, 1, 0)
@@ -44,6 +45,7 @@ fs$fs_rm_2016s2_2018s2_bin = ifelse(fs$fs_rm_2016s2_2018s2 > 0, 1, 0)
 fs$fs_rm_2016s2_2019s1_bin = ifelse(fs$fs_rm_2016s2_2019s1 > 0, 1, 0)
 fs$fs_rm_2019s1_2019s2_bin = ifelse(fs$fs_rm_2019s1_2019s2 > 0, 1, 0)
 fs$fs_rm_2019s2_bin = ifelse(fs$fs_rm_2019s2 > 0, 1, 0)
+
 # Create alternative (binary) change variables
 fs$fs_rm_2001s2_2015s2_bin2 = with(fs, ifelse((fs_2001_06 - fs_2015_12) > 0, 1, 0))
 fs$fs_rm_2001s2_2018s2_bin2 = with(fs, ifelse((fs_2001_06 - fs_2018_12) > 0, 1, 0))
@@ -51,6 +53,7 @@ fs$fs_rm_2016s2_2018s2_bin2 = with(fs, ifelse((fs_2016_06 - fs_2018_12) > 0, 1, 
 fs$fs_rm_2016s2_2019s1_bin2 = with(fs, ifelse((fs_2016_06 - fs_2019_06) > 0, 1, 0))
 fs$fs_rm_2019s1_2019s2_bin2 = with(fs, ifelse((fs_2018_12 - fs_2019_12) > 0, 1, 0))
 fs$fs_rm_2019s2_bin2 = with(fs, ifelse((fs_2019_06 - fs_2019_12) > 0, 1, 0))
+
 # Only keep certain variables
 fs = fs[, c("muni_code", "fs_rm_2016s2_2018s2",
   "fs_rm_2001s2_2015s2_bin", "fs_rm_2001s2_2018s2_bin", "fs_rm_2011s1_2018s2_bin",

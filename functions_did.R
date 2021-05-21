@@ -1,3 +1,8 @@
+## Replication "Do TJ policies cause backlash? Evidence from street name changes in Spain"
+## January 2021
+## File: SUPPLEMENTARY FUNCTIONS (for 'analyses.R')
+## ---------------------------------------
+
 did_sim = function(m, fs_chg_var, other_vars, FE = NULL){
 
   print("(Remember: Dependent variable must be binary 0/1)")

@@ -1,7 +1,4 @@
 .DS_Store
 */.DS_Store
 .Rapp.history
-REFS_streets_Vox/*
-OLD/*
-_references/*
-writing/*
+references/*
