@@ -1,4 +1,9 @@
 digraph G {
+download_str->str_changes
+input->str_local_vars
+str_changes->str_local_vars
+download_str->str_local_vars
 input->dataset
+str_local_vars->dataset
 download_elec->dataset
 }

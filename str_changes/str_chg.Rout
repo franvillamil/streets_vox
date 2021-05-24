@@ -1,0 +1,26 @@
+running
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=str_changes/str_chg.R'
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+[[1]]
+[1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[7] "methods"   "base"     
+
+[[2]]
+[1] "stringr"   "dplyr"     "stats"     "graphics"  "grDevices" "utils"    
+[7] "datasets"  "methods"   "base"     
+
+[[3]]
+ [1] "muniSpain" "stringr"   "dplyr"     "stats"     "graphics"  "grDevices"
+ [7] "utils"     "datasets"  "methods"   "base"     
+

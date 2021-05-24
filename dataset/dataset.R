@@ -22,9 +22,7 @@ mayor = read.csv("input/major_izq_muni.csv")
 unemp16 = read.csv("input/unemployment_01_2016.csv")
 unemp19 = read.csv("input/unemployment_01_2019.csv")
 elec = read.csv("download_elec/output/elec.csv")
-# NOTE: create more tasks to go further back with Franc St data
-# At least from the point of the descriptives
-francst = read.csv("input/francoist_streets.csv")
+francst = read.csv("str_local_vars/output/fs.csv")
 
 # ------------------------------
 

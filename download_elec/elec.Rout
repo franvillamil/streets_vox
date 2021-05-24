@@ -1,3 +1,17 @@
+running
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=download_elec/elec.R'
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
 [[1]]
 [1] "tidyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
 [7] "methods"   "base"     
@@ -14,4 +28,29 @@
  [1] "elecciones" "muniSpain"  "dplyr"      "tidyr"      "stats"     
  [6] "graphics"   "grDevices"  "utils"      "datasets"   "methods"   
 [11] "base"      
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02201911_MUNI.zip'
+Content type 'application/zip' length 863207 bytes (842 KB)
+==================================================
+downloaded 842 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02201904_MUNI.zip'
+Content type 'application/zip' length 831827 bytes (812 KB)
+==================================================
+downloaded 812 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02201606_MUNI.zip'
+Content type 'application/zip' length 789566 bytes (771 KB)
+==================================================
+downloaded 771 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02201512_MUNI.zip'
+Content type 'application/zip' length 874636 bytes (854 KB)
+==================================================
+downloaded 854 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02201111_MUNI.zip'
+Content type 'application/zip' length 834367 bytes (814 KB)
+==================================================
+downloaded 814 KB
 

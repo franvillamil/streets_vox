@@ -1,0 +1,30 @@
+running
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=download_str/download.R'
+
+
+Attaching package: ‘zip’
+
+The following objects are masked from ‘package:utils’:
+
+    unzip, zip
+
+[[1]]
+[1] "zip"       "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[7] "methods"   "base"     
+
+[[2]]
+[1] "stringr"   "zip"       "stats"     "graphics"  "grDevices" "utils"    
+[7] "datasets"  "methods"   "base"     
+
+[[3]]
+ [1] "muniSpain" "stringr"   "zip"       "stats"     "graphics"  "grDevices"
+ [7] "utils"     "datasets"  "methods"   "base"     
+
+[1] "C"
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072019.zip'
+Content type 'application/zip' length 39496076 bytes (37.7 MB)
+==================================================
+downloaded 37.7 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpVpkiZy/VIAS-NAL.F190630"
+[1] "reading..."
