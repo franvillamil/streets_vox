@@ -99,5 +99,60 @@ data = merge(data, mayor, all.x = TRUE)
 
 # ------------------------------
 
-# Save
+# Change a few variables (log, etc)
+data = data %>% mutate(
+  l_fs_2001_06 = log(fs_2001_06 + 1),
+  l_fs_2016_06 = log(fs_2016_06 + 1),
+  l_fs_2018_12 = log(fs_2018_12 + 1),
+  l_fs_2019_06 = log(fs_2019_06 + 1),
+  l_fs_rm_2016s2_2018s2 = log(fs_rm_2016s2_2018s2 + 1),
+  change_2019_VOX = VOX2019_11 / VOX2019_04)
+data$change_2019_VOX[data$change_2019_VOX == "Inf"] = NA
+
+# ------------------------------
+
+# Create long form datasets
+
+# VOX
+dl_VOX = data %>%
+  filter(!is.na(VOX2016_06) & fs_2016_06 > 0) %>%
+  dplyr::select(-ends_with(c("2011_11", "2019_11"))) %>%
+  pivot_longer(
+    cols = starts_with("VOX"),
+    names_to = "election",
+    names_prefix = "VOX",
+    values_to = c("VOX_share")) %>%
+  mutate(VOX_share = VOX_share * 100) %>%
+  as.data.frame()
+
+# PP
+dl_PP = data %>%
+  filter(fs_2016_06 > 0) %>%
+  dplyr::select(-ends_with(c("2019_11"))) %>%
+  pivot_longer(
+    cols = starts_with("PP"),
+    names_to = "election",
+    names_prefix = "PP",
+    values_to = c("PP_share")) %>%
+  mutate(PP_share = PP_share * 100) %>%
+  as.data.frame()
+
+# PSOE
+dl_PSOE = data %>%
+  filter(fs_2016_06 > 0) %>%
+  dplyr::select(-ends_with(c("2019_11"))) %>%
+  pivot_longer(
+    cols = starts_with("PSOE"),
+    names_to = "election",
+    names_prefix = "PSOE",
+    values_to = c("PSOE_share")) %>%
+  mutate(PSOE_share = PSOE_share * 100) %>%
+  as.data.frame()
+
+# ------------------------------
+
+# Save everything
 write.csv(data, "dataset/output/data.csv", row.names = FALSE)
+write.csv(dl_VOX, "dataset/output/dl_VOX.csv", row.names = FALSE)
+write.csv(dl_PP, "dataset/output/dl_PP.csv", row.names = FALSE)
+write.csv(dl_PSOE, "dataset/output/dl_PSOE.csv", row.names = FALSE)

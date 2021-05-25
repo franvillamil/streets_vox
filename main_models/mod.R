@@ -11,89 +11,16 @@ lapply(pkg, library, character.only = TRUE)
 # ------------------------------
 
 # Load functions
-source("main_models/functions_did.R")
-
-# My Stargazer
-my_stargazer = function(dest_file, model_list,
-  omit, title, label, order, covariate.labels, notes_table, dep.var.labels){
-
-  filecon = file(dest_file)
-  writeLines(
-    stargazer(model_list, omit = omit, title = title, label = label,
-      order = order, covariate.labels = covariate.labels, notes = notes_table,
-      omit.stat = c("f", "ser"),
-      intercept.bottom = FALSE,
-      column.sep.width = "-20pt",
-      multicolumn = FALSE,
-      dep.var.caption = "",
-      dep.var.labels = dep.var.labels,
-      font.size = "small",
-      digits = 3,
-      digits.extra = 0,
-      star.char = c("+", "*", "**", "***"),
-      star.cutoffs = c(0.1, 0.05, 0.01, 0.001),
-      notes.align = "c",
-      align = TRUE,
-      no.space = TRUE,
-      add.lines=list(c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(model_list)))),
-      notes.label = "",
-      notes.append = FALSE),
-  filecon)
-  close(filecon)
-
-}
+source("func/functions_did.R")
+source("func/my_stargazer.R")
 
 # ------------------------------
 
 # Load data
 data = read.csv("dataset/output/data.csv")
-
-# Prepare
-data = data %>% mutate(
-  l_fs_2001_06 = log(fs_2001_06 + 1),
-  l_fs_2016_06 = log(fs_2016_06 + 1),
-  l_fs_2018_12 = log(fs_2018_12 + 1),
-  l_fs_2019_06 = log(fs_2019_06 + 1),
-  l_fs_rm_2016s2_2018s2 = log(fs_rm_2016s2_2018s2 + 1),
-  change_2019_VOX = VOX2019_11 / VOX2019_04)
-data$change_2019_VOX[data$change_2019_VOX == "Inf"] = NA
-
-# Long-form data for the DiD analyses
-# VOX
-dl_VOX = data %>%
-  filter(!is.na(VOX2016_06) & fs_2016_06 > 0) %>%
-  dplyr::select(-ends_with(c("2011_11", "2019_11"))) %>%
-  pivot_longer(
-    cols = starts_with("VOX"),
-    names_to = "election",
-    names_prefix = "VOX",
-    values_to = c("VOX_share")) %>%
-  mutate(VOX_share = VOX_share * 100) %>%
-  as.data.frame()
-
-# PP
-dl_PP = data %>%
-  filter(fs_2016_06 > 0) %>%
-  dplyr::select(-ends_with(c("2019_11"))) %>%
-  pivot_longer(
-    cols = starts_with("PP"),
-    names_to = "election",
-    names_prefix = "PP",
-    values_to = c("PP_share")) %>%
-  mutate(PP_share = PP_share * 100) %>%
-  as.data.frame()
-
-# PSOE
-dl_PSOE = data %>%
-  filter(fs_2016_06 > 0) %>%
-  dplyr::select(-ends_with(c("2019_11"))) %>%
-  pivot_longer(
-    cols = starts_with("PSOE"),
-    names_to = "election",
-    names_prefix = "PSOE",
-    values_to = c("PSOE_share")) %>%
-  mutate(PSOE_share = PSOE_share * 100) %>%
-  as.data.frame()
+dl_VOX = read.csv("dataset/output/dl_VOX.csv")
+dl_PP = read.csv("dataset/output/dl_PP.csv")
+dl_PSOE = read.csv("dataset/output/dl_PSOE.csv")
 
 # ------------------------------
 # Cross-sectional models
@@ -162,6 +89,10 @@ my_stargazer(dest_file = "main_models/output/tab_did.tex",
     "Leftist major 2015", "Log. Population",
     "Log. No. Francoist streets $t_{0}$",
     "Unemployment"),
+  add.lines=list(
+    c("Controls", rep("\\multicolumn{1}{c}{Yes}", 3)),
+    c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 3))
+    ),
   notes_table = "\\parbox[t]{0.75\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Only municipalities that had at least one street with a Francoist name in $t_{0}$ were included in the sample.}")
 
 
