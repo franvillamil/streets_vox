@@ -34,6 +34,21 @@ fs_all = read.csv("str_agg/output/fs_all.csv")
 
 # ------------------------------
 
+# Create list of Francoist street names (for tex)
+fn_tex = franc_names[order(franc_names)]
+fn_tex = as.character(sapply(fn_tex, function(x) capitalize(x)))
+fn_tex = gsub(" De ", " de ", fn_tex)
+fn_tex = gsub(" Del ", " del ", fn_tex)
+fn_tex = gsub(" La ", " la ", fn_tex)
+fn_tex = gsub(" Las ", " las ", fn_tex)
+fn_tex = gsub(" Los ", " los ", fn_tex)
+fn_tex = gsub(" Y ", " y ", fn_tex)
+fn_tex = gsub("Vallejo-nagera", "Vallejo-Nagera", fn_tex)
+fn_tex = paste(fn_tex, collapse = "; ")
+writeLines(fn_tex, con = file("descriptives/output/francoist_name_list.txt"))
+
+# ------------------------------
+
 # Prepare changes dataframe
 changes = changes %>%
   mutate(old = tolower(old), new = tolower(new)) %>%

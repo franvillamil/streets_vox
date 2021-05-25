@@ -13,4 +13,7 @@ func->robust
 input->descriptives
 str_changes->descriptives
 str_agg->descriptives
+descriptives->writing
+robust->writing
+main_models->writing
 }

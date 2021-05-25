@@ -1,6 +1,7 @@
 # My Stargazer
 my_stargazer = function(dest_file, model_list, omit, title, label, order,
   covariate.labels, notes_table, dep.var.labels,
+  dep.var.labels.include = TRUE,
   add.lines=list(c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(model_list))))){
 
   filecon = file(dest_file)
@@ -13,6 +14,7 @@ my_stargazer = function(dest_file, model_list, omit, title, label, order,
       multicolumn = FALSE,
       dep.var.caption = "",
       dep.var.labels = dep.var.labels,
+      dep.var.labels.include = dep.var.labels.include,
       font.size = "small",
       digits = 3,
       digits.extra = 0,

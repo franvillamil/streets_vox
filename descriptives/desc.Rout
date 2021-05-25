@@ -66,6 +66,9 @@ The following object is masked from ‘package:dplyr’:
 [13] "utils"     "datasets"  "methods"   "base"     
 
 `summarise()` ungrouping output (override with `.groups` argument)
+Warnmeldung:
+In for (i in seq_along(cenv$extra)) { :
+  cerrando la conenexion 3 (descriptives/output/francoist_name_list.txt) que no esta siendo utilizada 
 null device 
           1 
 null device 

@@ -162,7 +162,7 @@ Second, the decrease in votes for the mainstream right-wing party in the 2015 lo
 \begin{figure*}[htb!]
 \centering
 
-  \includegraphics[width = 0.8\textwidth]{img/changes_over_time}
+  \includegraphics[width = 0.8\textwidth]{img/changes_by_year}
 
   \caption{Number of Francoist street name removals over time}\label{fig:changes_time}
 
@@ -171,7 +171,7 @@ Second, the decrease in votes for the mainstream right-wing party in the 2015 lo
 \begin{figure*}[htb!]
 \centering
 
-  \includegraphics[width = 0.7\textwidth]{img/fs_year}
+  \includegraphics[width = 0.7\textwidth]{img/fs_by_year}
 
   \caption{Percentage of streets with Francoist street names over time}\label{fig:fs_year}
 
@@ -221,39 +221,7 @@ Table~\ref{tab:cs} shows the results of the cross-sectional analyses.
 The first two columns show that the removal of Francoist street names during the last two decades, between June 2001 and December 2018, is correlated with a higher electoral support for Vox in both April and November 2019 elections.
 Columns 3 and 4 repeat these analyses with a limited sample of municipalities that still had Francoist street names in June 2001, and also show a positive correlation between street name changes and Vox electoral support.
 
-\begin{table}[!htbp] \centering
-  \caption{Francoist street name removal and electoral support for Vox}
-  \label{tab:cs}
-\small
-\begin{tabular}{@{\extracolsep{-20pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} }
-\\[-1.8ex]\hline
-\hline \\[-1.8ex]
-\\[-1.8ex] & \multicolumn{2}{c}{\footnotesize Full sample} & \multicolumn{2}{c}{\footnotesize Restricted sample} \\
-\\[-1.8ex] & \multicolumn{1}{c}{\footnotesize Apr 2019} & \multicolumn{1}{c}{\footnotesize Nov 2019} & \multicolumn{1}{c}{\footnotesize Apr 2019} & \multicolumn{1}{c}{\footnotesize Nov 2019} \\
-\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\
-\hline \\[-1.8ex]
- (Intercept) & 0.078^{***} & 0.147^{***} & 0.119^{***} & 0.211^{***} \\
-  & (0.009) & (0.010) & (0.018) & (0.020) \\
-  Francoist street name removal & 0.010^{***} & 0.013^{***} & 0.005^{*} & 0.008^{**} \\
-  & (0.002) & (0.002) & (0.002) & (0.003) \\
-  Unemployment 2019 & 0.084^{***} & 0.195^{***} & 0.043 & 0.141^{*} \\
-  & (0.025) & (0.031) & (0.047) & (0.058) \\
-  Turnout April 2019 & 0.005 &  & -0.020 &  \\
-  & (0.010) &  & (0.020) &  \\
-  Turnout Nov 2019 &  & -0.038^{***} &  & -0.086^{***} \\
-  &  & (0.011) &  & (0.023) \\
-  Log. Population & 0.003^{***} & 0.006^{***} & 0.002^{*} & 0.003^{***} \\
-  & (0.000) & (0.000) & (0.001) & (0.001) \\
- \hline \\[-1.8ex]
-CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
-$n$ & \multicolumn{1}{c}{7,819} & \multicolumn{1}{c}{7,820} & \multicolumn{1}{c}{2,164} & \multicolumn{1}{c}{2,165} \\
-R$^{2}$ & \multicolumn{1}{c}{0.442} & \multicolumn{1}{c}{0.500} & \multicolumn{1}{c}{0.292} & \multicolumn{1}{c}{0.318} \\
-Adjusted R$^{2}$ & \multicolumn{1}{c}{0.441} & \multicolumn{1}{c}{0.498} & \multicolumn{1}{c}{0.284} & \multicolumn{1}{c}{0.311} \\
-\hline
-\hline \\[-1.8ex]
-\multicolumn{5}{c}{\parbox[t]{0.82\textwidth}{\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between June 2001 and December 2018. Models 3 and 4 only include municipalities that had Francoist street names in June 2001.}} \\
-\end{tabular}
-\end{table}
+\input{tab/tab_cs.tex}
 
 In the appendix, we show that the results do not change significantly when looking only at street name removals after the 2007 Law of Historical Memory was passed, namely, between 2011 and 2018.
 We also show that there is no correlation between these name changes and the change in support for Vox between April and November 2019 elections, which suggests that any local effect due to a backlash over the politics of memory took place prior to April 2019.
@@ -261,49 +229,19 @@ We also show that there is no correlation between these name changes and the cha
 To get closer to identifying the causal effect of street name changes, we develop a DiD setup where we analyze the increase in electoral support for Vox between 2016 and 2019 elections,% the period during which the party grew from being politically irrelevant (with marginal political influence) to becoming a relevant party at the national level.
 together with the main two parties, PSOE and PP.
 %We also analyze the change in support for the main two parties, PSOE and PP, to explore the local shift in electoral support.
-Table~\ref{tab:main_DiD} shows the results of these analyses.
+Table~\ref{tab:main_did} shows the results of these analyses.
 Each of the three columns shows the results for the same model using electoral support for the three different parties.
-In order to see the results more clearly, figure~\ref{fig:main_DiD} shows the simulated DiD estimate of the Francoist street name removal.
+In order to see the results more clearly, figure~\ref{fig:main_did} shows the simulated DiD estimate of the Francoist street name removal.
 %In other words, the effect of the street name removal on the change in electoral support for these parties between 2016 and 2019.
 
-\begin{table}[!htbp] \centering
-  \caption{Francoist street name removal and increase in electoral support for parties}
-  \label{tab:main_DiD}
-
-  \small
-  \begin{tabular}{lccc}
-  \\[-1.8ex]\hline
-  \hline \\[-1.8ex]
-  \\[-1.8ex] & \multicolumn{1}{c}{VOX} & \multicolumn{1}{c}{PP} & \multicolumn{1}{c}{PSOE} \\
-  \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\
-  \\[-1.8ex]\hline
-  \\[-1.8ex]
-   (Intercept) & -1.470^{**} & 56.375^{***} & 34.870^{***} \\
-    & (0.451) & (0.922) & (0.876) \\
-    Francoist street name removal & -0.132 & 1.158^{*} & -0.159 \\
-    & (0.262) & (0.476) & (0.453) \\
-    Election April 2019 & 12.319^{***} & -17.406^{***} & 4.629^{***} \\
-    & (0.167) & (0.338) & (0.320) \\
-    Francoist removal $\times$ April 2019 & 0.724^{*} & -1.405^{*} & -0.434 \\
-    & (0.352) & (0.639) & (0.607) \\
-   \hline \\[-1.8ex]
-  Controls & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
-  CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
-  $n$ & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{3,223} & \multicolumn{1}{c}{3,242} \\
-  R$^{2}$ & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.720} & \multicolumn{1}{c}{0.482} \\
-  Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.717} & \multicolumn{1}{c}{0.478} \\
-  \hline
-  \hline \\[-1.8ex]
-  \multicolumn{4}{c}{\parbox[t]{0.75\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\
-  \end{tabular}
-\end{table}
+\input{tab/tab_main_did.tex}
 
 \begin{figure*}[htb!]
 \centering
 
   \includegraphics[width = 0.6\textwidth]{img/DiD_estimates}
 
-  \caption{DiD estimates of Francoist street name removal on vote change, obtained from 1000 simulations. Points show the mean estimate, bars indicate 90\% and 95\% CIs.}\label{fig:main_DiD}
+  \caption{DiD estimates of Francoist street name removal on vote change, obtained from 1000 simulations. Points show the mean estimate, bars indicate 90\% and 95\% CIs.}\label{fig:main_did}
 
 \end{figure*}
 
@@ -345,9 +283,9 @@ All in all, this article focuses on a relatively unexplored question. Exploiting
 
 \clearpage
 \bibliographystyle{rap}
-\bibliography{$HOME/Documents/REF}$
+\bibliography{REF}
 
-\newpage
-\includepdf[pages=-]{appendix.pdf}
+% \newpage
+% \includepdf[pages=-]{appendix.pdf}
 
 \end{document}

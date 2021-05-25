@@ -75,9 +75,9 @@ did_PSOE1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
   data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
 
-my_stargazer(dest_file = "main_models/output/tab_did.tex",
+my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
   model_list = list(did_VOX1, did_PP1, did_PSOE1),
-  omit = "ccaa",
+  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
   label = "tab:main_did",
   title = "Francoist street name removal and increase in electoral support for parties",
   dep.var.labels = c("VOX", "PP", "PSOE"),
@@ -85,10 +85,7 @@ my_stargazer(dest_file = "main_models/output/tab_did.tex",
   covariate.labels = c("(Intercept)",
     "Francoist street name removal",
     "Election April 2019",
-    "Francoist removal $\\times$ April 2019",
-    "Leftist major 2015", "Log. Population",
-    "Log. No. Francoist streets $t_{0}$",
-    "Unemployment"),
+    "Francoist removal $\\times$ April 2019"),
   add.lines=list(
     c("Controls", rep("\\multicolumn{1}{c}{Yes}", 3)),
     c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 3))
