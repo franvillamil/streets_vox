@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=main_models/mod.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,7 +19,7 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attaching package: ‘MASS’
+Attache Paket: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
@@ -52,7 +52,7 @@ The following object is masked from ‘package:dplyr’:
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, May 24, 2021 - 15:08:44
+% Date and time: Tue, May 25, 2021 - 11:21:12
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and electoral support for Vox} 
@@ -88,7 +88,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.441} & \multicolumn{1}{c}{0.498} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, May 24, 2021 - 15:08:44
+% Date and time: Tue, May 25, 2021 - 11:21:12
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for parties} 
@@ -127,10 +127,10 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.717} & \mult
 \end{tabular} 
 \end{table} 
 [1] "(Remember: Dependent variable must be binary 0/1)"
-`summarise()` has grouped output by 'depvar'. You can override using the `.groups` argument.
+`summarise()` regrouping output by 'depvar' (override with `.groups` argument)
 [1] "(Remember: Dependent variable must be binary 0/1)"
-`summarise()` has grouped output by 'depvar'. You can override using the `.groups` argument.
+`summarise()` regrouping output by 'depvar' (override with `.groups` argument)
 [1] "(Remember: Dependent variable must be binary 0/1)"
-`summarise()` has grouped output by 'depvar'. You can override using the `.groups` argument.
+`summarise()` regrouping output by 'depvar' (override with `.groups` argument)
 null device 
           1 

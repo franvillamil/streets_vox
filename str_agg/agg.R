@@ -5,8 +5,14 @@ pkg = c("dplyr", "tidyr", "stringr")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
+# muniSpain
+if(!"muniSpain" %in% rownames(installed.packages())){
+  if(!"devtools" %in% rownames(installed.packages())){install.packages("devtools")}
+  library(devtools)
+  install_github("franvillamil/muniSpain")
+}
 # Load
-lapply(pkg, library, character.only = TRUE)
+lapply(c(pkg, "muniSpain"), library, character.only = TRUE)
 
 # -------------------------
 
@@ -54,9 +60,11 @@ calles = as.data.frame(do.call("rbind", df_list))
 calles = calles[, c("muni", "fecha", "nombre_via")]
 calles$nombre_via = tolower(calles$nombre_via)
 
-# Get number of streets and Francoist streets by muni and date
+# Fix date
 calles$fecha = paste(str_sub(as.character(calles$fecha), 1, 4),
   str_sub(as.character(calles$fecha), 5, 6), sep = "_")
+
+# Get number of streets and Francoist streets by muni and date
 fc_muni = calles %>%
   group_by(muni, fecha) %>%
   summarize(
@@ -68,6 +76,20 @@ fc_muni = calles %>%
     values_from = "f_streets",
     names_prefix = "fs_") %>%
   as.data.frame()
+
+# Get province and total aggregates (for descriptives)
+fc_prov = calles %>%
+  mutate(prov = code_to_prov(str_sub(muni, -5L, -4L))) %>%
+  group_by(prov, fecha) %>%
+  summarize(
+    total_streets = length(nombre_via),
+    f_streets = length(nombre_via[nombre_via %in% franc_names]))
+
+fc_all = calles %>%
+  group_by(fecha) %>%
+  summarize(
+    total_streets = length(nombre_via),
+    f_streets = length(nombre_via[nombre_via %in% franc_names]))
 
 # -------------------------
 # Put together
@@ -84,4 +106,6 @@ names(data)[names(data) == "muni"] = "muni_code"
 # -------------------------
 # Save
 
-write.csv(data, "str_local_vars/output/fs.csv", row.names = FALSE)
+write.csv(data, "str_agg/output/fs.csv", row.names = FALSE)
+write.csv(fc_prov, "str_agg/output/fs_prov.csv", row.names = FALSE)
+write.csv(fc_all, "str_agg/output/fs_all.csv", row.names = FALSE)

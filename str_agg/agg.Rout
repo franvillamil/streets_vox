@@ -1,5 +1,5 @@
 running
-  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=dataset/dataset.R'
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=str_agg/agg.R'
 
 
 Attache Paket: ‘dplyr’
@@ -28,3 +28,7 @@ The following objects are masked from ‘package:base’:
  [1] "muniSpain" "stringr"   "tidyr"     "dplyr"     "stats"     "graphics" 
  [7] "grDevices" "utils"     "datasets"  "methods"   "base"     
 
+`summarise()` regrouping output by 'muni' (override with `.groups` argument)
+`summarise()` regrouping output by 'muni' (override with `.groups` argument)
+`summarise()` regrouping output by 'prov' (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)

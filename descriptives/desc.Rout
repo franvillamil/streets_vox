@@ -1,0 +1,76 @@
+running
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=descriptives/desc.R'
+
+
+Attache Paket: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Please cite as: 
+
+ Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+
+Attache Paket: ‘MASS’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+[[1]]
+[1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[7] "methods"   "base"     
+
+[[2]]
+[1] "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices" "utils"    
+[7] "datasets"  "methods"   "base"     
+
+[[3]]
+ [1] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
+ [7] "utils"     "datasets"  "methods"   "base"     
+
+[[4]]
+ [1] "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"     "graphics" 
+ [7] "grDevices" "utils"     "datasets"  "methods"   "base"     
+
+[[5]]
+ [1] "stringr"   "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"    
+ [7] "graphics"  "grDevices" "utils"     "datasets"  "methods"   "base"     
+
+[[6]]
+ [1] "MASS"      "stringr"   "ggplot2"   "stargazer" "tidyr"     "dplyr"    
+ [7] "stats"     "graphics"  "grDevices" "utils"     "datasets"  "methods"  
+[13] "base"     
+
+[[7]]
+ [1] "forcats"   "MASS"      "stringr"   "ggplot2"   "stargazer" "tidyr"    
+ [7] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[13] "methods"   "base"     
+
+[[8]]
+ [1] "scales"    "forcats"   "MASS"      "stringr"   "ggplot2"   "stargazer"
+ [7] "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices" "utils"    
+[13] "datasets"  "methods"   "base"     
+
+[[9]]
+ [1] "muniSpain" "scales"    "forcats"   "MASS"      "stringr"   "ggplot2"  
+ [7] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
+[13] "utils"     "datasets"  "methods"   "base"     
+
+`summarise()` ungrouping output (override with `.groups` argument)
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 

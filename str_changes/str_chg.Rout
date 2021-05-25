@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=str_changes/str_chg.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -24,3 +24,23 @@ The following objects are masked from ‘package:base’:
  [1] "muniSpain" "stringr"   "dplyr"     "stats"     "graphics"  "grDevices"
  [7] "utils"     "datasets"  "methods"   "base"     
 
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)
+`summarise()` ungrouping output (override with `.groups` argument)

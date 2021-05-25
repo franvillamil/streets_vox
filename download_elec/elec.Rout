@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=download_elec/elec.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 

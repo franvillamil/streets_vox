@@ -1,10 +1,13 @@
 digraph G {
 download_str->str_changes
-input->str_local_vars
-str_changes->str_local_vars
-download_str->str_local_vars
+input->str_agg
+str_changes->str_agg
+download_str->str_agg
 input->dataset
-str_local_vars->dataset
+str_agg->dataset
 download_elec->dataset
 dataset->main_models
+input->descriptives
+str_changes->descriptives
+str_agg->descriptives
 }
