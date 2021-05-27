@@ -4,21 +4,21 @@
 
 # DESCRIPTIVES
 
-- Municipalities with/without Francoist names in 2016 / Test if the DiD sample is indeed more rightist than the rest
-- Do the same but with 2001
-- In sample (w/st 2016): differences between control and treatment condition, compare (and discuss results from table 1 in Appendix)
-- Treatment strength (mean number of streets removed, absolute / relative, ...)
-- Parallel trends up to 2016 (mean share in T/C for PP, PSOE, VOX) [R1 dice de poner tablas A5/A6 en el main text, pero no hay puto sitio]
+-[X] Municipalities with/without Francoist names in 2016 (Test if the DiD sample is indeed more rightist than the rest)
+-[X] Do the same but with 2001, including PP/PSOE back to 2001
+-[ ] In sample (w/st 2016): differences between control and treatment condition, compare (and discuss results from table 1 in Appendix)
+-[ ] Treatment strength (mean number of streets removed, absolute / relative, ...)
+-[ ] Parallel trends up to 2016 (mean share in T/C for PP, PSOE, VOX) [R1 dice de poner tablas A5/A6 en el main text, pero no hay puto sitio]
 
 # MODEL CHANGES
 
-- Incluir PSOE para las parallel trends (tablas A5/A6)
-- SE, clustered on CCAAs?
-- DiD results WITHOUT controls
-- Binary/continuous treatment, explanation? https://stats.stackexchange.com/questions/152684/how-do-i-interpret-a-difference-in-differences-model-with-continuous-treatment
-- Results using varied periods for Franc street removal (cross-sec)
+-[ ] Incluir PSOE para las parallel trends (tablas A5/A6)
+-[ ] SE, clustered on CCAAs?
+-[ ] DiD results WITHOUT controls
+-[ ] Binary/continuous treatment, explanation? https://stats.stackexchange.com/questions/152684/how-do-i-interpret-a-difference-in-differences-model-with-continuous-treatment
+-[ ] Results using varied periods for Franc street removal (cross-sec)
 
 # NEW STUFF
 
-- First differences of the DiD models? (See discussion of Card 1992 in DiD section in Angrist & Pischke)
-- Triple difference with a second control of municipalities that do not have Francoist street names in 2016. (https://edge.edx.org/assets/courseware/v1/b8d2a8030b7aa5f2762a464bf7f8b0c7/c4x/BerkeleyX/CEGA101AIE/asset/Module_2.5_Difference_in_Differences.pdf https://www.reddit.com/r/econometrics/comments/bhxj7l/triple_diff_in_diff_resources/ pages 4-5 in https://users.nber.org/~confer/2007/si2007/WNE/Slides7-31-07/slides_10_diffindiffs.pdf)
+-[ ] First differences of the DiD models? (See discussion of Card 1992 in DiD section in Angrist & Pischke)
+-[ ] Triple difference with a second control of municipalities that do not have Francoist street names in 2016. (https://edge.edx.org/assets/courseware/v1/b8d2a8030b7aa5f2762a464bf7f8b0c7/c4x/BerkeleyX/CEGA101AIE/asset/Module_2.5_Difference_in_Differences.pdf https://www.reddit.com/r/econometrics/comments/bhxj7l/triple_diff_in_diff_resources/ pages 4-5 in https://users.nber.org/~confer/2007/si2007/WNE/Slides7-31-07/slides_10_diffindiffs.pdf)

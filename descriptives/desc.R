@@ -2,7 +2,7 @@
 options(stringsAsFactors = FALSE)
 # List of packages
 pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr",
-  "MASS", "forcats", "scales")
+  "MASS", "forcats", "scales", "ggpubr")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
@@ -24,6 +24,44 @@ capitalize = function(str){
   return(out)
   }
 
+ttest_to_tex = function(ttout){
+  ins = paste0(round(ttout$estimate[1] * 100, 2), "\\%")
+  outs = paste0(round(ttout$estimate[2] * 100, 2), "\\%")
+  pv = sprintf("%0.3f", ttout$p.value)
+  if(ttout$p.value < 0.05){pv = paste0(pv, "*")}
+  if(ttout$p.value < 0.01){pv = paste0(pv, "*")}
+  if(ttout$p.value < 0.001){pv = paste0(pv, "*")}
+  diff = round(ttout$estimate[1] * 100 - ttout$estimate[2] * 100, 2)
+  party = gsub("^([A-Z]*)\\d+_\\d+.*", "\\1", ttout$data.name)
+  row = paste0(party, " & ", ins, " & ", outs, " & ", diff, " & ", pv, " \\\\")
+  return(row)
+}
+
+tex_append = function(title, label, midlines){
+
+  preamble = c(
+    "\\begin{table}[!htbp] \\centering",
+    paste0("\\caption{", title, "}"),
+    paste0("\\label{", label, "}"),
+    "\\small",
+    "\\begin{tabular}{lcccc}",
+    "\\\\[-1.8ex]\\hline",
+    "\\hline \\\\[-1.8ex]",
+    "\\\\[-1.8ex]",
+    "Party & In sample & Out of sample & Diff In-Out (\\%) & P-value \\\\",
+    "\\hline \\\\[-1.8ex]")
+
+  end = c("\\hline",
+    "\\hline \\\\[-1.8ex]",
+    "\\multicolumn{5}{c}{\\parbox[t]{0.65\\textwidth}{\\textit{Note:} * $p<0.05$; ** $p<0.01$; *** $p<0.001$.}}\\\\",
+    "\\end{tabular}",
+    "\\end{table}")
+
+  return(c(preamble, midlines, end))
+
+}
+
+
 # ------------------------------
 
 # Load data
@@ -31,6 +69,7 @@ franc_names = readLines("input/calles_franquistas.txt")
 changes = read.csv("str_changes/output/changes.csv")
 fs_prov_all  = read.csv("str_agg/output/fs_prov.csv")
 fs_all = read.csv("str_agg/output/fs_all.csv")
+data = read.csv("dataset/output/data.csv")
 
 # ------------------------------
 
@@ -45,7 +84,9 @@ fn_tex = gsub(" Los ", " los ", fn_tex)
 fn_tex = gsub(" Y ", " y ", fn_tex)
 fn_tex = gsub("Vallejo-nagera", "Vallejo-Nagera", fn_tex)
 fn_tex = paste(fn_tex, collapse = "; ")
-writeLines(fn_tex, con = file("descriptives/output/francoist_name_list.txt"))
+fc = file("descriptives/output/francoist_name_list.txt")
+writeLines(fn_tex, fc)
+close(fc)
 
 # ------------------------------
 
@@ -167,3 +208,102 @@ ggplot(fs_prov, aes(x = prov, y = fs_sh)) +
     strip.background = element_blank()) +
   labs(y = "\nShare of Francoist streets", x = "")
 dev.off()
+
+# ------------------------------
+
+# In-sample vs out-sample
+
+# Get rid of observations with missing data on covariates
+vars = c("fs_rm_2016s2_2018s2_bin", "fs_2016_06",
+  "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016")
+sample_did = data[!(apply(data[, vars], 1, function(x) sum(is.na(x))) > 0), ]
+
+# Create in/out sample variable, treatment/control
+sample_did$insample = ifelse(sample_did$fs_2016_06 >= 1, TRUE, FALSE)
+sample_did$insample2001 = ifelse(sample_did$fs_2001_06 >= 1, TRUE, FALSE)
+sample_did$treatment = ifelse(sample_did$fs_rm_2016s2_2018s2_bin == 1, TRUE, FALSE)
+sample_did$treatment = ifelse(!sample_did$insample, NA, sample_did$treatment)
+
+# Table with t-tests
+ttest_table = tex_append(
+  title = "Mean comparison municipalities in/out of sample (with/without Francoist street names in June 2016)",
+  label = "tab:ttest_sample",
+  midlines = c("& \\multicolumn{4}{c}{April 2019}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2019_04[insample], PP2019_04[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2019_04[insample], PSOE2019_04[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2019_04[insample], VOX2019_04[!insample]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{June 2016}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2016_06[insample], PP2016_06[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2016_06[insample], PSOE2016_06[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2016_06[insample], VOX2016_06[!insample]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{December 2015}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2015_12[insample], PP2015_12[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2015_12[insample], PSOE2015_12[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2015_12[insample], VOX2015_12[!insample]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{November 2011}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2011_11[insample], PP2011_11[!insample]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2011_11[insample], PSOE2011_11[!insample])))))
+
+fcon = file("descriptives/output/ttest_sample_fs2016.tex")
+writeLines(paste0(ttest_table), fcon)
+close(fcon)
+
+# Table with t-tests
+ttest_table2001 = tex_append(
+  title = "Mean comparison municipalities with/without Francoist street names in June 2001",
+  label = "tab:ttest_sample2001",
+  midlines = c("& \\multicolumn{4}{c}{April 2019}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2019_04[insample2001], PP2019_04[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2019_04[insample2001], PSOE2019_04[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2019_04[insample2001], VOX2019_04[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{June 2016}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2016_06[insample2001], PP2016_06[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2016_06[insample2001], PSOE2016_06[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2016_06[insample2001], VOX2016_06[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{December 2015}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2015_12[insample2001], PP2015_12[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2015_12[insample2001], PSOE2015_12[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2015_12[insample2001], VOX2015_12[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{November 2011}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2011_11[insample2001], PP2011_11[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2011_11[insample2001], PSOE2011_11[!insample2001])))))
+
+fcon = file("descriptives/output/ttest_sample_fs2001.tex")
+writeLines(paste0(ttest_table2001), fcon)
+close(fcon)
+
+# Logit regression
+sm1 = glm(insample ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm2 = glm(insample ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm3 = glm(insample ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm1_2001 = glm(insample2001 ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm2_2001 = glm(insample2001 ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm3_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+  factor(ccaa), data = sample_did)
+
+stargazer(sm1,sm2,sm3,sm1_2001,sm2_2001,sm3_2001, type="text",omit="ccaa")
+
+
+# # Create long-form data to plot
+# sample_did_l = sample_did
+# names(sample_did_l) = gsub("(PP|PSOE|VOX)(\\d+)_(\\d+)", "\\1_\\2\\3", names(sample_did_l))
+#
+# sample_did_l = sample_did_l %>%
+#   pivot_longer(cols = matches("(PP|PSOE|VOX)_(\\d+)"),
+#     names_to = c("party", "election"), names_sep= "[_]") %>%
+# # Tip: try puting ".value" instead of "election"
+# # see https://stackoverflow.com/questions/60083062
+#   mutate(election2 = as.Date(gsub("(\\d{4})(\\d{2})", "\\1-\\2-01", election))) %>%
+#   mutate(election2 = format(election2, "%b %Y")) %>%
+#   as.data.frame
