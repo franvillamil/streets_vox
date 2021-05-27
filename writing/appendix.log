@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  27 MAY 2021 13:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  27 MAY 2021 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -688,7 +688,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
-) (../descriptives/output/ttest_sample_fs2016_exclEC.tex)
+) (../descriptives/output/ttest_sample_fs2001.tex)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -722,7 +722,7 @@ Package pdftex.def Info: img/fs_by_prov.pdf  used on input line 75.
 
 LaTeX Warning: Reference `fig:fs_prov_time' on page 4 undefined on input line 84.
 
-(./tab/tab_logit_fs_rm.tex) (./tab/tab_cs_change.tex) (./tab/tab_cs_all_2011.tex [4] [5] [6]) (./tab/tab_cs_limited_2011.tex) [7 <./img/changes_by_prov.pdf>] [8] [9] (./tab/tab_vox_robustness.tex [10 <./img/fs_by_prov.pdf>]) (./tab/tab_pp_robustness.tex) [11] [12] (./appendix.aux)
+(./tab/tab_logit_fs_rm.tex) (./tab/tab_cs_change.tex) [4] [5] [6] (./tab/tab_cs_all_2011.tex) (./tab/tab_cs_limited_2011.tex) [7 <./img/changes_by_prov.pdf>] [8] [9] [10 <./img/fs_by_prov.pdf>] (./tab/tab_vox_robustness.tex) (./tab/tab_pp_robustness.tex) [11] [12] (./appendix.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -731,14 +731,14 @@ Package rerunfilecheck Info: File `appendix.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  23534 strings out of 478994
- 423764 string characters out of 5858184
- 768087 words of memory out of 5000000
+ 423733 string characters out of 5858184
+ 769129 words of memory out of 5000000
  40550 multiletter control sequences out of 15000+600000
  419179 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,17n,88p,2123b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on appendix.pdf (13 pages, 122173 bytes).
+Output written on appendix.pdf (13 pages, 122286 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams

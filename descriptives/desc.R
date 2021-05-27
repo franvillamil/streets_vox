@@ -53,7 +53,7 @@ tex_append = function(title, label, midlines){
 
   end = c("\\hline",
     "\\hline \\\\[-1.8ex]",
-    "\\multicolumn{5}{c}{\\parbox[t]{0.65\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$.}}\\\\",
+    "\\multicolumn{5}{c}{\\parbox[t]{0.65\\textwidth}{\\textit{Note:} * $p<0.05$; ** $p<0.01$; *** $p<0.001$.}}\\\\",
     "\\end{tabular}",
     "\\end{table}")
 
@@ -84,7 +84,9 @@ fn_tex = gsub(" Los ", " los ", fn_tex)
 fn_tex = gsub(" Y ", " y ", fn_tex)
 fn_tex = gsub("Vallejo-nagera", "Vallejo-Nagera", fn_tex)
 fn_tex = paste(fn_tex, collapse = "; ")
-writeLines(fn_tex, con = file("descriptives/output/francoist_name_list.txt"))
+fc = file("descriptives/output/francoist_name_list.txt")
+writeLines(fn_tex, fc)
+close(fc)
 
 # ------------------------------
 
@@ -218,12 +220,13 @@ sample_did = data[!(apply(data[, vars], 1, function(x) sum(is.na(x))) > 0), ]
 
 # Create in/out sample variable, treatment/control
 sample_did$insample = ifelse(sample_did$fs_2016_06 >= 1, TRUE, FALSE)
+sample_did$insample2001 = ifelse(sample_did$fs_2001_06 >= 1, TRUE, FALSE)
 sample_did$treatment = ifelse(sample_did$fs_rm_2016s2_2018s2_bin == 1, TRUE, FALSE)
 sample_did$treatment = ifelse(!sample_did$insample, NA, sample_did$treatment)
 
 # Table with t-tests
 ttest_table = tex_append(
-  title = "Mean comparison municipalities in/out of sample",
+  title = "Mean comparison municipalities in/out of sample (with/without Francoist street names in June 2016)",
   label = "tab:ttest_sample",
   midlines = c("& \\multicolumn{4}{c}{April 2019}\\\\",
   ttest_to_tex(with(sample_did, t.test(PP2019_04[insample], PP2019_04[!insample]))),
@@ -248,6 +251,33 @@ fcon = file("descriptives/output/ttest_sample_fs2016.tex")
 writeLines(paste0(ttest_table), fcon)
 close(fcon)
 
+# Table with t-tests
+ttest_table2001 = tex_append(
+  title = "Mean comparison municipalities with/without Francoist street names in June 2001",
+  label = "tab:ttest_sample2001",
+  midlines = c("& \\multicolumn{4}{c}{April 2019}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2019_04[insample2001], PP2019_04[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2019_04[insample2001], PSOE2019_04[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2019_04[insample2001], VOX2019_04[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{June 2016}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2016_06[insample2001], PP2016_06[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2016_06[insample2001], PSOE2016_06[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2016_06[insample2001], VOX2016_06[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{December 2015}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2015_12[insample2001], PP2015_12[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2015_12[insample2001], PSOE2015_12[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(VOX2015_12[insample2001], VOX2015_12[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{November 2011}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2011_11[insample2001], PP2011_11[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2011_11[insample2001], PSOE2011_11[!insample2001])))))
+
+fcon = file("descriptives/output/ttest_sample_fs2001.tex")
+writeLines(paste0(ttest_table2001), fcon)
+close(fcon)
+
 # Logit regression
 sm1 = glm(insample ~ PP2011_11 + PSOE2011_11 + lpop2011 +
   factor(ccaa), data = sample_did)
@@ -255,8 +285,15 @@ sm2 = glm(insample ~ PP2015_12 + PSOE2015_12 + lpop2011 +
   factor(ccaa), data = sample_did)
 sm3 = glm(insample ~ PP2016_06 + PSOE2016_06 + lpop2011 +
   factor(ccaa), data = sample_did)
+sm1_2001 = glm(insample2001 ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm2_2001 = glm(insample2001 ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm3_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+  factor(ccaa), data = sample_did)
 
-stargazer(sm1,sm2,sm3, type="text",omit="ccaa")
+stargazer(sm1,sm2,sm3,sm1_2001,sm2_2001,sm3_2001, type="text",omit="ccaa")
+
 
 # # Create long-form data to plot
 # sample_did_l = sample_did

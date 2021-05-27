@@ -4,8 +4,8 @@
 
 # DESCRIPTIVES
 
--[ ] Municipalities with/without Francoist names in 2016 / Test if the DiD sample is indeed more rightist than the rest
--[ ] Do the same but with 2001
+-[X] Municipalities with/without Francoist names in 2016 (Test if the DiD sample is indeed more rightist than the rest)
+-[X] Do the same but with 2001, including PP/PSOE back to 2001
 -[ ] In sample (w/st 2016): differences between control and treatment condition, compare (and discuss results from table 1 in Appendix)
 -[ ] Treatment strength (mean number of streets removed, absolute / relative, ...)
 -[ ] Parallel trends up to 2016 (mean share in T/C for PP, PSOE, VOX) [R1 dice de poner tablas A5/A6 en el main text, pero no hay puto sitio]

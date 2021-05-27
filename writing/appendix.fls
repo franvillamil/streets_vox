@@ -986,10 +986,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplri7t.tfm
-INPUT ../descriptives/output/ttest_sample_fs2016_exclEC.tex
-INPUT ../descriptives/output/ttest_sample_fs2016_exclEC.tex
-INPUT ../descriptives/output/ttest_sample_fs2016_exclEC.tex
-INPUT ../descriptives/output/ttest_sample_fs2016_exclEC.tex
+INPUT ../descriptives/output/ttest_sample_fs2001.tex
+INPUT ../descriptives/output/ttest_sample_fs2001.tex
+INPUT ../descriptives/output/ttest_sample_fs2001.tex
+INPUT ../descriptives/output/ttest_sample_fs2001.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm

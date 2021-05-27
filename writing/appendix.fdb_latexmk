@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1622114089 "appendix.tex" "appendix.pdf" "appendix" 1622114091
-  "../descriptives/output/ttest_sample_fs2016.tex" 1622114086 1119 bdc6b1bf2fa25f89ed03f53d4016f3bd ""
-  "../descriptives/output/ttest_sample_fs2016_exclEC.tex" 1622114086 1162 809d689f8c98ed736daf8dc8a73c0383 ""
+["pdflatex"] 1622116550 "appendix.tex" "appendix.pdf" "appendix" 1622116552
+  "../descriptives/output/ttest_sample_fs2001.tex" 1622116517 1143 cc5902fe6dca51970dcee992aa1817a1 ""
+  "../descriptives/output/ttest_sample_fs2016.tex" 1622116517 1159 df37398dfc6c515db9691af9bb0f030c ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136768653 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -175,10 +175,10 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616695603 5169178 a2ce6e2d73f603b690db6777d06dbccb ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1618217920 2724739 d06cef4217cd60bcdf905aa8f120eb7c ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "appendix.aux" 1622114090 4515 01006960e7d0257d705466f8cb4565d7 "pdflatex"
-  "appendix.out" 1622114090 876 58977dcc49b20903c42580d1d3a66b10 "pdflatex"
-  "appendix.tex" 1622113730 5174 580ec193961f8762dc1e15bb2985ce3f ""
-  "appendix.toc" 1622114090 380 58f48fe53b0f2a0e7ef1a8cf58e96d2d "pdflatex"
+  "appendix.aux" 1622116551 4597 8791c7142c462c0a58b71f533b390bf4 "pdflatex"
+  "appendix.out" 1622116551 876 58977dcc49b20903c42580d1d3a66b10 "pdflatex"
+  "appendix.tex" 1622116383 5167 fc0bd20f6d24af89fec5779ce411c448 ""
+  "appendix.toc" 1622116551 381 d600e8deaeb23828023417c60e0aa07b "pdflatex"
   "img/changes_by_prov.pdf" 1622105574 8048 ba403440f31d38725836cc1b1975874e ""
   "img/fs_by_prov.pdf" 1622105574 8165 dc547ec3cf1735d4aca661f00d3fefd5 ""
   "tab/francoist_name_list.tex" 1622105574 2071 409ac8fe07fe425bacde885f3ba3d0af ""
@@ -189,8 +189,8 @@
   "tab/tab_pp_robustness.tex" 1622105574 3074 10b5e5d96fccdb5666cde1d175c7d3c1 ""
   "tab/tab_vox_robustness.tex" 1622105574 2768 215ecc635b90231c9d52af940acf4cf1 ""
   (generated)
+  "appendix.pdf"
   "appendix.out"
-  "appendix.aux"
   "appendix.log"
   "appendix.toc"
-  "appendix.pdf"
+  "appendix.aux"
