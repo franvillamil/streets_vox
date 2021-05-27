@@ -62,6 +62,38 @@ tex_append = function(title, label, midlines){
 }
 
 
+# My Stargazer (for the glm)
+my_stargazer = function(dest_file, model_list, title, label, order,
+  covariate.labels, notes_table,
+  add.lines=list(c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(model_list))))){
+
+  filecon = file(dest_file)
+  writeLines(
+    stargazer(model_list, title = title, label = label,
+      order = order, covariate.labels = covariate.labels, notes = notes_table,
+      omit.stat = c("ll"),
+      dep.var.caption = "",
+      dep.var.labels.include = FALSE,
+      intercept.bottom = FALSE,
+      column.sep.width = "-20pt",
+      multicolumn = FALSE,
+      omit = "ccaa",
+      font.size = "small",
+      digits = 3,
+      digits.extra = 0,
+      star.char = c("+", "*", "**", "***"),
+      star.cutoffs = c(0.1, 0.05, 0.01, 0.001),
+      notes.align = "c",
+      align = TRUE,
+      no.space = TRUE,
+      add.lines = add.lines,
+      notes.label = "",
+      notes.append = FALSE),
+  filecon)
+  close(filecon)
+
+}
+
 # ------------------------------
 
 # Load data
@@ -84,7 +116,7 @@ fn_tex = gsub(" Los ", " los ", fn_tex)
 fn_tex = gsub(" Y ", " y ", fn_tex)
 fn_tex = gsub("Vallejo-nagera", "Vallejo-Nagera", fn_tex)
 fn_tex = paste(fn_tex, collapse = "; ")
-fc = file("descriptives/output/francoist_name_list.txt")
+fc = file("descriptives/output/francoist_name_list.tex")
 writeLines(fn_tex, fc)
 close(fc)
 
@@ -211,7 +243,7 @@ dev.off()
 
 # ------------------------------
 
-# In-sample vs out-sample
+# In-sample vs out-sample tables & glm
 
 # Get rid of observations with missing data on covariates
 vars = c("fs_rm_2016s2_2018s2_bin", "fs_2016_06",
@@ -272,38 +304,124 @@ ttest_table2001 = tex_append(
   "\\hline \\\\[-1.8ex]",
   "& \\multicolumn{4}{c}{November 2011}\\\\",
   ttest_to_tex(with(sample_did, t.test(PP2011_11[insample2001], PP2011_11[!insample2001]))),
-  ttest_to_tex(with(sample_did, t.test(PSOE2011_11[insample2001], PSOE2011_11[!insample2001])))))
+  ttest_to_tex(with(sample_did, t.test(PSOE2011_11[insample2001], PSOE2011_11[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{March 2008}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2008_03[insample2001], PP2008_03[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2008_03[insample2001], PSOE2008_03[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{March 2004}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2004_03[insample2001], PP2004_03[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2004_03[insample2001], PSOE2004_03[!insample2001]))),
+  "\\hline \\\\[-1.8ex]",
+  "& \\multicolumn{4}{c}{March 2000}\\\\",
+  ttest_to_tex(with(sample_did, t.test(PP2000_03[insample2001], PP2000_03[!insample2001]))),
+  ttest_to_tex(with(sample_did, t.test(PSOE2000_03[insample2001], PSOE2000_03[!insample2001])))
+))
 
 fcon = file("descriptives/output/ttest_sample_fs2001.tex")
 writeLines(paste0(ttest_table2001), fcon)
 close(fcon)
 
 # Logit regression
-sm1 = glm(insample ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+sm00 = glm(insample ~ PP2000_03 + PSOE2000_03 + lpop2011 +
   factor(ccaa), data = sample_did)
-sm2 = glm(insample ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+sm04 = glm(insample ~ PP2004_03 + PSOE2004_03 + lpop2011 +
   factor(ccaa), data = sample_did)
-sm3 = glm(insample ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+sm08 = glm(insample ~ PP2008_03 + PSOE2008_03 + lpop2011 +
   factor(ccaa), data = sample_did)
-sm1_2001 = glm(insample2001 ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+sm11 = glm(insample ~ PP2011_11 + PSOE2011_11 + lpop2011 +
   factor(ccaa), data = sample_did)
-sm2_2001 = glm(insample2001 ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+sm15 = glm(insample ~ PP2015_12 + PSOE2015_12 + lpop2011 +
   factor(ccaa), data = sample_did)
-sm3_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+sm16 = glm(insample ~ PP2016_06 + PSOE2016_06 + lpop2011 +
   factor(ccaa), data = sample_did)
 
-stargazer(sm1,sm2,sm3,sm1_2001,sm2_2001,sm3_2001, type="text",omit="ccaa")
+sm00_2001 = glm(insample2001 ~ PP2000_03 + PSOE2000_03 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm04_2001 = glm(insample2001 ~ PP2004_03 + PSOE2004_03 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm08_2001 = glm(insample2001 ~ PP2008_03 + PSOE2008_03 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm11_2001 = glm(insample2001 ~ PP2011_11 + PSOE2011_11 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm15_2001 = glm(insample2001 ~ PP2015_12 + PSOE2015_12 + lpop2011 +
+  factor(ccaa), data = sample_did)
+sm16_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
+  factor(ccaa), data = sample_did)
+
+my_stargazer(dest_file = "descriptives/output/tab_insample.tex",
+  model_list = list(sm00, sm04, sm08, sm11, sm15, sm16),
+  title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2016",
+  label = "tab:insample",
+  order = "Constant",
+  covariate.labels = c("(Intercept)",
+    "PP (2000/03)", "PSOE (2000/03)",
+    "PP (2004/03)", "PSOE (2004/03)",
+    "PP (2008/03)", "PSOE (2008/03)",
+    "PP (2011/11)", "PSOE (2011/11)",
+    "PP (2015/12)", "PSOE (2015/12)",
+    "PP (2016/06)", "PSOE (2016/06)",
+    "Log. Pop 2011"),
+  notes_table = "\\parbox[t]{0.6\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$.}")
+
+my_stargazer(dest_file = "descriptives/output/tab_insample2001.tex",
+  model_list = list(sm00_2001, sm04_2001, sm08_2001,
+    sm11_2001, sm15_2001, sm16_2001),
+  title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2001",
+  label = "tab:insample2001",
+  order = "Constant",
+  covariate.labels = c("(Intercept)",
+    "PP (2000/03)", "PSOE (2000/03)",
+    "PP (2004/03)", "PSOE (2004/03)",
+    "PP (2008/03)", "PSOE (2008/03)",
+    "PP (2011/11)", "PSOE (2011/11)",
+    "PP (2015/12)", "PSOE (2015/12)",
+    "PP (2016/06)", "PSOE (2016/06)",
+    "Log. Pop 2011"),
+  notes_table = "\\parbox[t]{0.6\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$.}")
 
 
-# # Create long-form data to plot
-# sample_did_l = sample_did
-# names(sample_did_l) = gsub("(PP|PSOE|VOX)(\\d+)_(\\d+)", "\\1_\\2\\3", names(sample_did_l))
-#
-# sample_did_l = sample_did_l %>%
-#   pivot_longer(cols = matches("(PP|PSOE|VOX)_(\\d+)"),
-#     names_to = c("party", "election"), names_sep= "[_]") %>%
-# # Tip: try puting ".value" instead of "election"
-# # see https://stackoverflow.com/questions/60083062
-#   mutate(election2 = as.Date(gsub("(\\d{4})(\\d{2})", "\\1-\\2-01", election))) %>%
-#   mutate(election2 = format(election2, "%b %Y")) %>%
-#   as.data.frame
+# ------------------------------
+
+# Create long-form data to plot
+sample_did_l = sample_did
+names(sample_did_l) = gsub("(PP|PSOE|VOX)(\\d+)_(\\d+)", "\\1_\\2\\3", names(sample_did_l))
+
+sample_did_l = sample_did_l %>%
+  pivot_longer(cols = matches("(PP|PSOE|VOX)_(\\d+)"),
+    names_to = c("party", "election"), names_sep= "[_]") %>%
+# Tip: try puting ".value" instead of "election"
+# see https://stackoverflow.com/questions/60083062
+  mutate(election_date = as.Date(gsub("(\\d{4})(\\d{2})", "\\1-\\2-01", election))) %>%
+  mutate(election_date = format(election_date, "%Y/%m")) %>%
+  as.data.frame
+
+# National means
+trends = sample_did_l %>%
+  filter(insample) %>%
+  group_by(party, election_date, treatment) %>%
+  summarize(value = mean(value, na.rm = TRUE)) %>%
+  as.data.frame()
+
+trends$election_date = factor(trends$election_date)
+trends$treatment = factor(trends$treatment)
+levels(trends$treatment) = c("No", "Yes")
+
+# Plots of parallel trends
+pdf("descriptives/output/par_trends.pdf", width = 10, height = 4)
+ggplot(trends, aes(x = election_date, y = value, group = treatment)) +
+  geom_line(aes(linetype = treatment)) +
+  facet_wrap(~party, scales = "free_y", ncol = 2) +
+  theme_bw() +
+  theme(
+    legend.position = c(0.85, 0),
+    legend.justification = c(1, 0),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_rect(colour = "black", fill = NA),
+    strip.text = element_text(colour = "grey30", size = 10),
+    strip.background = element_blank()) +
+  labs(x = "", y = "Mean electoral share", linetype = "Removed Francoist street names?")
+dev.off()

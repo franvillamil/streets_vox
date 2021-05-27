@@ -1,7 +1,1 @@
-
--[X] Tasks to create Francoist street data (at least, para lo necesario para
-     crear los descriptives: changes.csv, share of FS per province...)
--[X] Clean main analyses
--[X] Robustness tests & alt explanations
--[X] Clean descriptives
--[ ] Add-ons for the R&R (see other file) (in analyses & descriptives)
+- Add-ons for the R&R (see other file) (in analyses & descriptives)

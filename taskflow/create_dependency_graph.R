@@ -6,8 +6,10 @@ library(stringr)
 # Load makefile
 l = readLines(file("Makefile"))
 
-# Replace functions
+# Remove the "|"
+l = gsub(" \\| ", "", l)
 
+# Replace functions
 funcs = l[grepl("^[a-z].* = ", l)]
 if(length(funcs) > 0){
   funcs = str_split(funcs, " = ")

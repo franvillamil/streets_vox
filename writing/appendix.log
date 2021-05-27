@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  27 MAY 2021 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.12)  27 MAY 2021 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,48 +681,65 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `appendix.toc'.
 
- (../descriptives/output/ttest_sample_fs2016.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 5.
+(Font)              <12> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 5.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
-) (../descriptives/output/ttest_sample_fs2001.tex)
+(Font)              <6> on input line 45.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 50.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 50.
+(Font)              <5> on input line 45.
 
-Underfull \hbox (badness 1681) in paragraph at lines 50--50
+Underfull \hbox (badness 1681) in paragraph at lines 45--45
 [][][]\OT1/ppl/m/n/10 The full list and the rea-sons for the choice of each street name is avail-able on-line at
+ []
+
+(./tab/francoist_name_list.tex)
+Overfull \hbox (8.2276pt too wide) in paragraph at lines 1--51
+[]\OT1/ppl/m/n/12 18 de Julio; Al-calde Conde de May-alde; Al-cazar; Al-cazar de Toledo; Alferez
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.53 
-      [1] [2] (./tab/francoist_name_list.tex)
-Overfull \hbox (8.2276pt too wide) in paragraph at lines 1--56
-[]\OT1/ppl/m/n/12 18 de Julio; Al-calde Conde de May-alde; Al-cazar; Al-cazar de Toledo; Alferez
- []
-
-[3]
-<img/changes_by_prov.pdf, id=54, 578.16pt x 578.16pt>
+l.51 \end{quote}
+                 [1]
+<img/changes_by_prov.pdf, id=41, 578.16pt x 578.16pt>
 File: img/changes_by_prov.pdf Graphic file (type pdf)
 <use img/changes_by_prov.pdf>
-Package pdftex.def Info: img/changes_by_prov.pdf  used on input line 66.
+Package pdftex.def Info: img/changes_by_prov.pdf  used on input line 61.
 (pdftex.def)             Requested size: 443.57848pt x 443.57896pt.
-<img/fs_by_prov.pdf, id=55, 578.16pt x 578.16pt>
+<img/fs_by_prov.pdf, id=42, 578.16pt x 578.16pt>
 File: img/fs_by_prov.pdf Graphic file (type pdf)
 <use img/fs_by_prov.pdf>
-Package pdftex.def Info: img/fs_by_prov.pdf  used on input line 75.
+Package pdftex.def Info: img/fs_by_prov.pdf  used on input line 70.
 (pdftex.def)             Requested size: 443.57848pt x 443.57896pt.
 
 
-LaTeX Warning: Reference `fig:fs_prov_time' on page 4 undefined on input line 84.
+LaTeX Warning: Reference `fig:fs_prov_time' on page 2 undefined on input line 79.
 
-(./tab/tab_logit_fs_rm.tex) (./tab/tab_cs_change.tex) [4] [5] [6] (./tab/tab_cs_all_2011.tex) (./tab/tab_cs_limited_2011.tex) [7 <./img/changes_by_prov.pdf>] [8] [9] [10 <./img/fs_by_prov.pdf>] (./tab/tab_vox_robustness.tex) (./tab/tab_pp_robustness.tex) [11] [12] (./appendix.aux)
+[2] [3 <./img/changes_by_prov.pdf>] (./tab/tab_logit_fs_rm.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 9.
+) (./tab/ttest_sample_fs2016.tex) (./tab/ttest_sample_fs2001.tex) (./tab/tab_insample.tex
+Overfull \hbox (4.02893pt too wide) in paragraph at lines 9--50
+ [][] 
+ []
+
+) (./tab/tab_insample2001.tex
+Overfull \hbox (4.02893pt too wide) in paragraph at lines 9--50
+ [][] 
+ []
+
+) (./tab/tab_cs_change.tex [4 <./img/fs_by_prov.pdf>] [5] [6] [7] [8] [9]) (./tab/tab_cs_all_2011.tex) (./tab/tab_cs_limited_2011.tex) [10] [11] [12] (./tab/tab_vox_robustness.tex) (./tab/tab_pp_robustness.tex
+
+LaTeX Warning: Float too large for page by 16.59067pt on input line 52.
+
+) (./tab/tab_psoe_robustness.tex
+
+LaTeX Warning: Float too large for page by 16.59067pt on input line 52.
+
+) [13] [14] [15] (./appendix.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -730,18 +747,18 @@ Package rerunfilecheck Info: File `appendix.out' has not changed.
 (rerunfilecheck)             Checksum: 58977DCC49B20903C42580D1D3A66B10;876.
  ) 
 Here is how much of TeX's memory you used:
- 23534 strings out of 478994
- 423733 string characters out of 5858184
- 769129 words of memory out of 5000000
- 40550 multiletter control sequences out of 15000+600000
+ 23554 strings out of 478994
+ 423988 string characters out of 5858184
+ 821479 words of memory out of 5000000
+ 40556 multiletter control sequences out of 15000+600000
  419179 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,17n,88p,2123b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on appendix.pdf (13 pages, 122286 bytes).
+Output written on appendix.pdf (16 pages, 127430 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  55 words of extra memory for PDF output out of 10000 (max. 10000000)
 

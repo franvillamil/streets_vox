@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=descriptives/desc.R'
 
 
-Attache Paket: ‘dplyr’
+Attaching package: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,7 +19,7 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attache Paket: ‘MASS’
+Attaching package: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
@@ -61,19 +61,60 @@ The following object is masked from ‘package:dplyr’:
 [13] "datasets"  "methods"   "base"     
 
 [[9]]
- [1] "muniSpain" "scales"    "forcats"   "MASS"      "stringr"   "ggplot2"  
+ [1] "ggpubr"    "scales"    "forcats"   "MASS"      "stringr"   "ggplot2"  
  [7] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
 [13] "utils"     "datasets"  "methods"   "base"     
 
-`summarise()` ungrouping output (override with `.groups` argument)
-Warnmeldung:
-In for (i in seq_along(cenv$extra)) { :
-  cerrando la conenexion 3 (descriptives/output/francoist_name_list.txt) que no esta siendo utilizada 
+[[10]]
+ [1] "muniSpain" "ggpubr"    "scales"    "forcats"   "MASS"      "stringr"  
+ [7] "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"     "graphics" 
+[13] "grDevices" "utils"     "datasets"  "methods"   "base"     
+
 null device 
           1 
 null device 
           1 
 null device 
           1 
+null device 
+          1 
+
+===================================================================================
+                                         Dependent variable:                       
+                  -----------------------------------------------------------------
+                              insample                       insample2001          
+                     (1)        (2)        (3)        (4)        (5)        (6)    
+-----------------------------------------------------------------------------------
+PP2011_11          0.212***                         0.340***                       
+                   (0.051)                          (0.056)                        
+                                                                                   
+PSOE2011_11       -0.157***                          -0.047                        
+                   (0.056)                          (0.062)                        
+                                                                                   
+PP2015_12                     0.263***                         0.358***            
+                              (0.045)                          (0.050)             
+                                                                                   
+PSOE2015_12                  -0.138***                          -0.066             
+                              (0.054)                          (0.059)             
+                                                                                   
+PP2016_06                                0.237***                         0.327*** 
+                                         (0.046)                          (0.051)  
+                                                                                   
+PSOE2016_06                             -0.175***                         -0.105*  
+                                         (0.057)                          (0.063)  
+                                                                                   
+lpop2011           0.072***   0.075***   0.074***   0.077***   0.082***   0.080*** 
+                   (0.003)    (0.003)    (0.003)    (0.003)    (0.003)    (0.003)  
+                                                                                   
+Constant          -0.246***  -0.268***  -0.248***  -0.338***  -0.328***  -0.305*** 
+                   (0.048)    (0.042)    (0.044)    (0.053)    (0.047)    (0.048)  
+                                                                                   
+-----------------------------------------------------------------------------------
+Observations        7,897      7,897      7,897      7,897      7,897      7,897   
+Log Likelihood    -3,392.694 -3,393.221 -3,391.562 -4,149.657 -4,149.061 -4,149.126
+Akaike Inf. Crit. 6,829.387  6,830.442  6,827.124  8,343.314  8,342.123  8,342.252 
+===================================================================================
+Note:                                                   *p<0.1; **p<0.05; ***p<0.01
+`summarise()` has grouped output by 'party', 'election_date'. You can override using the `.groups` argument.
 null device 
           1 

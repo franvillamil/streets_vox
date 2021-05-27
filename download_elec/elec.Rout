@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=download_elec/elec.R'
 
 
-Attache Paket: ‘dplyr’
+Attaching package: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -53,4 +53,19 @@ probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02
 Content type 'application/zip' length 834367 bytes (814 KB)
 ==================================================
 downloaded 814 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02200803_MUNI.zip'
+Content type 'application/zip' length 1208943 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02200403_MUNI.zip'
+Content type 'application/zip' length 1021695 bytes (997 KB)
+==================================================
+downloaded 997 KB
+
+probando la URL 'http://www.infoelectoral.mir.es/infoelectoral/docxl/apliextr/02200003_MUNI.zip'
+Content type 'application/zip' length 851897 bytes (831 KB)
+==================================================
+downloaded 831 KB
 

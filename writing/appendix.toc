@@ -1,5 +1,5 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Francoist street names}{1}{section.1}%
-\contentsline {section}{\numberline {2}Francoist street name removals}{4}{section.2}%
-\contentsline {section}{\numberline {3}Additional analysis (cross-sectional)}{7}{section.3}%
+\contentsline {section}{\numberline {2}Francoist street name removals}{2}{section.2}%
+\contentsline {section}{\numberline {3}Additional analysis (cross-sectional)}{10}{section.3}%
 \contentsline {section}{\numberline {4}Robustness tests (difference-in-differences)}{10}{section.4}%
