@@ -2,7 +2,7 @@
 options(stringsAsFactors = FALSE)
 # List of packages
 pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr",
-  "MASS", "forcats", "scales", "ggpubr")
+  "MASS", "forcats", "scales")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
@@ -17,82 +17,10 @@ lapply(c(pkg, "muniSpain"), library, character.only = TRUE)
 
 # ------------------------------
 
-# Function to make First Letter capital
-capitalize = function(str){
-  c = strsplit(str, " ")[[1]]
-  out = paste(toupper(substring(c, 1,1)), substring(c, 2), sep="", collapse=" ")
-  return(out)
-  }
-
-ttest_to_tex = function(ttout){
-  ins = paste0(round(ttout$estimate[1] * 100, 2), "\\%")
-  outs = paste0(round(ttout$estimate[2] * 100, 2), "\\%")
-  pv = sprintf("%0.3f", ttout$p.value)
-  if(ttout$p.value < 0.05){pv = paste0(pv, "*")}
-  if(ttout$p.value < 0.01){pv = paste0(pv, "*")}
-  if(ttout$p.value < 0.001){pv = paste0(pv, "*")}
-  diff = round(ttout$estimate[1] * 100 - ttout$estimate[2] * 100, 2)
-  party = gsub("^([A-Z]*)\\d+_\\d+.*", "\\1", ttout$data.name)
-  row = paste0(party, " & ", ins, " & ", outs, " & ", diff, " & ", pv, " \\\\")
-  return(row)
-}
-
-tex_append = function(title, label, midlines){
-
-  preamble = c(
-    "\\begin{table}[!htbp] \\centering",
-    paste0("\\caption{", title, "}"),
-    paste0("\\label{", label, "}"),
-    "\\small",
-    "\\begin{tabular}{lcccc}",
-    "\\\\[-1.8ex]\\hline",
-    "\\hline \\\\[-1.8ex]",
-    "\\\\[-1.8ex]",
-    "Party & In sample & Out of sample & Diff In-Out (\\%) & P-value \\\\",
-    "\\hline \\\\[-1.8ex]")
-
-  end = c("\\hline",
-    "\\hline \\\\[-1.8ex]",
-    "\\multicolumn{5}{c}{\\parbox[t]{0.65\\textwidth}{\\textit{Note:} * $p<0.05$; ** $p<0.01$; *** $p<0.001$.}}\\\\",
-    "\\end{tabular}",
-    "\\end{table}")
-
-  return(c(preamble, midlines, end))
-
-}
-
-
-# My Stargazer (for the glm)
-my_stargazer = function(dest_file, model_list, title, label, order,
-  covariate.labels, notes_table,
-  add.lines=list(c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(model_list))))){
-
-  filecon = file(dest_file)
-  writeLines(
-    stargazer(model_list, title = title, label = label,
-      order = order, covariate.labels = covariate.labels, notes = notes_table,
-      omit.stat = c("ll"),
-      dep.var.caption = "",
-      dep.var.labels.include = FALSE,
-      intercept.bottom = FALSE,
-      column.sep.width = "-20pt",
-      multicolumn = FALSE,
-      omit = "ccaa",
-      font.size = "small",
-      digits = 3,
-      digits.extra = 0,
-      star.char = c("+", "*", "**", "***"),
-      star.cutoffs = c(0.1, 0.05, 0.01, 0.001),
-      notes.align = "c",
-      align = TRUE,
-      no.space = TRUE,
-      add.lines = add.lines,
-      notes.label = "",
-      notes.append = FALSE),
-  filecon)
-  close(filecon)
-
-}
+# Functions
+source("func/capitalize.R")
+source("func/ttest_tex.R")
+source("func/my_stargazer_glm.R")
 
 # ------------------------------
 
@@ -350,7 +278,7 @@ sm15_2001 = glm(insample2001 ~ PP2015_12 + PSOE2015_12 + lpop2011 +
 sm16_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
   factor(ccaa), data = sample_did)
 
-my_stargazer(dest_file = "descriptives/output/tab_insample.tex",
+my_stargazer_glm(dest_file = "descriptives/output/tab_insample.tex",
   model_list = list(sm00, sm04, sm08, sm11, sm15, sm16),
   title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2016",
   label = "tab:insample",
@@ -365,7 +293,7 @@ my_stargazer(dest_file = "descriptives/output/tab_insample.tex",
     "Log. Pop 2011"),
   notes_table = "\\parbox[t]{0.6\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$.}")
 
-my_stargazer(dest_file = "descriptives/output/tab_insample2001.tex",
+my_stargazer_glm(dest_file = "descriptives/output/tab_insample2001.tex",
   model_list = list(sm00_2001, sm04_2001, sm08_2001,
     sm11_2001, sm15_2001, sm16_2001),
   title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2001",
@@ -381,6 +309,70 @@ my_stargazer(dest_file = "descriptives/output/tab_insample2001.tex",
     "Log. Pop 2011"),
   notes_table = "\\parbox[t]{0.6\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$.}")
 
+# ------------------------------
+
+# Treatment strength among treated
+
+pdf("descriptives/output/trt_strength.pdf", width = 5, height = 5)
+  ggplot(subset(sample_did, treatment),
+      aes(x = fs_rm_2016s2_2018s2)) +
+    geom_histogram(binwidth = 2, color = "white") +
+    theme_classic() +
+    theme(panel.background = element_blank(),
+          panel.grid = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_text(hjust = -0.25),
+          panel.border = element_blank(),
+          strip.text = element_text(size = 12),
+          plot.caption = element_text(size = 9, hjust = 0, margin = margin(t = 15)),
+          strip.background = element_blank()) +
+    labs(y = "",
+      x = "Francoist street names removed, Jun 2016 - Dec 2018")
+dev.off()
+
+pdf("descriptives/output/trt_remaining.pdf", width = 5, height = 5)
+  ggplot(subset(sample_did, treatment),
+      aes(x = fs_2016_06 - fs_rm_2016s2_2018s2)) +
+    geom_histogram(binwidth = 1, color = "white") +
+    theme_classic() +
+    theme(panel.background = element_blank(),
+          panel.grid = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_text(hjust = -0.25),
+          panel.border = element_blank(),
+          strip.text = element_text(size = 12),
+          plot.caption = element_text(size = 9, hjust = 0, margin = margin(t = 15)),
+          strip.background = element_blank()) +
+    labs(y = "",
+      x = "Remaining Francoist street names, Dec 2018")
+dev.off()
+
+pdf("descriptives/output/trt_strength_st2016.pdf", width = 7.5, height = 5)
+  ggplot(subset(sample_did, treatment & muni_code != 28079),
+      aes(x = fs_2016_06, y = fs_rm_2016s2_2018s2)) +
+    # geom_point(alpha = 0.25, size = 3, colour = "black") +
+    geom_bin2d(binwidth = 1) +
+    scale_fill_gradient(low = gray(0.9), high = gray(0)) +
+    theme_bw() +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      panel.background = element_blank(),
+      panel.border = element_rect(colour = "black", fill = NA),
+      strip.text = element_text(colour = "grey30", size = 10),
+      strip.background = element_blank()) +
+    labs(x = "Number of Francoist street names, June 2016\n(excl. city of Madrid)",
+      y = "Francoist street names removed\n(June 2016 - December 2018)",
+      fill = "")
+dev.off()
+
+
+# Print mean number of streets removed
+trt_mean = mean(sample_did$fs_rm_2016s2_2018s2[sample_did$fs_rm_2016s2_2018s2>0])
+trt_sd = sd(sample_did$fs_rm_2016s2_2018s2[sample_did$fs_rm_2016s2_2018s2>0])
+fc = file("descriptives/output/mean_trt_treated.tex")
+writeLines(paste0(round(trt_mean, 2), " (SD = ", round(trt_sd, 2), ")"), fc)
+close(fc)
 
 # ------------------------------
 

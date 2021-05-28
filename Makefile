@@ -8,8 +8,8 @@ raw_streets = download_str/output/V_072001.csv download_str/output/V_012011.csv 
 agg_streets = str_agg/output/fs.csv str_agg/output/fs_prov.csv str_agg/output/fs_all.csv
 dataset = dataset/output/data.csv dataset/output/dl_VOX.csv dataset/output/dl_PP.csv dataset/output/dl_PSOE.csv
 out_main_mod = main_models/output/DiD_estimates.pdf main_models/output/tab_main_did.tex main_models/output/tab_cs.tex
-out_robust = robust/output/tab_cs_limited_2011.tex robust/output/tab_cs_all_2011.tex robust/output/tab_cs_change.tex robust/output/tab_vox_robustness.tex robust/output/tab_pp_robustness.tex robust/output/tab_logit_fs_rm.tex
-out_desc = descriptives/output/par_trends.pdf descriptives/output/ttest_sample_fs2001.tex descriptives/output/ttest_sample_fs2016.tex descriptives/output/fs_by_prov.pdf descriptives/output/changes_by_prov.pdf descriptives/output/fs_by_year.pdf descriptives/output/changes_by_year.pdf descriptives/output/francoist_name_list.tex
+out_robust = robust/output/tab_cs_limited_2011.tex robust/output/tab_cs_all_2011.tex robust/output/tab_cs_change.tex robust/output/tab_vox_robustness.tex robust/output/tab_psoe_robustness.tex robust/output/tab_pp_robustness.tex robust/output/tab_logit_fs_rm.tex
+out_desc = descriptives/output/francoist_name_list.tex descriptives/output/changes_by_year.pdf descriptives/output/fs_by_year.pdf descriptives/output/changes_by_prov.pdf descriptives/output/fs_by_prov.pdf descriptives/output/ttest_sample_fs2016.tex descriptives/output/ttest_sample_fs2001.tex descriptives/output/tab_insample.tex descriptives/output/tab_insample2001.tex descriptives/output/trt_strength.pdf descriptives/output/trt_remaining.pdf descriptives/output/trt_strength_st2016.pdf descriptives/output/mean_trt_treated.tex descriptives/output/par_trends.pdf
 tex = writing/main.pdf writing/appendix.pdf
 
 
