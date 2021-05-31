@@ -76,8 +76,7 @@ $(out_desc): descriptives/desc.R input/calles_franquistas.txt str_changes/output
 texb = pdflatex -interaction=batchmode
 
 $(tex): writing/main.tex writing/appendix.tex $(out_desc) $(out_robust) $(out_main_mod) | wsubdir
-	cp */output/*.pdf writing/img
-	cp */output/*.tex writing/tab
+	cp */output/*.pdf writing/img;cp */output/*.tex writing/tab
 	$(texb) appendix.tex
 	bibtex appendix.aux
 	$(texb) appendix.tex

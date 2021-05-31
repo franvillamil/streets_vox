@@ -14,9 +14,8 @@
 # MODEL CHANGES
 
 -[X] Incluir PSOE para las parallel trends (tablas A5/A6)
-
 -[ ] SE, clustered on CCAAs?
--[ ] DiD results WITHOUT controls
+-[X] DiD results WITHOUT controls
 -[ ] Binary/continuous treatment, explanation? https://stats.stackexchange.com/questions/152684/how-do-i-interpret-a-difference-in-differences-model-with-continuous-treatment
 -[ ] Results using varied periods for Franc street removal (cross-sec)
 

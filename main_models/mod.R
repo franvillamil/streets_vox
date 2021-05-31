@@ -63,6 +63,18 @@ my_stargazer(dest_file = "main_models/output/tab_cs.tex",
 # ------------------------------
 # Difference-in-Differences
 
+did_VOX0 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
+  factor(ccaa),
+  data = subset(dl_VOX, election %in% c("2016_06", "2019_04")))
+
+did_PP0 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
+  factor(ccaa),
+  data = subset(dl_PP, election %in% c("2016_06", "2019_04")))
+
+did_PSOE0 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
+  factor(ccaa),
+  data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
+
 did_VOX1 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
   data = subset(dl_VOX, election %in% c("2016_06", "2019_04")))
@@ -75,23 +87,24 @@ did_PSOE1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
   data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
 
+main_did = list(did_VOX0, did_VOX1, did_PP0, did_PP1, did_PSOE0, did_PSOE1)
+
 my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
-  model_list = list(did_VOX1, did_PP1, did_PSOE1),
+  model_list = main_did,
   omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
   label = "tab:main_did",
   title = "Francoist street name removal and increase in electoral support for parties",
-  dep.var.labels = c("VOX", "PP", "PSOE"),
+  dep.var.labels = c("VOX", "VOX", "PP", "PP", "PSOE", "PSOE"),
   order = c("Constant"),
   covariate.labels = c("(Intercept)",
-    "Francoist street name removal",
+    "Francoist st name removal",
     "Election April 2019",
-    "Francoist removal $\\times$ April 2019"),
+    "Removal $\\times$ April 2019"),
   add.lines=list(
-    c("Controls", rep("\\multicolumn{1}{c}{Yes}", 3)),
-    c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 3))
+    c("Controls", paste0("\\multicolumn{1}{c}{", rep(c("No", "Yes"), 3), "}")),
+    c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(main_did)))
     ),
-  notes_table = "\\parbox[t]{0.75\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Only municipalities that had at least one street with a Francoist name in $t_{0}$ were included in the sample.}")
-
+  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Only municipalities that had at least one street with a Francoist name in $t_{0}$ were included in the sample.}")
 
 # ------------------------------
 # Simulation (DiD)
