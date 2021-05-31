@@ -1,7 +1,8 @@
 # setwd("~/Documents/Projects/streets_vox")
 options(stringsAsFactors = FALSE)
 # List of packages
-pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr", "MASS")
+pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr",
+  "MASS", "miceadds", "sandwich")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
@@ -13,6 +14,7 @@ lapply(pkg, library, character.only = TRUE)
 # Load functions
 source("func/functions_did.R")
 source("func/my_stargazer.R")
+source("func/cluster_se.R")
 
 # ------------------------------
 
@@ -42,9 +44,9 @@ m_cs4 = lm(VOX2019_11 ~ fs_rm_2001s2_2018s2_bin +
   unemp_2019 + part2019_11 + lpop2011 + factor(ccaa),
   data = subset(data, fs_2001_06 > 0))
 
-
 my_stargazer(dest_file = "main_models/output/tab_cs.tex",
   model_list = list(m_cs1, m_cs2, m_cs3, m_cs4),
+  se = lapply(list(m_cs1, m_cs2, m_cs3, m_cs4), function(x) cluster_se(x)),
   omit = "ccaa",
   label = "tab:cs",
   title = "Francoist street name removal and electoral support for Vox",
@@ -58,7 +60,6 @@ my_stargazer(dest_file = "main_models/output/tab_cs.tex",
     "Turnout Nov 2019",
     "Log. Population"),
   notes_table = "\\parbox[t]{0.8\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between June 2001 and December 2018. Models 3 and 4 only include municipalities that had Francoist street names in June 2001.}")
-
 
 # ------------------------------
 # Difference-in-Differences
@@ -75,8 +76,11 @@ did_PSOE1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
   data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
 
+main_did = list(did_VOX1, did_PP1, did_PSOE1)
+
 my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
-  model_list = list(did_VOX1, did_PP1, did_PSOE1),
+  model_list = main_did,
+  se = lapply(main_did, function(x) cluster_se(x)),
   omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
   label = "tab:main_did",
   title = "Francoist street name removal and increase in electoral support for parties",

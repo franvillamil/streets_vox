@@ -22,6 +22,8 @@ empirics: $(dataset) $(out_desc) $(out_main_mod) $(out_robust)
 
 clean:
 	rm -rvf */output/*
+	rm -rvf writing/img/* writing/tab/*
+	rm -rvf */*.Rout
 
 taskflow:
 	Rscript --no-save --verbose taskflow/create_dependency_graph.R
