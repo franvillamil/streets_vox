@@ -16,10 +16,11 @@
 -[X] Incluir PSOE para las parallel trends (tablas A5/A6)
 -[X] SE, clustered on CCAAs?
 -[X] DiD results WITHOUT controls
--[ ] Results using varied periods for Franc street removal (cross-sec)
+-[ ] Continuous/binary measure results for cross-sectional analyses
+-[X] Results using varied periods for Franc street removal (cross-sec)
 -[more on writing, actually] Binary/continuous treatment, explanation? https://stats.stackexchange.com/questions/152684/how-do-i-interpret-a-difference-in-differences-model-with-continuous-treatment
 
 # NEW STUFF
 
--[ ] First differences of the DiD models? (See discussion of Card 1992 in DiD section in Angrist & Pischke)
--[ ] Triple difference with a second control of municipalities that do not have Francoist street names in 2016. (https://edge.edx.org/assets/courseware/v1/b8d2a8030b7aa5f2762a464bf7f8b0c7/c4x/BerkeleyX/CEGA101AIE/asset/Module_2.5_Difference_in_Differences.pdf https://www.reddit.com/r/econometrics/comments/bhxj7l/triple_diff_in_diff_resources/ pages 4-5 in https://users.nber.org/~confer/2007/si2007/WNE/Slides7-31-07/slides_10_diffindiffs.pdf)
+-[X] First differences of the DiD models? (See discussion of Card 1992 in DiD section in Angrist & Pischke)
+-[NO SE PUEDE >> el modelo no estima el DDD estimate (triple interaction), ni tampoco la interaction selected*control, porque no hay obs suficientes para contrastes] Triple difference with a second control of municipalities that do not have Francoist street names in 2016. (https://edge.edx.org/assets/courseware/v1/b8d2a8030b7aa5f2762a464bf7f8b0c7/c4x/BerkeleyX/CEGA101AIE/asset/Module_2.5_Difference_in_Differences.pdf https://www.reddit.com/r/econometrics/comments/bhxj7l/triple_diff_in_diff_resources/ pages 4-5 in https://users.nber.org/~confer/2007/si2007/WNE/Slides7-31-07/slides_10_diffindiffs.pdf)

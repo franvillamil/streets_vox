@@ -26,6 +26,18 @@ VOX2016_above0 = subset(data, VOX2016_06 > 0)$muni_code
 dl_VOX$election = relevel(factor(dl_VOX$election), ref = "2016_06")
 dl_PP$election = relevel(factor(dl_PP$election), ref = "2016_06")
 
+# First diff models, new variables
+data = data %>%
+  mutate(
+    d_VOX_2015_2016 = (VOX2016_06 - VOX2015_12),
+    d_VOX_2016_2019 = (VOX2019_04 - VOX2016_06),
+    d_VOX_2019_2019 = (VOX2019_11 - VOX2019_04),
+    d_PP_2008_2011 = (PP2011_11 - PP2008_03),
+    d_PP_2011_2015 = (PP2015_12 - PP2011_11),
+    d_PP_2015_2016 = (PP2016_06 - PP2015_12),
+    d_PP_2016_2019 = (PP2019_04 - PP2016_06),
+    d_PP_2019_2019 = (PP2019_11 - PP2019_04))
+
 # ------------------------------
 # Cross-sectional models
 
@@ -105,7 +117,93 @@ my_stargazer(dest_file = "robust/output/tab_cs_limited_2011.tex",
   notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in June 2011 were included.}")
 
 # ------------------------------
-# DiD models (VOX)
+# Tracking street name changes in different periods
+
+m_csperiods1 = lm(VOX2019_04 ~ fs_rm_2001s2_2015s2_bin +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2001_06 > 0))
+m_csperiods2 = lm(VOX2019_04 ~ fs_rm_2001s2_2018s2_bin +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2001_06 > 0))
+m_csperiods3 = lm(VOX2019_04 ~ fs_rm_2011s1_2018s2_bin +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2010_12 > 0))
+m_csperiods4 = lm(VOX2019_04 ~ fs_rm_2016s2_2018s2_bin +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2016_06 > 0))
+
+# Change coefficient names to plot together in stargazer
+m_csperiods1_m = m_csperiods1
+m_csperiods2_m = m_csperiods2
+m_csperiods3_m = m_csperiods3
+m_csperiods4_m = m_csperiods4
+names(m_csperiods1_m$coefficients) = gsub("fs_rm_2001s2_2015s2_bin", "fsn_removal",
+  names(m_csperiods1_m$coefficients))
+names(m_csperiods2_m$coefficients) = gsub("fs_rm_2001s2_2018s2_bin", "fsn_removal",
+  names(m_csperiods2_m$coefficients))
+names(m_csperiods3_m$coefficients) = gsub("fs_rm_2011s1_2018s2_bin", "fsn_removal",
+  names(m_csperiods3_m$coefficients))
+names(m_csperiods4_m$coefficients) = gsub("fs_rm_2016s2_2018s2_bin", "fsn_removal",
+  names(m_csperiods4_m$coefficients))
+
+my_stargazer(dest_file = "robust/output/tab_cs_periods.tex",
+  model_list = list(m_csperiods1_m, m_csperiods2_m, m_csperiods3_m, m_csperiods4_m),
+  omit = "ccaa",
+  label = "tab:cs_periods",
+  title = "Electoral support for Vox in 2019 and Francoist street name removal across different periods",
+  order = c("Constant"),
+  dep.var.labels = c("2001-2015", "2001-2018", "2011-2018", "2016-2018"),
+  covariate.labels = c("(Intercept)",
+    "Francoist street name removal",
+    "Unemployment 2019",
+    "Turnout April 2019",
+    "Log. Population"),
+  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names in different periods: 1) June 2001 - December 2015, 2) June 2001 - December 2018, 3) December 2010 - December 2018, and 4) June 2016 - December 2018. Only municipalities that had Francoist street names at the beginning of each period were included.}")
+
+
+# ------------------------------
+# First differences (VOX and PP)
+# from: https://rpubs.com/eliascis/fd-plm-lfe
+
+# Right side formula
+rs = "~ fs_rm_2016s2_2018s2_bin + factor(ccaa)"
+
+# FD data
+fd_data = subset(data, fs_2016_06 > 0)
+
+# VOX
+m_fd_VOX_15 = lm(as.formula(paste0("d_VOX_2015_2016", rs)), data = fd_data)
+m_fd_VOX_16 = lm(as.formula(paste0("d_VOX_2016_2019", rs)), data = fd_data)
+m_fd_VOX_19 = lm(as.formula(paste0("d_VOX_2019_2019", rs)), data = fd_data)
+# PP
+m_fd_PP_15 = lm(as.formula(paste0("d_PP_2015_2016", rs)), data = fd_data)
+m_fd_PP_16 = lm(as.formula(paste0("d_PP_2016_2019", rs)), data = fd_data)
+m_fd_PP_19 = lm(as.formula(paste0("d_PP_2019_2019", rs)), data = fd_data)
+
+my_stargazer(dest_file = "robust/output/tab_firstdiff_vox.tex",
+  model_list = list(m_fd_VOX_15, m_fd_VOX_16, m_fd_VOX_19),
+  omit = "ccaa",
+  label = "tab:firstdiff_vox",
+  title = "First differences model on change in support for Vox",
+  order = c("Constant"),
+  dep.var.labels = c("2015-2016", "2016-2019", "2019-2019"),
+  covariate.labels = c("(Intercept)",
+    "Francoist street name removal"),
+  notes_table = "\\parbox[t]{0.65\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. The dependent variable refers to the change in support for Vox ($t_{1} - t_{0}$) in each of the three periods. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+
+my_stargazer(dest_file = "robust/output/tab_firstdiff_pp.tex",
+  model_list = list(m_fd_PP_15, m_fd_PP_16, m_fd_PP_19),
+  omit = "ccaa",
+  label = "tab:firstdiff_pp",
+  title = "First differences model on change in support for PP",
+  order = c("Constant"),
+  dep.var.labels = c("2015-2016", "2016-2019", "2019-2019"),
+  covariate.labels = c("(Intercept)",
+    "Francoist street name removal"),
+  notes_table = "\\parbox[t]{0.65\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. The dependent variable refers to the change in support for PP ($t_{1} - t_{0}$) in each of the three periods. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+
+# ------------------------------
+# Alternative DiD models (VOX)
 
 # Also including elections before 2016
 did_VOX_alt1 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +

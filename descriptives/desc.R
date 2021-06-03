@@ -394,26 +394,48 @@ trends = sample_did_l %>%
   filter(insample) %>%
   group_by(party, election_date, treatment) %>%
   summarize(value = mean(value, na.rm = TRUE)) %>%
+  group_by(party, treatment) %>%
+  mutate(n_value = value - value[election_date == "2016/06"]) %>%
   as.data.frame()
 
 trends$election_date = factor(trends$election_date)
 trends$treatment = factor(trends$treatment)
-levels(trends$treatment) = c("No", "Yes")
+levels(trends$treatment) = c("Control", "Treatment (rm Francoist street names)")
 
-# Plots of parallel trends
-pdf("descriptives/output/par_trends.pdf", width = 10, height = 4)
-ggplot(trends, aes(x = election_date, y = value, group = treatment)) +
+# # Plots of parallel trends
+# pdf("descriptives/output/par_trends.pdf", width = 10, height = 4)
+# ggplot(trends, aes(x = election_date, y = value, group = treatment)) +
+#   geom_line(aes(linetype = treatment)) +
+#   facet_wrap(~party, scales = "free_y", ncol = 2) +
+#   theme_bw() +
+#   theme(
+#     legend.position = c(0.85, 0),
+#     legend.justification = c(1, 0),
+#     panel.grid.major.x = element_blank(),
+#     panel.grid.minor.x = element_blank(),
+#     panel.background = element_blank(),
+#     panel.border = element_rect(colour = "black", fill = NA),
+#     strip.text = element_text(colour = "grey30", size = 12),
+#     strip.background = element_blank()) +
+#   labs(x = "", y = "Mean electoral share", linetype = "Group in DiD models")
+# dev.off()
+
+pdf("descriptives/output/par_trends_norm.pdf", width = 10, height = 3.5)
+ggplot(subset(trends, party != "PSOE" &
+      as.integer(str_sub(election_date, 1, 4)) > 2010),
+    aes(x = election_date, y = n_value, group = treatment)) +
   geom_line(aes(linetype = treatment)) +
-  facet_wrap(~party, scales = "free_y", ncol = 2) +
-  theme_bw() +
+  facet_wrap(~party, scales = "free", ncol = 2) +
+  geom_vline(xintercept = "2016/06", linetype = "dotted") +
+  theme_classic() +
   theme(
-    legend.position = c(0.85, 0),
-    legend.justification = c(1, 0),
+    legend.position = "bottom",
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.background = element_blank(),
-    panel.border = element_rect(colour = "black", fill = NA),
-    strip.text = element_text(colour = "grey30", size = 10),
+    # panel.border = element_rect(colour = "black", fill = NA),
+    strip.text = element_text(colour = "grey30", size = 12),
     strip.background = element_blank()) +
-  labs(x = "", y = "Mean electoral share", linetype = "Removed Francoist street names?")
+  labs(x = "", y = "Mean electoral share\n(Group-normalized, June 2016)",
+    linetype = "Group in DiD models")
 dev.off()
