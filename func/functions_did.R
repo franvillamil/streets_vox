@@ -5,7 +5,9 @@
 
 did_sim = function(m, fs_chg_var, other_vars, FE = NULL){
 
-  print("(Remember: Dependent variable must be binary 0/1)")
+  # Warning
+  if(!grepl("bin", fs_chg_var)){
+    print("==== Remember: Independent variable must be binary 0/1) =====")}
 
   # Get models coefficients
   coefs = names(m$coefficients)

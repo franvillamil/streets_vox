@@ -22,6 +22,7 @@ empirics: $(dataset) $(out_desc) $(out_main_mod) $(out_robust)
 
 clean:
 	rm -rvf */output/*
+	rm -rvf *.Rout
 
 taskflow:
 	Rscript --no-save --verbose taskflow/create_dependency_graph.R
@@ -36,38 +37,38 @@ wsubdir:
 
 $(raw_streets): download_str/download.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 str_changes/output/changes.csv: str_changes/str_chg.R $(raw_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 $(agg_streets): str_agg/agg.R input/calles_franquistas.txt str_changes/output/changes.csv $(raw_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 download_elec/output/elec.csv: download_elec/elec.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 $(dataset): dataset/dataset.R input/unemployment_01_2019.csv input/unemployment_01_2016.csv input/major_izq_muni.csv input/INE_census.csv str_agg/output/fs.csv download_elec/output/elec.csv
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 # ------------------------
 # Analyses and descriptives
 
 $(out_main_mod): main_models/mod.R func/functions_did.R func/my_stargazer.R $(dataset)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 $(out_robust): robust/rob.R $(dataset) func/my_stargazer.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 $(out_desc): descriptives/desc.R input/calles_franquistas.txt str_changes/output/changes.csv $(agg_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $<out
+	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
 
 # ------------------------

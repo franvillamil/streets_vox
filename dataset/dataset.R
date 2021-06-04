@@ -68,9 +68,12 @@ fs_sum = francst %>%
     fs_rm_2016s2_2019s1_bin = ifelse(fs_rm_2016s2_2019s1 > 0, 1, 0),
     fs_rm_2019s1_2019s2_bin = ifelse(fs_rm_2019s1_2019s2 > 0, 1, 0),
     fs_rm_2019s2_bin = ifelse(fs_rm_2019s2 > 0, 1, 0)) %>%
-  select(muni_code, fs_rm_2016s2_2018s2, fs_rm_2001s2_2015s2_bin,
-    fs_rm_2001s2_2018s2_bin, fs_rm_2011s1_2018s2_bin, fs_rm_2016s2_2018s2_bin,
-    fs_rm_2016s2_2019s1_bin, fs_rm_2019s1_2019s2_bin, fs_rm_2019s2_bin,
+  select(muni_code,
+    fs_rm_2001s2_2015s2, fs_rm_2001s2_2018s2,
+    fs_rm_2011s1_2018s2, fs_rm_2016s2_2018s2,
+    fs_rm_2001s2_2015s2_bin, fs_rm_2001s2_2018s2_bin, fs_rm_2011s1_2018s2_bin,
+    fs_rm_2016s2_2018s2_bin, fs_rm_2016s2_2019s1_bin, fs_rm_2019s1_2019s2_bin,
+    fs_rm_2019s2_bin,
     fs_2001_06, fs_2010_12, fs_2016_06, fs_2018_12, fs_2019_06)
 
 
@@ -105,6 +108,9 @@ data = data %>% mutate(
   l_fs_2016_06 = log(fs_2016_06 + 1),
   l_fs_2018_12 = log(fs_2018_12 + 1),
   l_fs_2019_06 = log(fs_2019_06 + 1),
+  l_fs_rm_2001s2_2015s2 = log(fs_rm_2001s2_2015s2 + 1),
+  l_fs_rm_2001s2_2018s2 = log(fs_rm_2001s2_2018s2 + 1),
+  l_fs_rm_2011s1_2018s2 = log(fs_rm_2011s1_2018s2 + 1),
   l_fs_rm_2016s2_2018s2 = log(fs_rm_2016s2_2018s2 + 1),
   change_2019_VOX = VOX2019_11 / VOX2019_04)
 data$change_2019_VOX[data$change_2019_VOX == "Inf"] = NA

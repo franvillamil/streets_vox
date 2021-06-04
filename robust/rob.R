@@ -44,7 +44,6 @@ data = data %>%
 # Change as DV
 m_cs_chg1 = lm(change_2019_VOX ~ fs_rm_2001s2_2018s2_bin +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa), data = data)
-
 m_cs_chg2 = lm(change_2019_VOX ~ fs_rm_2001s2_2018s2_bin +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
   data = subset(data, fs_2001_06 > 0))
@@ -52,10 +51,8 @@ m_cs_chg2 = lm(change_2019_VOX ~ fs_rm_2001s2_2018s2_bin +
 # Alternative period (2011-2018), full sample & limited sample
 m_cs_1118_full1 = lm(VOX2019_04 ~ fs_rm_2011s1_2018s2_bin +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa), data = data)
-
 m_cs_1118_full2 = lm(VOX2019_11 ~ fs_rm_2011s1_2018s2_bin +
   unemp_2019 + part2019_11 + lpop2011 + factor(ccaa), data = data)
-
 m_cs_1118_full3 = lm(change_2019_VOX ~ fs_rm_2011s1_2018s2_bin +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa), data = data)
 
@@ -160,6 +157,49 @@ my_stargazer(dest_file = "robust/output/tab_cs_periods.tex",
     "Log. Population"),
   notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names in different periods: 1) June 2001 - December 2015, 2) June 2001 - December 2018, 3) December 2010 - December 2018, and 4) June 2016 - December 2018. Only municipalities that had Francoist street names at the beginning of each period were included.}")
 
+# ------------------------------
+# Tracking street name changes in different periods (CONTINUOUS form)
+
+m_csperiods_c1 = lm(VOX2019_04 ~ l_fs_rm_2001s2_2015s2 +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2001_06 > 0))
+m_csperiods_c2 = lm(VOX2019_04 ~ l_fs_rm_2001s2_2018s2 +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2001_06 > 0))
+m_csperiods_c3 = lm(VOX2019_04 ~ l_fs_rm_2011s1_2018s2 +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2010_12 > 0))
+m_csperiods_c4 = lm(VOX2019_04 ~ l_fs_rm_2016s2_2018s2 +
+  unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
+  data = subset(data, fs_2016_06 > 0))
+
+# Change coefficient names to plot together in stargazer
+m_csperiods_c1_m = m_csperiods_c1
+m_csperiods_c2_m = m_csperiods_c2
+m_csperiods_c3_m = m_csperiods_c3
+m_csperiods_c4_m = m_csperiods_c4
+names(m_csperiods_c1_m$coefficients) = gsub("l_fs_rm_2001s2_2015s2", "fsn_removal",
+  names(m_csperiods_c1_m$coefficients))
+names(m_csperiods_c2_m$coefficients) = gsub("l_fs_rm_2001s2_2018s2", "fsn_removal",
+  names(m_csperiods_c2_m$coefficients))
+names(m_csperiods_c3_m$coefficients) = gsub("l_fs_rm_2011s1_2018s2", "fsn_removal",
+  names(m_csperiods_c3_m$coefficients))
+names(m_csperiods_c4_m$coefficients) = gsub("l_fs_rm_2016s2_2018s2", "fsn_removal",
+  names(m_csperiods_c4_m$coefficients))
+
+my_stargazer(dest_file = "robust/output/tab_cs_periods_cont.tex",
+  model_list = list(m_csperiods_c1_m, m_csperiods_c2_m, m_csperiods_c3_m, m_csperiods_c4_m),
+  omit = "ccaa",
+  label = "tab:cs_periods_cont",
+  title = "Electoral support for Vox in 2019 and Francoist street name removal across different periods (in continuous form)",
+  order = c("Constant"),
+  dep.var.labels = c("2001-2015", "2001-2018", "2011-2018", "2016-2018"),
+  covariate.labels = c("(Intercept)",
+    "Francoist street name rm (log no)",
+    "Unemployment 2019",
+    "Turnout April 2019",
+    "Log. Population"),
+  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the (logged) number of Francoist street name removals in different periods: 1) June 2001 - December 2015, 2) June 2001 - December 2018, 3) December 2010 - December 2018, and 4) June 2016 - December 2018. Only municipalities that had Francoist street names at the beginning of each period were included.}")
 
 # ------------------------------
 # First differences (VOX and PP)

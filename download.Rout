@@ -1,0 +1,382 @@
+running
+  '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=download_str/download.R'
+
+
+Attaching package: ‘zip’
+
+The following objects are masked from ‘package:utils’:
+
+    unzip, zip
+
+[[1]]
+[1] "zip"       "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[7] "methods"   "base"     
+
+[[2]]
+[1] "stringr"   "zip"       "stats"     "graphics"  "grDevices" "utils"    
+[7] "datasets"  "methods"   "base"     
+
+[[3]]
+ [1] "muniSpain" "stringr"   "zip"       "stats"     "graphics"  "grDevices"
+ [7] "utils"     "datasets"  "methods"   "base"     
+
+[1] "C"
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072001.zip'
+Content type 'application/zip' length 33805343 bytes (32.2 MB)
+==================================================
+downloaded 32.2 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIASG010831"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEUG010831
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMG010831
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UPG010831
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIASG010831
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b87c1f9cb9
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/libloc_213_e619d72855daa0d8.rds
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012011.zip'
+Content type 'application/zip' length 43187252 bytes (41.2 MB)
+==================================================
+downloaded 41.2 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F101231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F101231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F101231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F101231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F101231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8263e25c2
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072011.zip'
+Content type 'application/zip' length 38130246 bytes (36.4 MB)
+==================================================
+downloaded 36.4 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F110630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F110630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F110630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F110630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F110630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b84a4345dd
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012012.zip'
+Content type 'application/zip' length 47033747 bytes (44.9 MB)
+==================================================
+downloaded 44.9 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F111231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F111231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F111231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F111231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F111231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b867ab8a73
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072012.zip'
+Content type 'application/zip' length 47191567 bytes (45.0 MB)
+==================================================
+downloaded 45.0 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b86fa05819
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012013.zip'
+Content type 'application/zip' length 47367418 bytes (45.2 MB)
+==================================================
+downloaded 45.2 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F121231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F121231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F121231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F121231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F121231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b82d7d7806
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072013.zip'
+Content type 'application/zip' length 47542748 bytes (45.3 MB)
+==================================================
+downloaded 45.3 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F130630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F130630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F130630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F130630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F130630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b87b4f2b5d
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012014.zip'
+Content type 'application/zip' length 44093481 bytes (42.1 MB)
+==================================================
+downloaded 42.1 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F131231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F131231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F131231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F131231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F131231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b825512b1d
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072014.zip'
+Content type 'application/zip' length 44185906 bytes (42.1 MB)
+==================================================
+downloaded 42.1 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F140630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F140630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F140630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F140630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F140630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b86454c293
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012015.zip'
+Content type 'application/zip' length 44351273 bytes (42.3 MB)
+==================================================
+downloaded 42.3 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F141231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F141231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F141231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F141231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F141231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8bf4fe9e
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072015.zip'
+Content type 'application/zip' length 44427539 bytes (42.4 MB)
+==================================================
+downloaded 42.4 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F150630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F150630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAM-NAL.F150630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F150630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F150630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b87cfa21ac
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012016.zip'
+Content type 'application/zip' length 44526517 bytes (42.5 MB)
+==================================================
+downloaded 42.5 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F151231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F151231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F151231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F151231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F151231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b849531ade
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072016.zip'
+Content type 'application/zip' length 44603627 bytes (42.5 MB)
+==================================================
+downloaded 42.5 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F160630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F160630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F160630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F160630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F160630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b83a8bb30e
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012017.zip'
+Content type 'application/zip' length 44710381 bytes (42.6 MB)
+==================================================
+downloaded 42.6 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F161231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F161231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F161231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F161231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F161231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8597c2f14
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072017.zip'
+Content type 'application/zip' length 44777680 bytes (42.7 MB)
+==================================================
+downloaded 42.7 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F170630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F170630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F170630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F170630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F170630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8710248a
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012018.zip'
+Content type 'application/zip' length 44852307 bytes (42.8 MB)
+==================================================
+downloaded 42.8 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F180312"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F180312
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F180312
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F180312
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F180312
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b87ac380b8
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072018.zip'
+Content type 'application/zip' length 44573706 bytes (42.5 MB)
+==================================================
+downloaded 42.5 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F180630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F180630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAM-NAL.F180630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F180630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F180630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b872bc4b2
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012019.zip'
+Content type 'application/zip' length 39368769 bytes (37.5 MB)
+==================================================
+downloaded 37.5 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F181231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F181231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV31
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV09
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV36
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV38
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV07
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV39
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV06
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV01
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV08
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV37
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV30
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV52
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV48
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV41
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV46
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV12
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV15
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV23
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV24
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV47
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV40
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV49
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV25
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV22
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV14
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV13
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV50
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV35
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV32
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV04
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV03
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV51
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV02
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV05
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV33
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV34
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV16
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV29
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV11
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV27
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV18
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV20
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV45
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV42
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV21
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV26
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV19
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV10
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV17
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV28
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV43
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019/SECCIO_F01012019_PROV44
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO2019
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F181231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F181231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F181231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b83881f8a2
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072019.zip'
+Content type 'application/zip' length 39496076 bytes (37.7 MB)
+==================================================
+downloaded 37.7 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F190630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F190630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAM-NAL.F190630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F190630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F190630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8238a96e7
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_012020.zip'
+Content type 'application/zip' length 90239579 bytes (86.1 MB)
+==================================================
+downloaded 86.1 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F191231"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/E377E.CALLVAR.PSEU.D190701.A191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/E377E.CALLVAR.TRAM.D190701.A191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/E377E.CALLVAR.UP.D190701.A191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/E377E.CALLVAR.VIAS.D190701.A191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F191231.zip
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEUPxx.zip
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOS-NAL.F191231.zip
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAMOSPxx.zip
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F191231
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b8756f3465
+[1] "adapting encoding..."
+[1] "cleaning..."
+probando la URL 'http://www.ine.es/prodyser/callejero/caj_esp/caj_esp_072020.zip'
+Content type 'application/zip' length 41205338 bytes (39.3 MB)
+==================================================
+downloaded 39.3 MB
+
+[1] "/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F200630"
+[1] "reading..."
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/PSEU-NAL.F200630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/SECCIO-NAL.F200630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/TRAM-NAL.F200630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/UP-NAL.F200630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/VIAS-NAL.F200630
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/caj_esp_072020
+/var/folders/ft/wbxrgjg55t7glzftql6gp8yh0000gp/T//RtmpFCFWAk/file32b86b6fa7a0
+[1] "adapting encoding..."
+[1] "cleaning..."
+There were 31 warnings (use warnings() to see them)
