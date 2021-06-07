@@ -24,7 +24,7 @@ $(appdoc).pdf: $(appdoc).tex
 	$(texb) $<
 
 clean:
-	find . | egrep '\.(aux|log|toc|blg|bbl|out|DS|ent|fdb|fls)' | xargs rm -f
+	find . | egrep '\.(aux|log|toc|blg|bbl|out|DS|ent|fdb|fls|gz)' | xargs rm -f
 
 open:
 	open $(maindoc).pdf -a "Skim"

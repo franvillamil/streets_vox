@@ -1,8 +1,0 @@
-\babel@toc {english}{}
-\contentsline {section}{\numberline {1}Francoist street names}{2}{section.1}%
-\contentsline {section}{\numberline {2}DiD sample and treatment strength}{4}{section.2}%
-\contentsline {section}{\numberline {3}Francoist street name removals (descriptives)}{6}{section.3}%
-\contentsline {section}{\numberline {4}Francoist street name removals (treated vs control)}{8}{section.4}%
-\contentsline {section}{\numberline {5}Francoist street names in 2016 (in-sample vs out-of-sample)}{11}{section.5}%
-\contentsline {section}{\numberline {6}Additional analysis (cross-sectional)}{15}{section.6}%
-\contentsline {section}{\numberline {7}Robustness tests (difference-in-differences)}{18}{section.7}%
