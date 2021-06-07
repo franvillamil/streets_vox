@@ -387,7 +387,7 @@ names(did_PSOE_alt4_m$coefficients))
 my_stargazer(dest_file = "robust/output/tab_psoe_robustness.tex",
 model_list = list(did_PSOE_alt1_m, did_PSOE_alt2_m, did_PSOE_alt3_m, did_PSOE_alt4_m),
 omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
-label = "tab:PSOE_robustness",
+label = "tab:psoe_robustness",
 covariate.labels = c("(Intercept)",
   "Francoist street name removal",
   "Election March 2000",

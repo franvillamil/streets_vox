@@ -64,4 +64,4 @@ $(out_desc): descriptives/desc.R input/calles_franquistas.txt str_changes/output
 	mkdir -p $(<D)/output
 	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
 
-cp */output/*.pdf writing/img;cp */output/*.tex writing/tab
+# cp */output/*.pdf writing/img;cp */output/*.tex writing/tab
