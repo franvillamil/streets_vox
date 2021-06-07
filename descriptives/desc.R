@@ -48,6 +48,38 @@ fc = file("descriptives/output/francoist_name_list.tex")
 writeLines(fn_tex, fc)
 close(fc)
 
+# ------
+
+# Frequency table in_sample & treatment
+
+ft = table(data$fs_2016_06 > 0, data$fs_rm_2016s2_2018s2_bin)
+pft = round(prop.table(ft, 1)*100,0)
+
+sample_trt = c(
+  "\\begin{table}[!htbp] \\centering",
+  paste0("\\caption{DiD sample classification}"),
+  paste0("\\label{tab:sample_trt}"),
+  "\\small",
+  "\\begin{tabular}{lcc}",
+  "\\\\[-1.8ex]\\hline",
+  "\\hline \\\\[-1.8ex]",
+  "\\multicolumn{1}{p{3cm}}{\\hspace{3cm} Francoist names} & \\multicolumn{2}{p{3.5cm}}{Removed Francoist names, 2016--2018?}\\\\",
+  "in June 2016? & No & Yes \\\\",
+  "\\cline{2-3} \\\\[-1.8ex]",
+  paste0("No & ", paste(ft[1,], collapse = " & "), " \\\\"),
+  paste0(" & ", paste(paste0("(", pft[1,], "\\%)"), collapse = " & "), " \\\\"),
+  paste0("Yes (DiD sample) \\hspace{2cm} & ", paste(ft[2,], collapse = " & "), " \\\\"),
+  paste0(" & ", paste(paste0("(", pft[2,], "\\%)"), collapse = " & "), " \\\\"),
+  "\\\\[-1.8ex]\\hline",
+  "\\hline \\\\[-1.8ex]",
+  "\\multicolumn{3}{c}{\\parbox[t]{0.55\\textwidth}{\\textit{Note:} Row percentages. Changes in 2016--2018 refer to the period between 01/07/2016 and 31/12/2018.}}\\\\",
+  "\\end{tabular}",
+  "\\end{table}")
+
+fcon = file("descriptives/output/tab_sample_trt.tex")
+writeLines(paste0(sample_trt), fcon)
+close(fcon)
+
 # ------------------------------
 
 # Prepare changes dataframe
@@ -280,7 +312,7 @@ sm16_2001 = glm(insample2001 ~ PP2016_06 + PSOE2016_06 + lpop2011 +
 
 my_stargazer_glm(dest_file = "descriptives/output/tab_insample.tex",
   model_list = list(sm00, sm04, sm08, sm11, sm15, sm16),
-  title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2016",
+  title = "Voting for PP/PSOE and having a Francoist street name in June 2016",
   label = "tab:insample",
   order = "Constant",
   covariate.labels = c("(Intercept)",
@@ -296,7 +328,7 @@ my_stargazer_glm(dest_file = "descriptives/output/tab_insample.tex",
 my_stargazer_glm(dest_file = "descriptives/output/tab_insample2001.tex",
   model_list = list(sm00_2001, sm04_2001, sm08_2001,
     sm11_2001, sm15_2001, sm16_2001),
-  title = "Voting for PP/PSOE and being in the sample and having a Francoist street name in June 2001",
+  title = "Voting for PP/PSOE and having a Francoist street name in June 2001",
   label = "tab:insample2001",
   order = "Constant",
   covariate.labels = c("(Intercept)",
@@ -420,7 +452,7 @@ levels(trends$treatment) = c("Control", "Treatment (rm Francoist street names)")
 #   labs(x = "", y = "Mean electoral share", linetype = "Group in DiD models")
 # dev.off()
 
-pdf("descriptives/output/par_trends_norm.pdf", width = 10, height = 3.5)
+pdf("descriptives/output/par_trends_norm.pdf", width = 8.5, height = 3)
 ggplot(subset(trends, party != "PSOE" &
       as.integer(str_sub(election_date, 1, 4)) > 2010),
     aes(x = election_date, y = n_value, group = treatment)) +

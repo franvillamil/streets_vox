@@ -3,46 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: rap.bst
 Database file #1: REF.bib
-Warning--missing publisher in Taladrid:2019aa
 You've used 30 entries,
             2871 wiz_defined-function locations,
-            809 strings with 10813 characters,
-and the built_in function-call counts, 24555 in all, are:
-= -- 2528
+            810 strings with 10846 characters,
+and the built_in function-call counts, 24531 in all, are:
+= -- 2533
 > -- 519
 < -- 47
 + -- 206
 - -- 161
-* -- 1723
+* -- 1718
 := -- 3198
-add.period$ -- 60
+add.period$ -- 61
 call.type$ -- 30
-change.case$ -- 198
+change.case$ -- 199
 chr.to.int$ -- 31
-cite$ -- 31
-duplicate$ -- 2369
-empty$ -- 1955
+cite$ -- 30
+duplicate$ -- 2366
+empty$ -- 1946
 format.name$ -- 283
-if$ -- 5013
+if$ -- 5007
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 234
-newline$ -- 128
+missing$ -- 232
+newline$ -- 129
 num.names$ -- 152
-pop$ -- 1027
+pop$ -- 1022
 preamble$ -- 1
 purify$ -- 172
 quote$ -- 0
-skip$ -- 528
+skip$ -- 524
 stack$ -- 0
 substring$ -- 2473
-swap$ -- 607
+swap$ -- 605
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 336
-warning$ -- 1
+type$ -- 340
+warning$ -- 0
 while$ -- 179
 width$ -- 0
-write$ -- 362
-(There was 1 warning)
+write$ -- 364

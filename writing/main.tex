@@ -4,9 +4,8 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[table]{xcolor}
-\usepackage{graphicx, booktabs, tikz, csquotes, subfig, enumitem, dcolumn, pdfpages}
+\usepackage{graphicx, booktabs, tikz, csquotes, subcaption, enumitem, dcolumn, pdfpages}
 \usepackage[font=normalsize]{caption}%,labelfont=bf
-\usepackage{subcaption}
 
 \usepackage{endnotes}
 \let\footnote=\endnote
@@ -206,6 +205,8 @@ We use both a full sample of Spanish municipalities and a restricted sample of t
 In the DiD analyses, we use the electoral support for Vox, PP, and PSOE in June 2016 and April 2019 elections as the dependent variable, using as our main independent variable an indicator of street name removal between June 2016 and January 2019.
 In these models, we only compare municipalities that had at least one street with Francoist name at the beginning of the period.
 
+\input{tab/tab_sample_trt.tex}
+
 Limiting the sample implies that the the control group---those municipalities that did not change street names during this period---is probably more rightist than the average, as more leftist municipalities are more likely to have already changed Francoist street names before mid-2016.
 Indeed, some municipalities that still had not changed Francoist names by late 2018 were portrayed as the `resistance' to the Law of Historical Memory \citep{Blanco-Elipe:2018aa}, as they actively avoided doing so.
 This dodging of the Law was possible either because of delays in the legal procedures or some form of `foot-dragging' by local authorities.
@@ -255,10 +256,21 @@ These results could be confounded if the removal of Francoist street names was e
 One possibility is that these street name changes, which took place relatively late, took place in more conservative areas where Spanish nationalism was stronger.
 We believe that any selection bias in the sample should be in the opposite direction from the results.
 Moreover, if the concern above were true, we should see different trends before 2016 between municipalities that later had a change and those that did not.
-We include in the appendix models that show that the parallel trends assumption holds.
+Figure~\ref{fig:par_trends_norm} shows normalized electoral trends among the control and treatment groups for PP and Vox, and we include in the appendix much more detailed models analyzing the parallel trends assumption for Vox, PP, and PSOE.
+Moreover,
 
 We also show in the appendix results including the dependent variable in continuous form (logged number of street name removals), restricting the sample to municipalities where Vox had more than 0 votes in 2016, and changing the independent variable so it also registers changes that were registered in the first half of 2019, to account for possible delays in the official data.
 Results do not change in any of these specifications.
+
+
+\begin{figure*}[htb!]
+\centering
+
+  \includegraphics[width = \textwidth]{img/par_trends_norm}
+
+  \caption{Pre- and post-treatment trends in Vox and PP electoral share}\label{fig:par_trends_norm}
+
+\end{figure*}
 
 \section*{Conclusion}
 
@@ -285,7 +297,7 @@ All in all, this article focuses on a relatively unexplored question. Exploiting
 \bibliographystyle{rap}
 \bibliography{REF}
 
-% \newpage
-% \includepdf[pages=-]{appendix.pdf}
+\newpage
+\includepdf[pages=-]{appendix.pdf}
 
 \end{document}

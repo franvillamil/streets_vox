@@ -3,9 +3,8 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[table]{xcolor}
-\usepackage{graphicx, booktabs, tikz, csquotes, subfig, enumitem, dcolumn, pdfpages}
+\usepackage{graphicx, booktabs, tikz, csquotes, subcaption, enumitem, dcolumn, pdfpages}
 \usepackage[font=normalsize]{caption}%,labelfont=bf
-\usepackage{subcaption}
 
 \renewcommand*\rmdefault{ppl}
 
@@ -39,24 +38,55 @@
 \tableofcontents
 
 
-\clearpage
 
-\input{../robust/output/tab_firstdiff_vox.tex}
-\input{../robust/output/tab_firstdiff_pp.tex}
-\input{../robust/output/tab_cs_periods.tex}
+
+% \input{../robust/output/tab_firstdiff_vox.tex}
+% \input{../robust/output/tab_firstdiff_pp.tex}
+% \input{../robust/output/tab_cs_periods.tex}
 
 \clearpage
-\section{Francoist street names}
+\section{Francoist street names}\label{franc_names_list}
 
 We considered as Francoist the following street names. The starting point was the list published by the Madrid City Council in 2017, where they proposed a list of 52 street names to be removed, following a report by the Historical Memory Commission.\footnote{The full list and the reasons for the choice of each street name is available online at https://bit.ly/37cLGgk (accessed 26/11/2020).}
 This list was expanded, manually selecting from the street names most commonly changed.
-Indeed, among all the changes between 2001 and 2020, the five most commonly removed street names were all key Francoist figures: `Jose Antonio,' `Calvo Sotelo,' `General Mola,' `Generalísimo,' and `General Franco.'
+Indeed, among all the changes between 2001 and 2020, the five most commonly removed street names were all key Francoist figures: `Jose Antonio,' `Calvo Sotelo,' `General Mola,' `Generalísimo,' and `General Franco.' The full list:
 
 \begin{quote}
   \input{tab/francoist_name_list.tex}
 \end{quote}
 
-\section{Francoist street name removals}
+\clearpage
+\section{DiD sample and treatment strength}
+
+Figure~\ref{fig:trt_strength_st2016} shows the treatment strength (i.e. the number of Francoist name removals) depending on the number of streets with Francoist names in June 2016. Because of scale problems, the city of Madrid was removed from the graph, even though it follows a similar pattern: Madrid had 60 streets with Francoist names in mid 2016, and removed 52 of those during the period.
+The graph shows that most streets had very few streets in 2016 and removed those (usually 1 or 2), while a small subset had more streets and removed either all or part of them.
+
+Figure~\ref{fig:trt_remaining} shows the distribution of remaining streets with Francoist names on January 1st, 2019, among those municipalities that were classified as treated in the analyses.
+Most municipalities that were treated between mid 2016 and late 2018 removed all their streets with Francoist names, and only a small minority retained a small number of Francoist streets (mostly one or two).
+
+In many cases, differences in treatment strength---and the fact that there were remaining Francoist streets names after this period---is due to the fact that the list of Francoist names we use (list in previous section \ref{franc_names_list}) is very comprehensive: many municipalities likely removed the most famous and relevant Francoist names, which arguably were the ones most likely to produce some kind of effect on local political preferences.
+
+\begin{figure*}[htb!]
+\centering
+
+  \includegraphics[width = 0.7\textwidth]{img/trt_strength_st2016}
+
+  \caption{Treatment strength among the treated}\label{fig:trt_strength_st2016}
+
+\end{figure*}
+
+\begin{figure*}[htb!]
+\centering
+
+  \includegraphics[width = 0.5\textwidth]{img/trt_remaining}
+
+  \caption{Treatment strength among the treated}\label{fig:trt_remaining}
+
+\end{figure*}
+
+
+\clearpage
+\section{Francoist street name removals (descriptives)}
 
 Figure~\ref{fig:changes_by_prov} shows the number of Francoist street name removals by province in three different time periods: 2001--2020, 2011--2016, and 2016--2018.
 Figure~\ref{fig:fs_by_prov} shows the share of Francoist street by province at three different points in time: June 2001, January 2010, and June 2016.
@@ -79,19 +109,28 @@ Figure~\ref{fig:fs_by_prov} shows the share of Francoist street by province at t
 
 \end{figure*}
 
+\clearpage
+\section{Francoist street name removals (treated vs control)}
+
 Table~\ref{tab:logit_fs_rm} shows the results of regressing a binary indicator of Francoist street name removal between 2016 and 2018 (the period covered in the DiD analyses in the main text) on a set of explanatory variable.
 The sample only includes those municipalities that still had Francoist streets in June 2016.
 The picture that emerges from these analyses is that it was mainly smaller municipalities with a high number of Francoist streets at the beginning of the period the ones that were more likely to remove Francoist street names.
 Moreover, following figures~\ref{fig:changes_by_prov} and \ref{fig:fs_prov_time}, these municipalities were located mostly in the center of Spain.
 These results are in line with the idea that municipalities that still had and changed street names during this period were probably the ones that had not done so because of political inaction and that, if anything, the selection bias goes against our main hypothesis.
 
+\textbf{{\color{red}{DISCUSS MORE THIS}}}
+
 \input{tab/tab_logit_fs_rm.tex}
+
+\clearpage
+\section{Francoist street names in 2016 (in-sample vs out-of-sample)}
 
 \input{tab/ttest_sample_fs2016.tex}
 \input{tab/ttest_sample_fs2001.tex}
 \input{tab/tab_insample.tex}
 \input{tab/tab_insample2001.tex}
 
+\clearpage
 \section{Additional analysis (cross-sectional)}
 
 \input{tab/tab_cs_change.tex}
@@ -101,13 +140,15 @@ Tables~\ref{tab:cs_all_2011} and \ref{tab:cs_limited_2011} replicate the analyse
 \input{tab/tab_cs_all_2011.tex}
 \input{tab/tab_cs_limited_2011.tex}
 
+\clearpage
 \section{Robustness tests (difference-in-differences)}
 
-Table~\ref{tab:vox_robustness} shows the robustness tests for the DiD analyses using electoral support for Vox as the dependent variable, which table~\ref{tab:pp_robustness} does the same but using PP share as the dependent variable.
+Table~\ref{tab:vox_robustness} shows the robustness tests for the DiD analyses using electoral support for Vox as the dependent variable, while tables~\ref{tab:pp_robustness} and \ref{tab:psoe_robustness} do the same but using PP and PSOE share, respectively, as the dependent variable.
 All models in these tables include elections before June 2016: December 2015 in the case of Vox, and both December 2015 and November 2011 in the case of PP.
 Model 2 extends the dependent variable to the first half of 2019, accounting for potential delays in the registration of name changes.
 Model 3 uses the independent variable in continuous form, namely, the logged number of changes.
 Model 4 restricts the sample to municipalities where Vox got more than 0 votes in 2016 elections.
+\textbf{{\color{red}{DISCUSS}}}
 
 \input{tab/tab_vox_robustness.tex}
 \input{tab/tab_pp_robustness.tex}
