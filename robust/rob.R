@@ -85,7 +85,7 @@ my_stargazer(dest_file = "robust/output/tab_cs_all_2011.tex",
   model_list = list(m_cs_1118_full1, m_cs_1118_full2, m_cs_1118_full3),
   omit = "ccaa",
   label = "tab:cs_all_2011",
-  title = "Electoral support for Vox and Francoist street name removal",
+  title = "Electoral support for Vox and Francoist street name removal (2011--2018)",
   order = c("Constant"),
   dep.var.labels = c("\\footnotesize Apr 2019", "\\footnotesize Nov 2019",
     "\\footnotesize Change"),
@@ -101,7 +101,7 @@ my_stargazer(dest_file = "robust/output/tab_cs_limited_2011.tex",
   model_list = list(m_cs_1118_lim1, m_cs_1118_lim2, m_cs_1118_lim3),
   omit = "ccaa",
   label = "tab:cs_limited_2011",
-  title = "Electoral support for Vox and Francoist street name removal",
+  title = "Electoral support for Vox and Francoist street name removal (2011--2018), limited sample",
   order = c("Constant"),
   dep.var.labels = c("\\footnotesize Apr 2019", "\\footnotesize Nov 2019",
     "\\footnotesize Change"),
@@ -111,7 +111,7 @@ my_stargazer(dest_file = "robust/output/tab_cs_limited_2011.tex",
     "Turnout April 2019",
     "Turnout Nov 2019",
     "Log. Population"),
-  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in June 2011 were included.}")
+  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in January 2011 were included.}")
 
 # ------------------------------
 # Tracking street name changes in different periods
