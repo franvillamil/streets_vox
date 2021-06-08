@@ -169,11 +169,14 @@ The results show that the removal of Francoist street names only has a significa
 \section{Robustness tests (difference-in-differences)}
 
 Table~\ref{tab:vox_robustness} shows the robustness tests for the DiD analyses using electoral support for Vox as the dependent variable, while tables~\ref{tab:pp_robustness} and \ref{tab:psoe_robustness} do the same but using PP and PSOE share, respectively, as the dependent variable.
-All models in these tables include elections before June 2016: December 2015 in the case of Vox, and both December 2015 and November 2011 in the case of PP.
-Model 2 extends the dependent variable to the first half of 2019, accounting for potential delays in the registration of name changes.
-Model 3 uses the independent variable in continuous form, namely, the logged number of changes.
-Model 4 restricts the sample to municipalities where Vox got more than 0 votes in 2016 elections.
-\textbf{{\color{red}{DISCUSS}}}
+All models in these tables include elections before June 2016: December 2015 in the case of Vox, and all elections since March 2000 for PP and PSOE.
+Model 2 extends the dependent variable to the first half of 2019, accounting for potential delays in the registration of name changes that could have affected electoral support in April 2019.
+Model 3 uses the independent variable in continuous form, namely, the logged number of street name removals.
+Model 4 restricts the sample to municipalities where Vox got more than 0 votes in 2016 elections, to account for potential estimation issues.
+
+The two main takeaways from these results is that the main result does not change across the different specifications and that the parallel trend assumption holds.
+In the case of Vox, the pre-treatment DiD estimate (December 2015) does not show any statistical significance, while in the case of PP none of the DiD estimates between March 2000 and December 2015 in any of the models is significant either.
+In the PSOE models, it seems that municipalities that later removed Francoist names showed more support for the PSOE in earlier elections (November 2011 and December 2015), but this result is not robust across all specifications.
 
 \input{tab/tab_vox_robustness.tex}
 \input{tab/tab_pp_robustness.tex}
