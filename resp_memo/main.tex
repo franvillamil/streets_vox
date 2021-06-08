@@ -72,7 +72,7 @@ We completely agree with the reviewer that more information is needed to judge t
 \begin{itemize}
   \item We have included a frequency table (table 1) in the main text specifying the number of municipalities included in the DiD sample (i.e. municipalities that had Francoist street names in June 2016) and how many of these were in the treatment (street name removal between June 2016 and December 2018) and in the control groups.
   \item We have included in the appendix a section called `DiD sample and treatment strength' where we discuss the number of Francoist street name removals in treated municipalities, relative to the number of Francoist street they had at the beginning of the period, and how many Francoist street names they had not been yet removed at the end of the period.
-  \item We include a more thorough discussion of Table 1 in appendix, discussing the differences between treated and control municipalities in the sample \textbf{{\color{red}{-- discuss this on appendix}}}
+  \item We include a more thorough discussion of Table 1 in the appendix, discussing the differences between treated and control municipalities in the sample (section A4 in appendix).
   \item We include in the main text a graph showing the parallel trends for the main parties of the analyses (PP and Vox, following also the recommendation in the next comment), and we include much more detailed tables and analyses in the appendix (including test of the parallel trends in alternative DiD models for PP, Vox and PSOE with data since the early 2000s).
 \end{itemize}
 
@@ -87,35 +87,91 @@ We completely agree with the reviewer that more information is needed to judge t
 We also agree with the reviewer that showing that there are no diverging trends between control and treated municipalities is key for the credibility of the results.
 We have now included a plot in the main text showing these parallel trends for PP and Vox, and include much more detailed analyses in the appendix (robustness tests for PP, PSOE, and Vox).
 
-The reviewer is right in saying there is no reason not to include these robustness tests for PSOE. We did not include them in the beginning for reasons of brevity, but we know include a full table repeated all the same robustness tests for the DiD model (including parallel trends) using PSOE as dependent variable. \textbf{{\color{red}{-- discuss these models}}}
+The reviewer is right in saying there is no reason not to include these robustness tests for PSOE. We did not include them in the beginning for reasons of brevity, but we know include a full table repeated all the same robustness tests for the DiD model (including parallel trends) using PSOE as dependent variable.
+As shown in section A& in the appendix, we now include data on elections since March 2000, when PP won its first absolute majority in parliament, thus testing parallel trends across different electoral periods that include right-dominated and left-dominated two-party systems and the emergence of a multi-party system.
+We also include a reference to these analyses in the main text, even though we cannot discuss their details for reasons of space.
+Overall, we do not find evidence of significant differences between municipalities in treated and control conditions, in terms of Vox (in 2015), PP (2000-2015) or PSOE (2000-2015). If anything, some models suggests that treated municipalities had shown stronger support for the PSOE in 2011 and 2015, although this result is not robust across all specifications.
+Moreover, we think that this should not be a concern for the analyses, as both our argument and results focus on a process of asymmetric polarization that mainly affects right-wing voters.
 
-{\color{red}{\textbf{-- discutir algo sobre el punto 3 (vox pre-2015) aquí y en el main text/appendix}}}
+Finally, the reviewer raises a potential concern about the lack of data previous to the treatment for Vox.
+This is a very relevant point.
+However, there no easy solution as Vox did not participate in national elections before that year.
+Yet, we think that given that most electoral supporters of Vox had been PP voters in the past \citep[e.g.][]{Rama:2021tu}, testing the parallel trend assumption using PP votes (which holds for every year since 2000) should help to alleviate this potential problem.
+We have included a footnote in the main text discussing this point.
 
-\textbf{Comment 6:} On the modeling:
+\textbf{Comment 6:} \textit{On the modeling:
 \begin{itemize}
   \item[1)] Why do sample sizes in the DiD differ dramatically from outcome to outcome in Table 2? N should not change across outcomes, unless 1) vote shares are much more likely to be missing for Vox or 2) these are different samples -- both of which would be a concern.
   \item[2)] I’m not sure the cross-sectional analysis adds to the empirics, for the selection reasons the author(s) acknowledge. Maybe a triple difference with a second control category of municipalities that do not have Francoist street names in 2016 would similarly speak to generalizability of effects while retaining the nice identification strategy.
-\end{itemize}
+\end{itemize}}
 
-\textbf{Response}: {\color{red}{pending}}
+We agree with the reviewer that different sample sizes are a potential concern. The reason for these differences is that Vox did not participate in all municipalities in 2016, and that is why the sample is slightly smaller in this case.
+Yet, we agree that we should estimate the models on the sample sample, and even though the results do not change, we now limit the samples in the PP and PSOE models to those municipalities included in the Vox analyses (we explain this in a footnote in the main text, in page \textbf{{\color{red}{XX}}}).
 
-\textbf{Comment 7:} Small things:
+Regarding the second point, we thank the reviewer for suggesting this possibility, which we were not aware of.
+We have extensively look into this method and, even interesting, we think it does not fit this research design and the data we have.
+As far as we understand diff-in-diff-in-diff (DDD), this method is meant to include a second control category. However, it needs to be linked to the treatment group in some way that excludes the original control group. A classical example is a DiD design which compares the effect of a policy targeted at the elderly on the 55-64 (control) and 65+ (treated) population within a state (see \citep[150--151]{Wooldridge:2010aa}), and expands the model into a DDD by introducing as a second control the elderly population (65+) of another state.
+
+In our case, however, there is no way to distinguish the second control (municipalities without Francoist street names in June 2016) from the treated population but excluding the original control (municipalities with streets in June 2016 but that did not change them during 2016--2018).
+Because of this, the DDD estimate (the triple interaction term $treated \times control1 \times april2019$) in a DDD equation with these three groups fails to estimate.
+
+That said, if we misunderstood this method and their is indeed a way to apply it to this design, we would be very grateful about some references on how to proceed, because we do think it is very interesting and would greatly improve the analyses.
+
+
+\textbf{Comment 7:} \textit{Small things:
 \begin{itemize}
   \item The author(s) discuss Vox and PSOE, but (how) did PP politicize the issue?
-  \item Does the federal government coerce non-changers or reward changers? Might certain
-  municipalities be more/less responsive to incentives?
-  \item The author(s) say that the DiD sample is “probably” more rightist than the overall
-  population of municipalities (p9). This can be tested empirically, and would be
-  interesting.
-  \item I’d like to see a version of the DiD without controls.
-  \item Why do the author(s) simulate DiD estimates in Figure 3?
-  \item Are the standard errors clustered on Autonomous Communities?
-  \item Figure 2: title says “percentage”, y-axis says “share”.
-  \item Possible typo on first paragraph of page 14: “dependent variable in continuous form
-  (logged number of street name removals)”. Should this be independent variable? Also: how do the author(s) run a DiD with a continuous treatment?
+\end{itemize}}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{Does the federal government coerce non-changers or reward changers? Might certain
+  municipalities be more/less responsive to incentives?}
 \end{itemize}
 
 \textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{The author(s) say that the DiD sample is “probably” more rightist than the overall
+  population of municipalities (p9). This can be tested empirically, and would be
+  interesting.}
+\end{itemize}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{I’d like to see a version of the DiD without controls.}
+\end{itemize}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{Why do the author(s) simulate DiD estimates in Figure 3?}
+\end{itemize}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{Are the standard errors clustered on Autonomous Communities?}
+\end{itemize}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{Figure 2: title says “percentage”, y-axis says “share”.}
+\end{itemize}
+
+\textbf{Response}: {\color{red}{pending}}
+
+\begin{itemize}
+  \item \textit{Possible typo on first paragraph of page 14: “dependent variable in continuous form
+  (logged number of street name removals)”. Should this be independent variable? Also: how do the author(s) run a DiD with a continuous treatment?}
+\end{itemize}
+
+That is right, it is a typo. We have now changed it to ``the main independent variable''.
+
+About running a DiD with a continuous treatment, we do in the conventional way, including an interaction between the time indicator and the treatment variable (which indicates treatment strength). The only difference is that the DiD estimate should not be interpreted in a binary way (the treatment effect) but as the effect of an increase in the (logged) number of Francoist street name removals on the treated. The other two coefficients are interpreted the same way.
 
 \newpage
 \section*{Response to Reviewer 2}

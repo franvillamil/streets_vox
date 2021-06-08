@@ -63,31 +63,36 @@ my_stargazer(dest_file = "main_models/output/tab_cs.tex",
 # ------------------------------
 # Difference-in-Differences
 
+# Keep it to the same sapmle as Vox models
+mc = unique(subset(dl_VOX, election %in% c("2016_06", "2019_04"))$muni_code)
+
 did_VOX0 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   factor(ccaa),
-  data = subset(dl_VOX, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_VOX, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PP0 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   factor(ccaa),
-  data = subset(dl_PP, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_PP, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PSOE0 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   factor(ccaa),
-  data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_PSOE, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_VOX1 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
-  data = subset(dl_VOX, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_VOX, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PP1 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
-  data = subset(dl_PP, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_PP, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PSOE1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
-  data = subset(dl_PSOE, election %in% c("2016_06", "2019_04")))
+  data = subset(dl_PSOE, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 main_did = list(did_VOX0, did_VOX1, did_PP0, did_PP1, did_PSOE0, did_PSOE1)
+
+
 
 my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
   model_list = main_did,

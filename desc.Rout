@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=descriptives/desc.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,7 +19,7 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attaching package: ‘MASS’
+Attache Paket: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
@@ -65,6 +65,7 @@ The following object is masked from ‘package:dplyr’:
  [7] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
 [13] "utils"     "datasets"  "methods"   "base"     
 
+`summarise()` ungrouping output (override with `.groups` argument)
 null device 
           1 
 null device 
@@ -75,7 +76,7 @@ null device
           1 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 18:53:30
+% Date and time: Tue, Jun 08, 2021 - 15:11:09
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2016} 
@@ -125,7 +126,7 @@ Akaike Inf. Crit. & \multicolumn{1}{c}{6,625.822} & \multicolumn{1}{c}{6,839.057
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 18:53:30
+% Date and time: Tue, Jun 08, 2021 - 15:11:10
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2001} 
@@ -179,6 +180,6 @@ null device
           1 
 null device 
           1 
-`summarise()` has grouped output by 'party', 'election_date'. You can override using the `.groups` argument.
+`summarise()` regrouping output by 'party', 'election_date' (override with `.groups` argument)
 null device 
           1 
