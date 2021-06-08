@@ -1,0 +1,8 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {A1}Francoist street names}{2}{section.1}%
+\contentsline {section}{\numberline {A2}DiD sample and treatment strength}{4}{section.2}%
+\contentsline {section}{\numberline {A3}Descriptives on Francoist street name removals}{6}{section.3}%
+\contentsline {section}{\numberline {A4}Comparing treated vs control and sample vs out-of-sample}{9}{section.4}%
+\contentsline {section}{\numberline {A5}Additional cross-sectional analysis}{15}{section.5}%
+\contentsline {section}{\numberline {A6}Robustness tests (difference-in-differences)}{19}{section.6}%
+\contentsline {section}{\numberline {A7}First difference models}{23}{section.7}%
