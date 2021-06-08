@@ -52,7 +52,7 @@ The following object is masked from ‘package:dplyr’:
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 15:11:14
+% Date and time: Tue, Jun 08, 2021 - 19:19:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and electoral support for Vox} 
@@ -88,7 +88,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.441} & \multicolumn{1}{c}{0.498} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 15:11:14
+% Date and time: Tue, Jun 08, 2021 - 19:19:29
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for parties} 

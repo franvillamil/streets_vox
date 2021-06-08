@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=robust/rob.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,12 +19,29 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attaching package: ‘MASS’
+Attache Paket: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
     select
 
+Lade nötiges Paket: zoo
+
+Attache Paket: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Lade nötiges Paket: mice
+
+Attache Paket: ‘mice’
+
+The following objects are masked from ‘package:base’:
+
+    cbind, rbind
+
+* miceadds 3.9-14 (2020-05-09 11:27:27)
 [[1]]
 [1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
 [7] "methods"   "base"     
@@ -50,9 +67,24 @@ The following object is masked from ‘package:dplyr’:
  [7] "stats"     "graphics"  "grDevices" "utils"     "datasets"  "methods"  
 [13] "base"     
 
+[[7]]
+ [1] "sandwich"  "MASS"      "stringr"   "ggplot2"   "stargazer" "tidyr"    
+ [7] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[13] "methods"   "base"     
+
+[[8]]
+ [1] "lmtest"    "zoo"       "sandwich"  "MASS"      "stringr"   "ggplot2"  
+ [7] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
+[13] "utils"     "datasets"  "methods"   "base"     
+
+[[9]]
+ [1] "miceadds"  "mice"      "lmtest"    "zoo"       "sandwich"  "MASS"     
+ [7] "stringr"   "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"    
+[13] "graphics"  "grDevices" "utils"     "datasets"  "methods"   "base"     
+
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:43
+% Date and time: Tue, Jun 08, 2021 - 19:19:32
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for Vox during 2019} 
@@ -86,7 +118,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.075} & \multicolumn{1}{c}{0.125} \\
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:43
+% Date and time: Tue, Jun 08, 2021 - 19:19:32
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018)} 
@@ -122,7 +154,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.440} & \multicolumn{1}{c}{0.497} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:43
+% Date and time: Tue, Jun 08, 2021 - 19:19:32
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018), limited sample} 
@@ -158,7 +190,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.260} & \multicolumn{1}{c}{0.287} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:43
+% Date and time: Tue, Jun 08, 2021 - 19:19:32
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods} 
@@ -192,7 +224,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.283} & \multicolumn{1}{c}{0.284} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:43
+% Date and time: Tue, Jun 08, 2021 - 19:19:33
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods (in continuous form)} 
@@ -226,7 +258,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.282} & \multicolumn{1}{c}{0.283} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:33
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for Vox} 
@@ -254,7 +286,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{-0.005} & \multicolumn{1}{c}{0.200} & \mul
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:33
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for PP} 
@@ -282,7 +314,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.038} & \multicolumn{1}{c}{0.170} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:33
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for Vox} 
@@ -318,7 +350,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:33
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for PP} 
@@ -370,7 +402,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:34
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for PSOE} 
@@ -422,7 +454,40 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.570} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 07, 2021 - 19:09:44
+% Date and time: Tue, Jun 08, 2021 - 19:19:35
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{Main models using conventional, robust or clustered SE} 
+  \label{tab:models_se} 
+\small 
+\begin{tabular}{@{\extracolsep{-20pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{1}{c}{VOX} & \multicolumn{1}{c}{PP} & \multicolumn{1}{c}{VOX} & \multicolumn{1}{c}{PP} & \multicolumn{1}{c}{VOX} & \multicolumn{1}{c}{PP} \\ 
+ & \multicolumn{2}{c}{} & \multicolumn{2}{c}{Het. Robust SE} & \multicolumn{2}{c}{Clustered SE} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\ 
+\hline \\[-1.8ex] 
+ (Intercept) & -1.470^{**} & 54.479^{***} & -1.470^{***} & 54.479^{***} & -1.470^{***} & 54.479^{***} \\ 
+  & (0.451) & (0.988) & (0.434) & (1.121) & (0.432) & (1.466) \\ 
+  Francoist st name removal & -0.132 & 1.324^{*} & -0.132 & 1.324^{*} & -0.132 & 1.324^{*} \\ 
+  & (0.262) & (0.574) & (0.128) & (0.633) & (0.129) & (0.665) \\ 
+  Election April 2019 & 12.319^{***} & -17.350^{***} & 12.319^{***} & -17.350^{***} & 12.319^{***} & -17.350^{***} \\ 
+  & (0.167) & (0.366) & (0.160) & (0.361) & (0.171) & (0.188) \\ 
+  Removal $\times$ April 2019 & 0.724^{*} & -1.731^{*} & 0.724^{+} & -1.731^{*} & 0.724^{+} & -1.731^{***} \\ 
+  & (0.352) & (0.771) & (0.381) & (0.782) & (0.403) & (0.431) \\ 
+ \hline \\[-1.8ex] 
+CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
+Observations & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} \\ 
+\hline 
+\hline \\[-1.8ex] 
+\multicolumn{7}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Clustered SE at the level of municipalities.}} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, Jun 08, 2021 - 19:19:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Logit regression on Francoist street name removal (2016--2018)} 

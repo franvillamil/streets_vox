@@ -1,7 +1,8 @@
 # setwd("~/Documents/Projects/streets_vox")
 options(stringsAsFactors = FALSE)
 # List of packages
-pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr", "MASS")
+pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr", "MASS",
+  "sandwich", "lmtest", "miceadds")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
@@ -12,6 +13,7 @@ lapply(pkg, library, character.only = TRUE)
 
 # Load functions
 source("func/my_stargazer.R")
+source("func/se.R")
 
 # ------------------------------
 
@@ -411,6 +413,59 @@ add.lines=list(
   c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 4))
   ),
 notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+
+# ------------------------------
+# Trying different SEs (R&R response memo)
+
+
+mc = unique(subset(dl_VOX, election %in% c("2016_06", "2019_04"))$muni_code)
+
+did_VOX_se = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  data = subset(dl_VOX, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
+did_PP_se = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  data = subset(dl_PP, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
+
+m_se = list(did_VOX_se, did_PP_se)
+filecon = file("robust/output/tab_models_se.tex")
+writeLines(
+  stargazer(rep(m_se, 3),
+    omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+    title = "Main models using conventional, robust or clustered SE",
+    label = "tab:models_se",
+    order = "Constant",
+    covariate.labels = c("(Intercept)",
+      "Francoist st name removal",
+      "Election April 2019",
+      "Removal $\\times$ April 2019"),
+    column.labels = c("", "Het. Robust SE", "Clustered SE"),
+    se = c(
+      lapply(m_se, function(x) summary(x)$coefficients[, "Std. Error"]),
+      lapply(m_se, function(x) robust_se(x)),
+      lapply(m_se, function(x) cluster_se(x, "muni_code"))),
+    column.separate = c(2,2,2),
+    omit.stat = c("f", "ser"),
+    intercept.bottom = FALSE,
+    column.sep.width = "-20pt",
+    multicolumn = FALSE,
+    dep.var.caption = "",
+    dep.var.labels = rep(c("VOX", "PP"), 3),
+    font.size = "small",
+    digits = 3,
+    digits.extra = 0,
+    star.char = c("+", "*", "**", "***"),
+    star.cutoffs = c(0.1, 0.05, 0.01, 0.001),
+    notes.align = "c",
+    align = TRUE,
+    no.space = TRUE,
+    add.lines = list(
+      c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(m_se)*3))),
+    notes.label = "",
+    notes.append = FALSE,
+    notes = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Clustered SE at the level of municipalities.}"),
+  filecon)
+close(filecon)
 
 # ------------------------------
 # Removal of Francoist streets as DV

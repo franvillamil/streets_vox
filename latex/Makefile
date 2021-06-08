@@ -3,7 +3,7 @@ appdoc = appendix
 maindoc = main
 
 .PHONY: clean prepare open
-all: prepare $(appdoc).pdf $(maindoc).pdf clean open
+all: prepare $(appdoc).pdf $(maindoc).pdf clean #open
 
 prepare:
 	mkdir -p tab img
@@ -17,7 +17,6 @@ $(maindoc).pdf: $(maindoc).tex $(appdoc).pdf
 	bibtex $(maindoc).aux
 	$(texb) $<
 	$(texb) $<
-	open $<
 
 $(appdoc).pdf: $(appdoc).tex
 	$(texb) $<
@@ -28,5 +27,5 @@ $(appdoc).pdf: $(appdoc).tex
 clean:
 	find . | egrep '\.(aux|log|toc|blg|lot|lof|bbl|out|DS|ent|fdb|fls|gz)' | xargs rm -f
 
-open:
-	open $(maindoc).pdf -a "Skim"
+# open:
+# 	open $(maindoc).pdf -a "Skim"
