@@ -25,6 +25,22 @@ The following object is masked from ‘package:dplyr’:
 
     select
 
+Lade nötiges Paket: sp
+rgdal: version: 1.5-16, (SVN revision 1050)
+Geospatial Data Abstraction Library extensions to R successfully loaded
+Loaded GDAL runtime: GDAL 2.4.2, released 2019/06/28
+Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/gdal
+GDAL binary built with GEOS: FALSE 
+Loaded PROJ runtime: Rel. 5.2.0, September 15th, 2018, [PJ_VERSION: 520]
+Path to PROJ shared files: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/proj
+Linking to sp version:1.4-2
+Overwritten PROJ_LIB was /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/proj
+rgeos version: 0.5-5, (SVN revision 640)
+ GEOS runtime version: 3.7.2-CAPI-1.11.2 
+ Linking to sp version: 1.4-2 
+ Polygon checking: TRUE 
+
+Checking rgeos availability: TRUE
 [[1]]
 [1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
 [7] "methods"   "base"     
@@ -61,10 +77,33 @@ The following object is masked from ‘package:dplyr’:
 [13] "datasets"  "methods"   "base"     
 
 [[9]]
- [1] "muniSpain" "scales"    "forcats"   "MASS"      "stringr"   "ggplot2"  
- [7] "stargazer" "tidyr"     "dplyr"     "stats"     "graphics"  "grDevices"
-[13] "utils"     "datasets"  "methods"   "base"     
+ [1] "rgdal"     "sp"        "scales"    "forcats"   "MASS"      "stringr"  
+ [7] "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"     "graphics" 
+[13] "grDevices" "utils"     "datasets"  "methods"   "base"     
 
+[[10]]
+ [1] "rgeos"     "rgdal"     "sp"        "scales"    "forcats"   "MASS"     
+ [7] "stringr"   "ggplot2"   "stargazer" "tidyr"     "dplyr"     "stats"    
+[13] "graphics"  "grDevices" "utils"     "datasets"  "methods"   "base"     
+
+[[11]]
+ [1] "maptools"  "rgeos"     "rgdal"     "sp"        "scales"    "forcats"  
+ [7] "MASS"      "stringr"   "ggplot2"   "stargazer" "tidyr"     "dplyr"    
+[13] "stats"     "graphics"  "grDevices" "utils"     "datasets"  "methods"  
+[19] "base"     
+
+[[12]]
+ [1] "muniSpain" "maptools"  "rgeos"     "rgdal"     "sp"        "scales"   
+ [7] "forcats"   "MASS"      "stringr"   "ggplot2"   "stargazer" "tidyr"    
+[13] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
+[19] "methods"   "base"     
+
+OGR data source with driver: ESRI Shapefile 
+Source: "/Users/franvillamil/Documents/Projects/streets_vox/input/ESP_adm4_codes.shp", layer: "ESP_adm4_codes"
+with 8160 features
+It has 6 fields
+null device 
+          1 
 `summarise()` ungrouping output (override with `.groups` argument)
 null device 
           1 
@@ -76,7 +115,7 @@ null device
           1 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 15:11:09
+% Date and time: Thu, Jun 10, 2021 - 19:04:47
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2016} 
@@ -126,7 +165,7 @@ Akaike Inf. Crit. & \multicolumn{1}{c}{6,625.822} & \multicolumn{1}{c}{6,839.057
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 15:11:10
+% Date and time: Thu, Jun 10, 2021 - 19:04:48
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2001} 

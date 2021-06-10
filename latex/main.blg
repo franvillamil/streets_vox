@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: rap.bst
+Database file #1: REF.bib
+Warning--I didn't find a database entry for "Ward2021"
+You've used 31 entries,
+            2871 wiz_defined-function locations,
+            819 strings with 11086 characters,
+and the built_in function-call counts, 25321 in all, are:
+= -- 2614
+> -- 538
+< -- 49
++ -- 215
+- -- 167
+* -- 1776
+:= -- 3300
+add.period$ -- 63
+call.type$ -- 31
+change.case$ -- 206
+chr.to.int$ -- 32
+cite$ -- 31
+duplicate$ -- 2444
+empty$ -- 2004
+format.name$ -- 297
+if$ -- 5165
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 239
+newline$ -- 134
+num.names$ -- 157
+pop$ -- 1058
+preamble$ -- 1
+purify$ -- 178
+quote$ -- 0
+skip$ -- 542
+stack$ -- 0
+substring$ -- 2543
+swap$ -- 622
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 352
+warning$ -- 0
+while$ -- 184
+width$ -- 0
+write$ -- 376
+(There was 1 warning)

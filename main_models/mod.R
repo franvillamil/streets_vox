@@ -26,13 +26,13 @@ dl_PSOE = read.csv("dataset/output/dl_PSOE.csv")
 # Cross-sectional models
 
 
-m_cs1 = lm(VOX2019_04 ~ fs_rm_2001s2_2018s2_bin +
+m_cs1 = lm(VOX2019_04 ~ l_fs_rm_2001s2_2018s2 +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
-  data = data)
+  data = subset(data, fs_2001_06 > 0))
 
-m_cs2 = lm(VOX2019_11 ~ fs_rm_2001s2_2018s2_bin +
+m_cs2 = lm(VOX2019_11 ~ l_fs_rm_2001s2_2018s2 +
   unemp_2019 + part2019_11 + lpop2011 + factor(ccaa),
-  data = data)
+  data = subset(data, fs_2001_06 > 0))
 
 m_cs3 = lm(VOX2019_04 ~ fs_rm_2001s2_2018s2_bin +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
@@ -52,7 +52,8 @@ my_stargazer(dest_file = "main_models/output/tab_cs.tex",
   dep.var.labels = c("\\footnotesize Apr 2019", "\\footnotesize Nov 2019",
     "\\footnotesize Apr 2019", "\\footnotesize Nov 2019"),
   covariate.labels = c("(Intercept)",
-    "Francoist street name removal",
+    "Francoist street name removal (log. no)",
+    "Francoist street name removal (dummy)",
     "Unemployment 2019",
     "Turnout April 2019",
     "Turnout Nov 2019",

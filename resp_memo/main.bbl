@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+{\catcode`\|=0\catcode`\#=12\catcode`\@=11\catcode`\\=12
+|immediate|write|@auxout{\expandafter\ifx\csname
+  natexlab\endcsname\relax\gdef\natexlab#1{#1}\fi}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\harvarditem{Aguilar}{2002}{Aguilar:2002aa}
+Aguilar P \harvardyearleft 2002\harvardyearright{} \emph{Memory and Amnesia:
+  {{The}} Role of the {{Spanish Civil War}} in the Transition to Democracy}.
+\newblock {New York}: {Berghahn Books}.
+
+\harvarditem[Aguilar et~al.]{Aguilar, Balcells \harvardand{}
+  Cebolla-Boado}{2011}{Aguilar:2011aa}
+Aguilar P, Balcells L \harvardand{} Cebolla-Boado H \harvardyearleft
+  2011\harvardyearright{} Determinants of attitudes toward transitional
+  justice: An empirical analysis of the spanish case.
+\newblock \emph{Comparative Political Studies} 44(10): 1397--1430.
+
+\harvarditem[Balcells et~al.]{Balcells, Palanza \harvardand{}
+  Voytas}{2020}{Balcells:2020aa}
+Balcells L, Palanza V \harvardand{} Voytas E \harvardyearleft
+  2020\harvardyearright{} Do museums promote reconciliation? a field experiment
+  on transitional justice.
+\newblock \emph{The Journal of Politics} forthcoming.
+
+\harvarditem{Grossman}{2016}{Grossman:2016}
+Grossman J \harvardyearleft 2016\harvardyearright{} Whose memory? whose
+  monuments? history, commemoration, and the struggle for an ethical past.
+\newblock \emph{Perspectives on History} (February).
+
+\harvarditem{Kydd \harvardand{} Walter}{2002}{Kydd:2002aa}
+Kydd A \harvardand{} Walter BF \harvardyearleft 2002\harvardyearright{}
+  Sabotaging the peace: {{The}} politics of extremist violence.
+\newblock \emph{International Organization} 56(02): 263--296.
+
+\harvarditem[Rama et~al.]{Rama, Zanotti, Turnbull-Dugarte \harvardand{}
+  Santana}{2021}{Rama:2021tu}
+Rama J, Zanotti L, Turnbull-Dugarte SJ \harvardand{} Santana A \harvardyearleft
+  2021\harvardyearright{} \emph{VOX: The rise of the Spanish populist radical
+  right}.
+\newblock London: Routledge.
+
+\harvarditem{Rozenas \harvardand{} Vlasenko}{2021}{Rozenas:2021}
+Rozenas A \harvardand{} Vlasenko A \harvardyearleft 2021\harvardyearright{} The
+  real consequences of symbolic politics: Breaking the soviet past in ukraine.
+\newblock \emph{SSRN Working Paper} .
+\newline\harvardurl{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3633272}
+
+\harvarditem{Walsh}{2020}{Walsh2020}
+Walsh C \harvardyearleft 2020\harvardyearright{} Must we allow symbols of
+  racism on public land?
+\newblock \emph{The Harvard Gazzette} .
+\newline\harvardurl{https://news.harvard.edu/gazette/story/2020/06/historian-puts-the-push-to-remove-confederate-statues-in-context/}
+
+\harvarditem{Ward}{2021}{Ward2021}
+Ward G \harvardyearleft 2021\harvardyearright{} Monumental antiracism. a
+  collaborative survey of anti-racist memory work.
+\newline\harvardurl{https://storymaps.arcgis.com/stories/174be577e91346da88f06c879c9f53c8}
+
+\harvarditem{Wooldridge}{2010}{Wooldridge:2010aa}
+Wooldridge JM \harvardyearleft 2010\harvardyearright{} \emph{Econometric
+  Analysis of Cross Section and Panel Data}.
+\newblock {MIT press}.
+
+\end{thebibliography}

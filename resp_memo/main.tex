@@ -2,10 +2,12 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{csquotes, xcolor, graphicx, hyperref}
+\usepackage{csquotes, xcolor, graphicx}
 \usepackage{setspace}
 \setstretch{1.3}
 \usepackage[parfill]{parskip}
+
+\usepackage[colorlinks = TRUE, allcolors = blue]{hyperref}
 
 % Bibliography
 \usepackage[natbibapa]{apacite}
@@ -27,6 +29,7 @@
 
 \maketitle
 
+
 % \newpage
 \section*{Response to Editor}
 
@@ -38,7 +41,6 @@ In general terms, we have  XXXX
 %revised the literature review and theory section and made it more relevant for the issue of Spanish nationalism. We have also expanded the section on the historical background of the teachers' purges adding more information on the role of the teachers in the Second Republic, the characteristics of Basque and Catalan nationalism, and the strategies of the Francoist regime, in line with some of the reviewers' comments.
 Finally, we have also improved the empirical analyses, addressing all of the reviewers' points on the analyses. We hope you will find that the manuscript has significantly improved through this process.\\ [1ex]
 
-\bigspace
 
 \newpage
 
@@ -48,15 +50,17 @@ We would like to thank the reviewer for all the comments. They were all very tho
 
 \textbf{Comment 1:} \textit{On a conceptual level, I think the author(s) need to 1) define TJ policies more concretely, and 2) explain how renaming streets fits into the concept of TJ generally. The current definition of TJ offered in the manuscript (bottom of p2) combines truth-seeking, justice, and the politics of memory, but the case itself is exclusively about the politics of memory. The theory/discussion of contributions should reflect this focus on the politics of memory specifically, and highlight how these might be distinct from other types of TJ policies. In short, scope conditions need to be clearer.}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: {Thank you for these suggestions. We have made an effort to clarify the scope conditions of our study. On the reviewer point 1) (definition of TJ policies), we are a bit constrained by the word limit, and that is why we refer to previous work on TJ, such as Monika Nalepa, Paloma Aguilar, or Elsa Voytas' work. On 2), we clarify in the paper that street renaming, just like the removal of statues and other symbols or the building of museums and establishment of historical markers, are a form of symbolic Transitional Justice \citep{Ward2021}. In the case of Spain, as we detail in the paper, the renaming policy has been driven by the different TJ policy initiatives, particularly since the 2008 Law. Thus, we believe that this is one subset of TJ policies, and not just politics of memory, although these two things are very much intertwined}
 
 \textbf{Comment 2:} \textit{As it stands, I think the theory needs to be developed. Why do certain individuals react against TJ policies? Also: is asymmetric polarization context-specific to Spain, or a more general phenomenon?}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: {\color{red}{pending LAIA}}
 
 \textbf{Comment 3:} \textit{On the broader contribution: I think there are two potential interpretations. Is backlash against TJ policies representative of the failure of TJ (ie: has renaming streets actually harmed the TJ process)? Or is backlash a second-order effect of TJ (ie: is successfully removing street signs a TJ victory with unfortunate side effects)?}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: {We believe that it is the latter.
+From a normative point of view, we are not trying to argue that these measures are not necessary. Even if they backlash, they might be necessary for healing and reconciliation purposes \citep{Walsh2020, Ward2021}. Still, knowing what their unintended effects are, and precisely measuring them, is important, and has relevant policy implications. For example, knowing that this is a phenomenon, traditional parties might get more ready to counter the extreme parties narratives around these issues, and minimize thep potential backlash effects of these measures.
+}
 
 \textbf{Comment 4:} \textit{On the empirics, my primary concern is that I can’t fully judge whether the DiD is appropriate without more info. The unit of analysis in both analyses is the municipality; the DiD compares municipalities that changed street names to those that left them unchanged. However, the data section provides descriptive stats on street names rather than municipalities. Figures 1 and 2 show the total share of streets names in Spain that are Francoist and the number of individual street name changes, neither of which are relevant to the identification strategy per se. What I want to see:
 \begin{itemize}
@@ -67,7 +71,7 @@ We would like to thank the reviewer for all the comments. They were all very tho
   \item[5)] Whether the trends in Vox/PP/PSOE vote share are parallel leading up to 2016.
 \end{itemize}}
 
-We completely agree with the reviewer that more information is needed to judge the identification strategy, and we think this is a very good point. We how now included more additional information and graphs, both in the main text and in the appendix. In particular:
+We completely agree with the reviewer that more information is needed to judge the identification strategy. We how now included more additional information and graphs, both in the main text and in the appendix. In particular:
 
 \begin{itemize}
   \item We have included a frequency table (table 1) in the main text specifying the number of municipalities included in the DiD sample (i.e. municipalities that had Francoist street names in June 2016) and how many of these were in the treatment (street name removal between June 2016 and December 2018) and in the control groups.
@@ -84,18 +88,18 @@ We completely agree with the reviewer that more information is needed to judge t
   assumption properly. Is the test for parallel trends in Table 5 still valid? Is there anyway to go further back? Some discussion of this is necessary.
 \end{itemize}}
 
-We also agree with the reviewer that showing that there are no diverging trends between control and treated municipalities is key for the credibility of the results.
+We appreciate this comment. We agree with the reviewer that showing that there are no diverging trends between control and treated municipalities is key for the credibility of the results.
 We have now included a plot in the main text showing these parallel trends for PP and Vox, and include much more detailed analyses in the appendix (robustness tests for PP, PSOE, and Vox).
 
 The reviewer is right in saying there is no reason not to include these robustness tests for PSOE. We did not include them in the beginning for reasons of brevity, but we know include a full table repeated all the same robustness tests for the DiD model (including parallel trends) using PSOE as dependent variable.
-As shown in section A& in the appendix, we now include data on elections since March 2000, when PP won its first absolute majority in parliament, thus testing parallel trends across different electoral periods that include right-dominated and left-dominated two-party systems and the emergence of a multi-party system.
+As shown in section `Robustness tests (difference-in-differences)' in the appendix, we now include data on elections since March 2000, when PP won its first absolute majority in parliament, thus testing parallel trends across different electoral periods that include right-dominated and left-dominated two-party systems and the emergence of a multi-party system.
 We also include a reference to these analyses in the main text, even though we cannot discuss their details for reasons of space.
 Overall, we do not find evidence of significant differences between municipalities in treated and control conditions, in terms of Vox (in 2015), PP (2000-2015) or PSOE (2000-2015). If anything, some models suggests that treated municipalities had shown stronger support for the PSOE in 2011 and 2015, although this result is not robust across all specifications.
 Moreover, we think that this should not be a concern for the analyses, as both our argument and results focus on a process of asymmetric polarization that mainly affects right-wing voters.
 
 Finally, the reviewer raises a potential concern about the lack of data previous to the treatment for Vox.
 This is a very relevant point.
-However, there no easy solution as Vox did not participate in national elections before that year.
+However, there is no easy solution to this problem as Vox did not participate in national elections before that year.
 Yet, we think that given that most electoral supporters of Vox had been PP voters in the past \citep[e.g.][]{Rama:2021tu}, testing the parallel trend assumption using PP votes (which holds for every year since 2000) should help to alleviate this potential problem.
 We have included a footnote in the main text discussing this point.
 
@@ -106,7 +110,7 @@ We have included a footnote in the main text discussing this point.
 \end{itemize}}
 
 We agree with the reviewer that different sample sizes are a potential concern. The reason for these differences is that Vox did not participate in all municipalities in 2016, and that is why the sample is slightly smaller in this case.
-Yet, we agree that we should estimate the models on the sample sample, and even though the results do not change, we now limit the samples in the PP and PSOE models to those municipalities included in the Vox analyses (we explain this in a footnote in the main text, in page \textbf{{\color{red}{XX}}}).
+Yet, we agree that we should estimate the models on the same sample, and even though the results do not change, we now limit the samples in the PP and PSOE models to those municipalities included in the Vox analyses (we explain this in note \textbf{{\color{red}{X}}} in the main text). We also included a table (table 1, page 8) summarizing the DiD sample, so it can now be clearly seen.
 
 Regarding the second point, we thank the reviewer for suggesting this possibility, which we were not aware of.
 We have extensively look into this method and, even interesting, we think it does not fit this research design and the data we have.
@@ -115,7 +119,7 @@ As far as we understand diff-in-diff-in-diff (DDD), this method is meant to incl
 In our case, however, there is no way to distinguish the second control (municipalities without Francoist street names in June 2016) from the treated population but excluding the original control (municipalities with streets in June 2016 but that did not change them during 2016--2018).
 Because of this, the DDD estimate (the triple interaction term $treated \times control1 \times april2019$) in a DDD equation with these three groups fails to estimate.
 
-That said, if we have misunderstood this method and their is indeed a way to apply it to this design, we would be very grateful about some references on how to proceed, because we do think it is very interesting and would greatly improve the analyses.
+That said, if we have misunderstood this method and there is indeed a way to apply it to this design, we would be very grateful about some references on how to proceed. We think that this is a very interesting suggestion and that this estimation could potentially improve the analyses.
 
 
 \textbf{Comment 7:} \textit{Small things:
@@ -123,7 +127,7 @@ That said, if we have misunderstood this method and their is indeed a way to app
   \item The author(s) discuss Vox and PSOE, but (how) did PP politicize the issue?
 \end{itemize}}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: {\color{red}{pending} LAIA}
 
 \begin{itemize}
   \item \textit{Does the federal government coerce non-changers or reward changers? Might certain
@@ -138,7 +142,7 @@ That said, if we have misunderstood this method and their is indeed a way to app
   interesting.}
 \end{itemize}
 
-\textbf{Response}: This is a very good point. We now include a much more thorough comparison of municipalities in and out of the sample (including t-test comparison on electoral shares and logistic regressions) in the appendix (section A4). Also related to more commends by the reviewer above selection bias above, this is a very important point for the analyses. What we find is that indeed the municipalities included in the analyses are slightly more rightist that the rest, particularly when we only compare municipalities within the same region.
+\textbf{Response}: We thank the reviewer for this very helpful comment. We now include a much more thorough comparison of municipalities in and out of the sample (including t-test comparison on electoral shares and logistic regressions) in the appendix (section A4). Also related to more commends by the reviewer above selection bias above, this is a very important point for the analyses. What we find is that indeed the municipalities included in the analyses are slightly more rightist that the rest, particularly when we only compare municipalities within the same region.
 We also include a reference in the main text to this section in the appendix.
 
 \begin{itemize}
@@ -158,7 +162,7 @@ Figure 3 shows the mean and 0.025 and 0.975 percentiles of these simulations.
   \item \textit{Are the standard errors clustered on Autonomous Communities?}
 \end{itemize}
 
-\textbf{Response}: We do not use clustered standard errors on Autonomous Communities because we did not think there were reasons to do so: the treatment is not clustered at the level of Autonomous Communities, and we already include fixed effects to account for potentially different levels of regional variation. That said, we agree with the reviewer that it is important to account for potential biases in the SEs, and now include a table in the robustness section of the appendix (section A6) where we show results for the main models using heteroskedasticity-consistent SEs and SEs clustered at the level of municipalities.
+\textbf{Response}: We do not use clustered standard errors on Autonomous Communities because we did not think there were reasons to do so: the treatment is not taking place at the level of Autonomous Communities, and we already include fixed effects to account for potentially unobservables driving regional variation. That said, we agree with the reviewer that it is important to account for potential biases in the SEs, and now include a table in the robustness section of the appendix (section A6) where we show results for the main models using heteroskedasticity-consistent SEs and SEs clustered at the level of municipalities.
 Although in some cases the level of significance decreases a bit, and in some cases it increases, all key coefficients retain some level of statistical significance.
 
 \begin{itemize}
@@ -172,7 +176,7 @@ Although in some cases the level of significance decreases a bit, and in some ca
   (logged number of street name removals)”. Should this be independent variable? Also: how do the author(s) run a DiD with a continuous treatment?}
 \end{itemize}
 
-That is right, it is a typo. We have now changed it to ``the main independent variable''.
+That is right, it is a typo. Thank you for pointing it out. We have now changed it to ``the main independent variable''.
 
 About running a DiD with a continuous treatment, we do in the conventional way, including an interaction between the time indicator and the treatment variable (which indicates treatment strength). The only difference is that the DiD estimate should not be interpreted in a binary way (the treatment effect) but as the effect of an increase in the (logged) number of Francoist street name removals on the treated. The other two coefficients are interpreted the same way.
 
@@ -183,11 +187,15 @@ We would like to thank the reviewer for all the comments. They were all very tho
 
 \textbf{Comment 1:} \textit{The literature Review and theory could be a bit more focused particularly to provide justification for the backlash idea. At the moment the expectation/hypothesis follows a very general literature review on the effects of transitional justice measures. More focus on the effect of political legacies on political support in the relation to transitional justice would help here as well. I would recommend looking beyond the literature on transitional justice and considering the growing literature on authoritarian legacies and political behavior in new democracies (see for example the Comparative Political Studies Special Issue Neundorf, A. and Pop-Eleches, G., 2020. Dictators and Their Subjects: Authoritarian Attitudinal Effects and Legacies. Comparative Political Studies, 53(12), pp.1839-1860.)}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: {\color{red}{pending LAIA}}
 
 \textbf{Comment 2:} \textit{The initial motivation is a bit confusing by focusing on the US and then switching to Spain. Why the US? Surely taking down symbols of the old regime is a more general phenomenon? Also the US perhaps does not fit the more general paradigm of a post-authoritarian context. And why is Spain a good case to examine the effects of taking down symbols? Are the mechanisms proposed to be at work in Spain generalizable to other contexts? Why do you assume that taking down symbols of the old regime will necessarily increase support for the far-right? Why not extremist parties in general? See Milan Svolik’s paper (Svolik, M.W., 2019. Polarization versus democracy. Journal of Democracy, 30(3), pp.20-32.) How would what you find be generalized to post-communist contexts? Do you think taking down communist symbols should lead to a revival of some form of left-wing parties?}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: We appreciate these thoughtful inquiries. We believe that, in spite of the differences between the US and Spain, the US parallel works because historical memory symbolic politics matter a great deal for contemporary politics too. The US is not a paradigm of a post-authoritarian context, but the Confederacy was a repressive regime in which a subset of the population was enslaved, systematically discriminated, and oppressed. Thus, removing the symbols of the Confederacy is a way to somewhat acknowledge these victims, and try to achieve some symbolic reparations, which can help in the ultimate goal of achieving reconciliation.\citep{Walsh2020, Ward2021} As Grossman puts it, ``Choices are made about what gets built, displayed, and given plaques. Memorials are public commemorations that legitimate what comes to be called “heritage.” '' \citep{Grossman:2016}
+Beyond the US, we believe that our results could travel to other contexts, although with context-dependent considerations. Regarding the reviewer's question about post-communist contexts, we would expect that taking down communist symbols would cause increased support for parties associated with the communist past if they catalyzed this issue. In fact, in a recent working paper, \citet{Rozenas:2021} find that the removal of Soviet monuments in Ukraine (during the so-called \textit{Leninopad}) mobilized supporters of the Soviet legacy parties, which, they argue, ``are those with a relatively favorable interpretation of Ukraine’s Soviet past.'' These are the parties that activate or simply capitalize popular backlash against these removals. To be sure, we do not expect the removal of the symbols to lead to an automatic increase of support for specific parties: this will happen only if such parties are mobilizing and trying to electorally exploit grudges around these removals. In the case of Spain, these parties are the far-right parties (e.g. Falange, VOX), which have connections to the Francoist past, and openly vindicate it.
+
+Spain is a good case to analyze the removal of street names, which, just like the removal of statues and other symbols or the building of museums and historical markers, are a form of symbolic Transitional Justice.\citep{Ward2021, Balcells:2020aa} In Spain, TJ took place several years after the end of the dictatorship and transition to democracy.\citep{Aguilar:2002aa} Spaniards are quite divided on their opinions regarding TJ measures, and these divisions roughly fall into the left-right divide, with the left being more favorable to them than the right.\citep{Aguilar:2011aa} The removal of Francoist street names is a TJ measure that, together with others such as the removal of General Francisco Franco from its mausoleum (``Valle de los Caidos"), has been challenged by right-wing parties, and particularly so by the extreme-right. It is thus an ideal case to assess if these measures backlash and electorally benefit these parties.
+
 
 \textbf{Comment 3:} \textit{Also how generalizable are the findings even within Spain? Is the backlash specific to areas that might have high latent rightist support? This is issue is also linked to concerns about the DiD design.}
 
@@ -195,15 +203,38 @@ We would like to thank the reviewer for all the comments. They were all very tho
 
 \textbf{Comment 4:} \textit{The methodological and empirical sections need to be better organized and more transparent. The relevant information for understanding the DiD design is scattered throughout the methodology section and the first part of the analysis section. The word count limit is low, but specific information on the measurement levels of each variable would be helpful as well as the model equations. For the robustness checks referred to in the appendix, please provide specific table numbers in the appendix in the main body of the text. It would be clearer to introduce the variables, then run the main analysis, and then refer to the robustness checks in the appendix. As an example the author(s) chose to code the Francoist street name removals as a binary variable. This is an important decision. I would like to see some graphical representation of how many and which municipalities would fall into either category. For the cross-sectional analysis I would be interested in seeing the effects of the Francoist street name removals as an interval measure in relation to the effects of the binary coding. The authors say they have done the additional analysis using an interval measure (logged number of changes) but only in the methods section (page 6) and also it is not very clear which table they refer to in the appendix. It would be logical to mention this robustness check after the discussion of the results in Table 1 of the main body. It is not clear which table shows the cross-sectional analysis with the logged number of removals.}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: We are very thankful to the reviewer for this detailed comment on the empirical analyses.
+As with a related comment by R1, we think providing more information was absolutely necessary and does indeed improve the paper. We have tried to do so. In particular:
+
+We have slightly rearranged the empirics and results section so it a bit clearer now, such as discussing the robustness tests after the analyses are presented, and specifying specific sections in the appendix to find them.
+
+We have included much more information on the variables, even though we could not explain it at length in the main text because of space constraints (we do include a table in the main text specifying how many municipalities fall into the sample criteria and how many of these fall in the treatment and control groups, table 1).
+
+We now include in the appendix summary statistics of the variables (section A2), a map showing the municipalities included in the DiD analyses (section A2), information of treatment strength (i.e. what is actually behind the binary coding, showing that most municipalities had indeed few streets to begin with and few changes) (section A3), and a very detailed comparison of municipalities in and out of the sample and treated vs. control municipalities (section A5).
+
+We now include specific references to the section in the appendix which includes the analyses with the continuous measure of Francoist street name removals.
 
 \textbf{Comment 5:} \textit{I would also generally be interested in understanding more about what distinguishes the municipalities that retained Francoist street names until the periods analyzed from those that removed the names before 2001. Perhaps a map of Spain showing where are the municipalities included in the sample are located would be nice. What is their history? Are they former Francoist strongholds? If so the effects of removal of symbols would be rather inflated: that is if we could go back in time and look at the earlier effects of the removals of street names would they have caused an equally sized backlash? Maybe not if the removals were done in areas of Spain that were more anti-Franco.}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: We agree with the reviewer that this is a major point affecting the interpretation of the results, which was also pointed out by R1. We now include a much more detailed section in the appendix (section A5) making a thorough comparison between those municipalities in the sample and those that are not in it. We mention it in the main text but, beyond what we say about municipalities that still retained Francoist street names in 2016, space contrains stop us from a more detailed discussion.
+
+Overall, as we mention in the main text, we find that municipalities in the sample are slightly more rightist that those outside it. In terms of the interpretation of the results, we think it does not harm our inferences. One could say that a more rightist sample makes the generalization of the results more difficult, as the same effect would not have taken place in more leftist areas. However, we think this reasoning could be an ecological fallacy. The fact that a municipalities shows higher support for rightist parties does not mean that everybody is rightist, nor that in a more leftist municipality everyone is leftist.
+And, if anything, more rightist municipalities should already be more likely to support the new far right party Vox, which should in some way cancel out the effect of street name removal.
+We think a more leftist sample would be more problematic as we are dealing with a potential backlash effect among the rightist population in areas where right-wing political parties are less likely to enjoy local power.
+Obviously, a more detailed analyses using individual data, if that data were available, would help to dig deeper into these questions.
 
 \textbf{Comment 6:} \textit{For the first cross-sectional analysis: what is the point of the model (Table 1) on the full sample if the majority of municipalities had no Francoist street names to remove? In other words these municipalities are not eligible for “treatment” anyhow and more likely to be fundamentally different from the municipalities that still retained Francoist street names in 2001 or later. For the cross-sectional analysis I would be interested to see the effects of the interval/continuous measure of Francoist street name removals. I would also like to systematically see maybe in the appendix side by side the regression results using varied periods in which the Francoist street name removals are considered (e.g. 2001-2018, 2011-2018, etc). The main point is that we have some systematic change in the samples so for example same end point to the period but sliding starting points. I have also noticed that the samples vary according to whether all the included municipalities had some Francoist street names in the starting year of the period considered for the independent variable. It is logical obviously to look at the municipalities that had Francoist street names at the starting but again consistency would help (Table 4 in the appendix states the sample only includes municipalities that had street names in June 2011 but the period considered for removal is December 2010-2018).}
 
 \textbf{Response}: {\color{red}{pending}}
+
+the reviewer is right, relates to R1's comment blah blah
+
+we now dropped from the main text the analyses with the full sample, and compare now results in table 2 using the continuous and binary measure of fran st name removal
+
+we also include in the appendix results for different periods (and reference in main text), with the sliding starting point the reviewer mentions : see section A6 in appendix
+
+we have corrected that table to January 2011. The reason we speak about changes between June X and December X but then limit to sample in terms of January is because the dates are 30Dec / 30june
+
 
 \textbf{Comment 7:} \textit{The application of the difference-in-difference design could be much clearer. The word count limit is quite short but briefly writing out the model (Also clearly specify which in the models coefficients capture the treatment effect) and perhaps explaining the design explicitly in terms of treatment and control would help (additional details could go in the appendix). Noting details like the model type would help too (I am assuming OLS based on the dependent variable). Overall it seems like the design should be viable and defendable although the generalizability of the findings might be more limited than currently stated. But I would like to see more explicit consideration of DiD design. To this end it would help write out the model and in the appendix maybe explain the more design more systematically in terms of treatment and control and expected outcomes. Telling us the mean values on the outcome for these municipalities versus the “treatment” municipalities as well as the levels of Francoist street names.}
 
@@ -223,14 +254,15 @@ We would like to thank the reviewer for all the comments. They were all very tho
 
 \textbf{Comment 11:} \textit{As to the conclusions and implications: why should the removal of old regime symbols just increase in support for the far-right? If the idea of backlash is to travel, then surely we would expect in Eastern Europe an increase in support for the left if communist symbols are removed?}
 
-\textbf{Response}: {\color{red}{pending}}
+\textbf{Response}: As argued above, we expect the removal of symbols to generate backlash among supporters of the former regime or the perpetrators, and thus to increase support for parties that are mobilizing this issue and that try to electorally benefit from these grudges. These are not necessarily far-right parties; they are in the case of Spain because the far-right is connected to the past authoritarian regime (i.e. Francoism), vindicates it, and it mobilizes the issue of the symbols. Traditional conservative parties are less adamant to defend such symbols, or they do it less fiercely, so the far-right ends up benefiting from it. In a way, there is an outbidding dynamic\citep{Kydd:2002aa} on this issue which benefits the most extreme parties. As discussed above, there is some evidence from a former communist country (i.e. Ukraine) that supports the idea that these backlash effects travel to other contexts, and that parties that defend the soviet legacy benefit from such backlash. Similarly, in the case of the US, we would expect that the removal of Confederate symbols would benefit electoral candidates that defend the legacy of the Confederacy and that fiercely oppose the removal. This is something that we could test in further research.
 
 \vspace{30pt}
 
-Again, we very much appreciate  blah blah
+Again, we very much appreciate the opportunity to revise and resubmit our manuscript. We believe that these thoughtful comments have helped us considerably in strengthening the article. To recap, we we have XXX, we have clarified some aspects of our theory that were confusing, and we have revised the empirical tests to document our findings' robustness and further substantiate our claims. We made all these changes staying within the journal page limit. We hope that you are happy with these changes, and we are deeply grateful for your time and assistance on this project.
+
 
 \newpage
-\bibliographystyle{jpr}
+\bibliographystyle{rap}
 \bibliography{REF}
 
 \end{document}

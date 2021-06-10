@@ -2,7 +2,7 @@
 options(stringsAsFactors = FALSE)
 # List of packages
 pkg = c("dplyr", "tidyr", "stargazer", "ggplot2", "stringr",
-  "MASS", "forcats", "scales")
+  "MASS", "forcats", "scales", "rgdal", "rgeos", "maptools")
 # Checks if they are installed, install if not
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
@@ -21,6 +21,7 @@ lapply(c(pkg, "muniSpain"), library, character.only = TRUE)
 source("func/capitalize.R")
 source("func/ttest_tex.R")
 source("func/my_stargazer_glm.R")
+source("func/fix_map_ci.R")
 
 # ------------------------------
 
@@ -30,6 +31,108 @@ changes = read.csv("str_changes/output/changes.csv")
 fs_prov_all  = read.csv("str_agg/output/fs_prov.csv")
 fs_all = read.csv("str_agg/output/fs_all.csv")
 data = read.csv("dataset/output/data.csv")
+
+# ------------------------------
+# Descriptives table
+
+covs = data[, c("muni_code", "VOX2019_04", "VOX2016_06",
+  "PP2019_04", "PP2016_06", "PSOE2019_04", "PSOE2016_06",
+  "fs_rm_2001s2_2018s2_bin", "l_fs_2016_06",
+  "part2019_04", "part2016_06", "lpop2011", "major_2015_izq", "unemp_2016")] %>%
+  filter(!is.na(VOX2016_06) & l_fs_2016_06 > 0) %>%
+  rename(
+    "Vox April 2019" = `VOX2019_04`,
+    "Vox June 2016" = `VOX2016_06`,
+    "PP April 2019" = `PP2019_04`,
+    "PP June 2016" = `PP2016_06`,
+    "PSOE April 2019" = `PSOE2019_04`,
+    "PSOE June 2016" = `PSOE2016_06`,
+    "Francoist st name removal, 2016-2018" = `fs_rm_2001s2_2018s2_bin`,
+    "Log. Francoist streets, June 2016" = `l_fs_2016_06`,
+    "Turnout April 2019" = `part2019_04`,
+    "Turnout June 2016" = `part2016_06`,
+    "Log. Population 2011" = `lpop2011`,
+    "Leftist mayor 2015" = `major_2015_izq`,
+    "Unemployment 2016" = `unemp_2016`)
+
+muni_inc = covs$muni_code
+covs = covs[, -which(names(covs) == "muni_code")]
+
+# Create table df
+descs = vector()
+for(i in 1:ncol(covs)){descs = rbind(descs, round(summary(covs[, i]), 2)[1:6])}
+descs = as.data.frame(descs)
+descs = cbind(names(covs), descs)
+names(descs) = c("Variable", "Min", "Q1", "Median", "Mean", "Q3", "Max")
+
+# Write tex table
+fileconnection = file("descriptives/output/tab_descriptives.tex")
+writeLines(
+  paste0(
+    "\\begin{table}[!htbp] \\centering", "\n",
+    "\\caption{Summary statistics for the covariates}", "\n",
+    "\\label{tab:descriptives}", "\n",
+    "\\small", "\n",
+    paste0("\\begin{tabular}{l", strrep("c", ncol(descs)-1), "}"), "\n",
+    "\\\\[-1.8ex]\\hline", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    "\\\\[-1.8ex]", "\n",
+    paste(names(descs), collapse = " & "), " \\\\", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    paste(descs[1,], collapse = " & "), " \\\\", "\n",
+    paste(descs[2,], collapse = " & "), " \\\\", "\n",
+    paste(descs[3,], collapse = " & "), " \\\\", "\n",
+    paste(descs[4,], collapse = " & "), " \\\\", "\n",
+    paste(descs[5,], collapse = " & "), " \\\\", "\n",
+    paste(descs[6,], collapse = " & "), " \\\\", "\n",
+    paste(descs[7,], collapse = " & "), " \\\\", "\n",
+    paste(descs[8,], collapse = " & "), " \\\\", "\n",
+    paste(descs[9,], collapse = " & "), " \\\\", "\n",
+    paste(descs[10,], collapse = " & "), " \\\\", "\n",
+    paste(descs[11,], collapse = " & "), " \\\\", "\n",
+    paste(descs[12,], collapse = " & "), " \\\\", "\n",
+    paste(descs[13,], collapse = " & "), " \\\\", "\n",
+    "\\hline", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    "\\end{tabular}", "\n",
+    "\\end{table}", "\n"
+  ), fileconnection)
+close(fileconnection)
+
+# ------------------------------
+# Municipalities map
+
+# Load shapefile
+shp = readOGR("input/ESP_adm4_codes.shp", layer = "ESP_adm4_codes")
+
+# Changing Canary Islands
+shpEA = spTransform(shp,CRS("+init=epsg:2163"))
+ci = shpEA[shpEA$NAME_2 %in% c("santa cruz de tenerife", "las palmas"),]
+ci = fix1(ci, c(-20.5,1,-2.5e05,2e06))
+proj4string(ci) = proj4string(shpEA)
+shpEA = shpEA[!shpEA$NAME_2 %in% c("santa cruz de tenerife", "las palmas"),]
+shpEA = rbind(shpEA, ci)
+shp2 = spTransform(shpEA, CRS("+init=epsg:4326"))
+
+# Get whole country
+c = gUnaryUnion(shp2)
+
+# Mark municipalities in the sample
+shp2$sample = ifelse(shp2@data$muni_code %in% muni_inc, TRUE, FALSE)
+
+# Plot
+pdf("descriptives/output/map.pdf", width = 10, height = 8)
+# Base map, grey borders
+plot(shp2, col = "white", border = "grey", lwd = 0.25)
+# Municipalities in the sample
+plot(shp2[shp2$sample,], col = gray(0.5), border = "grey", lwd = 0.25, add = TRUE)
+# Country profile
+plot(c, border = grey(0.5), lwd = 0.5, add = TRUE)
+# Canary Islands box
+segments(x0 = -1.85, y0 = 34.1, y1 = 36, col = grey(0.5), lwd = 2, lty = "dashed")
+segments(x0 = -0.5, x1 = 4, y0 = 36.75, col = grey(0.5), lwd = 2, lty = "dashed")
+segments(x0 = -1.85, y0 = 36, x1 = -0.5, y1 = 36.75, col = grey(0.5), lwd = 2, lty = "dashed")
+dev.off()
 
 # ------------------------------
 
@@ -48,7 +151,7 @@ fc = file("descriptives/output/francoist_name_list.tex")
 writeLines(fn_tex, fc)
 close(fc)
 
-# ------
+# ------------------------------
 
 # Frequency table in_sample & treatment
 
