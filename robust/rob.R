@@ -113,7 +113,7 @@ my_stargazer(dest_file = "robust/output/tab_cs_limited_2011.tex",
     "Turnout April 2019",
     "Turnout Nov 2019",
     "Log. Population"),
-  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in January 2011 were included.}")
+  notes_table = "\\parbox[t]{0.7\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in December 2010 were included.}")
 
 # ------------------------------
 # Tracking street name changes in different periods

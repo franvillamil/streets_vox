@@ -140,7 +140,7 @@ We also implement a DiD analysis on the increase in electoral support for Vox be
 \subsection*{Francoist street name removal}
 
 To build our main independent variable, we downloaded data identifying all the streets in Spain at different points in time from the National Statistical Institute \citep{INE:2020aa}.
-In particular, the INE offers data for every six-month period since January 2011,\footnote{Specifically, it offers the official data for June 30th and December 31st.} plus a snapshot of the streets and their names existing in July 2001.
+In particular, the INE offers data for every six-month period since December 2010,\footnote{Specifically, it offers the official data for June 30th and December 31st.} plus a snapshot of the streets and their names existing in July 2001.
 We track the change in street names over time using the official ID number for each street.
 
 Using this setup, we identified streets named after Francoist symbols or figures.
@@ -200,7 +200,7 @@ In every case, we also include fixed effects at the region level (Autonomous Com
 \subsection*{Models}
 
 %We build two sets of models.
-The cross-sectional analyses use a linear regression on the vote share of Vox in both 2019 elections (April and November), using as the main independent variable binary and continuous indicators of street name removal between June 2001 and January 2019, the larger period for which we have data.
+The cross-sectional analyses use OLS regression on the vote share of Vox in both 2019 elections (April and November), using as the main independent variable binary and continuous indicators of street name removal between June 2001 and December 2018, the larger period for which we have data.
 We only include in the sample municipalities that had at least one street with Francoist name in June 2001.
 The models are defined as:
 
@@ -208,7 +208,7 @@ The models are defined as:
   Vox_Share{i} = \beta_0 + \beta_1 Removal_{i} + \beta^\top \mathbf{x}_{i} + \alpha_{i} + \epsilon_{i}
 \end{equation}
 
-In the DiD analyses, we use the electoral support for Vox, PP, and PSOE in June 2016 and April 2019 elections as the dependent variable, using as our main independent variable an indicator of street name removal between June 2016 and January 2019.
+In the DiD analyses, we also run OLS using the electoral support for Vox, PP, and PSOE in June 2016 and April 2019 elections as the dependent variable, and an indicator of street name removal between June 2016 and December 2018 as our main independent variable.
 The model is defined as:
 
 \begin{equation}
@@ -219,12 +219,12 @@ The model is defined as:
 \end{split}
 \end{equation}
 
-Where the treatment effect is captured by $\beta_3$, or the interaction between the time and the name removal dummies.
+Where the effect of street name removals is captured by $\beta_3$, or the interaction between the time and removal dummies.
 In these models, we only compare municipalities that had at least one street with Francoist name in June 2016. Table~\ref{tab:sample_trt} summarizes this classification.\footnote{In order to use the same sample of municipalities in all models, we limit the sample to those municipalities where Vox participated in 2016 elections. Results do not change if we use the full available sample for each party.}
 
 \input{tab/tab_sample_trt.tex}
 
-Limiting the sample implies that the the control group---those municipalities that did not change street names during this period---is probably more rightist than the average, as more leftist municipalities are more likely to have already changed Francoist street names before mid-2016.
+Limiting the sample implies that the the control group---those municipalities that did not change street names during this period---is probably more rightist than the average (compared to municipalities out of the sample), as more leftist municipalities are more likely to have already changed Francoist street names before mid-2016.
 Indeed, some municipalities that still had not changed Francoist names by late 2018 were portrayed as the `resistance' to the Law of Historical Memory \citep{Blanco-Elipe:2018aa}, as they actively avoided doing so.
 This dodging of the Law was possible either because of delays in the legal procedures or some form of `foot-dragging' by local authorities.
 Because of this, we think that, if anything, the selection bias should go against the backlash hypothesis, in the sense that the control group is comprised by municipalities where Vox is likely to have grown more between 2016 and 2019.
@@ -273,11 +273,10 @@ These results could be confounded if the removal of Francoist street names was e
 One possibility is that these street name changes, which took place relatively late, took place in more conservative areas where Spanish nationalism was stronger.
 We believe that any selection bias in the sample should be in the opposite direction from the results.
 Moreover, if the concern above were true, we should see different trends before 2016 between municipalities that later had a change and those that did not.
-Figure~\ref{fig:par_trends_norm} shows normalized electoral trends among the control and treatment groups for PP and Vox, and we include in the appendix much more detailed models analyzing the parallel trends assumption for Vox, PP, and PSOE.
-Moreover,
+Figure~\ref{fig:par_trends_norm} shows normalized electoral trends among control and treated groups for PP and Vox, and we include in the appendix much more detailed models analyzing the parallel trends assumption for Vox, PP, and PSOE.
 
 We also show in the appendix results including the main independent variable in continuous form (logged number of street name removals), restricting the sample to municipalities where Vox had more than 0 votes in 2016, and changing the independent variable so it also registers changes that were registered in the first half of 2019, to account for possible delays in the official data.
-Results do not change in any of these specifications (see section~\ref{app:robustness_did}). We also show first-difference models (section~\ref{app:first_diff}).
+Results do not change in any of these specifications (see section~\ref{app:robustness_did}), and results from first-difference models go in the same direction (section~\ref{app:first_diff}).
 
 
 \begin{figure*}[htb!]

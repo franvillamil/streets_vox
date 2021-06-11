@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=robust/rob.R'
 
 
-Attache Paket: ‘dplyr’
+Attaching package: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,29 +19,33 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attache Paket: ‘MASS’
+Attaching package: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
     select
 
-Lade nötiges Paket: zoo
+Loading required package: zoo
 
-Attache Paket: ‘zoo’
+Attaching package: ‘zoo’
 
 The following objects are masked from ‘package:base’:
 
     as.Date, as.Date.numeric
 
-Lade nötiges Paket: mice
+Loading required package: mice
 
-Attache Paket: ‘mice’
+Attaching package: ‘mice’
+
+The following object is masked from ‘package:stats’:
+
+    filter
 
 The following objects are masked from ‘package:base’:
 
     cbind, rbind
 
-* miceadds 3.9-14 (2020-05-09 11:27:27)
+* miceadds 3.11-6 (2021-01-21 11:48:47)
 [[1]]
 [1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
 [7] "methods"   "base"     
@@ -84,7 +88,7 @@ The following objects are masked from ‘package:base’:
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:32
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for Vox during 2019} 
@@ -118,7 +122,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.075} & \multicolumn{1}{c}{0.125} \\
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:32
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018)} 
@@ -154,7 +158,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.440} & \multicolumn{1}{c}{0.497} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:32
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018), limited sample} 
@@ -185,12 +189,12 @@ R$^{2}$ & \multicolumn{1}{c}{0.269} & \multicolumn{1}{c}{0.296} & \multicolumn{1
 Adjusted R$^{2}$ & \multicolumn{1}{c}{0.260} & \multicolumn{1}{c}{0.287} & \multicolumn{1}{c}{0.118} \\ 
 \hline 
 \hline \\[-1.8ex] 
-\multicolumn{4}{c}{\parbox[t]{0.7\textwidth}{\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in January 2011 were included.}} \\ 
+\multicolumn{4}{c}{\parbox[t]{0.7\textwidth}{\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. The main independent variable refers to the removal of Francoist street names between December 2010 and December 2018. Only municipalities that had Francoist street names in December 2010 were included.}} \\ 
 \end{tabular} 
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:32
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods} 
@@ -224,7 +228,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.283} & \multicolumn{1}{c}{0.284} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:33
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods (in continuous form)} 
@@ -258,7 +262,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.282} & \multicolumn{1}{c}{0.283} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:33
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for Vox} 
@@ -286,7 +290,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{-0.005} & \multicolumn{1}{c}{0.200} & \mul
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:33
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for PP} 
@@ -314,7 +318,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.038} & \multicolumn{1}{c}{0.170} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:33
+% Date and time: Fri, Jun 11, 2021 - 14:03:35
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for Vox} 
@@ -350,7 +354,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:33
+% Date and time: Fri, Jun 11, 2021 - 14:03:36
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for PP} 
@@ -402,7 +406,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:34
+% Date and time: Fri, Jun 11, 2021 - 14:03:36
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and increase in electoral support for PSOE} 
@@ -454,7 +458,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.570} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:35
+% Date and time: Fri, Jun 11, 2021 - 14:03:36
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Main models using conventional, robust or clustered SE} 
@@ -487,7 +491,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 08, 2021 - 19:19:35
+% Date and time: Fri, Jun 11, 2021 - 14:03:36
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Logit regression on Francoist street name removal (2016--2018)} 
