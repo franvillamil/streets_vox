@@ -38,9 +38,8 @@
 \maketitle
 
 \tableofcontents
-% \listoffigures
+% \newpage\listoffigures
 % \listoftables
-
 
 \clearpage
 \section{Francoist street names}\label{app:franc_names_list}
@@ -56,7 +55,8 @@ Indeed, among all the changes between 2001 and 2020, the five most commonly remo
 \clearpage
 \section{Descriptives}\label{app:descriptives}
 
-Table~\ref{tab:descriptives} shows the summary statistics for the sample included in the main DiD analyses. Figure~\ref{fig:map} shows a map of the municipalities included in these analyses.
+Table~\ref{tab:descriptives} shows the summary statistics for the sample included in the main DiD analyses. Figure~\ref{fig:map} shows a map of the municipalities included in these analyses, excluding municipalities where Vox did not participate in 2016.
+Figure~\ref{fig:map_full} shows a map of all the municipalities that still had Francoist street names in June 2016, that is, the full sample used included in the robustness checks for PP and PSOE.
 
 \input{tab/tab_descriptives.tex}
 
@@ -66,6 +66,15 @@ Table~\ref{tab:descriptives} shows the summary statistics for the sample include
   \includegraphics[width = \textwidth]{img/map}
 
   \caption{Municipalities included in the main DiD analyses}\label{fig:map}
+
+\end{figure*}
+
+\begin{figure*}[htb!]
+\centering
+
+  \includegraphics[width = \textwidth]{img/map_full}
+
+  \caption{Municipalities included in the DiD analyses with full sample (PP and PSOE)}\label{fig:map_full}
 
 \end{figure*}
 
@@ -162,10 +171,13 @@ Municipalities that had Francoist street names in later periods were more, on av
 \input{tab/tab_insample2001.tex}
 
 \clearpage
-\section{Additional cross-sectional analysis}\label{app:additional_cs}
+\section{Cross-sectional analysis}\label{app:crosssec}
 
-Table~\ref{tab:cs_change} shows the results of cross-sectional analyses similar to the ones shown in the main text but using the change in support for Vox between April and November 2019 as the dependent variable.
-As discussed in the main text, these results that any effect of the removal of Francoist streets took place between the April 2019 elections.
+Table~\ref{tab:cs} shows the basic cross-sectional results, using both binary and continuous versions of the main independent variable, which tracks the removal of Francoist street names for since the oldest data available (June 2001) to December 2018.
+Table~\ref{tab:cs_change} shows the results of cross-sectional analyses similar to the ones in the previous table but using the change in support for Vox between April and November 2019 as the dependent variable.
+These results that any effect of the removal of Francoist streets took place between the April 2019 elections.
+
+\input{tab/tab_cs.tex}
 
 \input{tab/tab_cs_change.tex}
 

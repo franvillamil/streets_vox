@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 {\catcode`\|=0\catcode`\#=12\catcode`\@=11\catcode`\\=12
 |immediate|write|@auxout{\expandafter\ifx\csname
@@ -20,12 +20,34 @@ Aguilar P, Balcells L \harvardand{} Cebolla-Boado H \harvardyearleft
   justice: An empirical analysis of the spanish case.
 \newblock \emph{Comparative Political Studies} 44(10): 1397--1430.
 
+\harvarditem{Balcells}{2012}{Balcells:2012aa}
+Balcells L \harvardyearleft 2012\harvardyearright{} The consequences of
+  victimization on political identities: {{Evidence}} from {{Spain}}.
+\newblock \emph{Politics \& Society} 40(3): 311--347.
+
 \harvarditem[Balcells et~al.]{Balcells, Palanza \harvardand{}
   Voytas}{2020}{Balcells:2020aa}
 Balcells L, Palanza V \harvardand{} Voytas E \harvardyearleft
   2020\harvardyearright{} Do museums promote reconciliation? a field experiment
   on transitional justice.
 \newblock \emph{The Journal of Politics} forthcoming.
+
+\harvarditem{Berbís}{2016}{Berbis2016}
+Berbís S \harvardyearleft 2016\harvardyearright{} Tortosa vota este sábado si
+  retira el monumento franquista del {E}bre.
+\newblock El Periódico, May 28, 2016. Available at https://bit.ly/3ws9UyB
+  (accessed 15/06/2021).
+
+\harvarditem{Capoccia \harvardand{} Pop-Eleches}{2020}{Capoccia:2020aa}
+Capoccia G \harvardand{} Pop-Eleches G \harvardyearleft 2020\harvardyearright{}
+  Democracy and retribution: Transitional justice and regime support in postwar
+  west germany.
+\newblock \emph{Comparative Political Studies} 53(3--4): 399--433.
+
+\harvarditem{Elster}{2004}{Elster:2004aa}
+Elster J \harvardyearleft 2004\harvardyearright{} \emph{Closing the books:
+  Transitional justice in historical perspective}.
+\newblock Cambridge University Press.
 
 \harvarditem{Grossman}{2016}{Grossman:2016}
 Grossman J \harvardyearleft 2016\harvardyearright{} Whose memory? whose
@@ -49,6 +71,12 @@ Rozenas A \harvardand{} Vlasenko A \harvardyearleft 2021\harvardyearright{} The
   real consequences of symbolic politics: Breaking the soviet past in ukraine.
 \newblock SSRN Working Paper, last revised April 20, 2021. Available at
   https://bit.ly/3gupfro (accessed 11/06/2021).
+
+\harvarditem{RTVE}{2019}{RTVE2019}
+RTVE \harvardyearleft 2019\harvardyearright{} El ministerio de justicia pide a
+  656 ayuntamientos que retiren los vestigios franquistas de sus calles.
+\newblock RTVE.es / EFE, February 6, 2019. Available at https://bit.ly/3gjuLyo
+  (accessed 14/06/2021).
 
 \harvarditem{Walsh}{2020}{Walsh2020}
 Walsh C \harvardyearleft 2020\harvardyearright{} Must we allow symbols of

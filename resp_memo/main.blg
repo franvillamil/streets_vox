@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
+This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: rap.bst
 Database file #1: REF.bib
 Warning--there's a number but no volume in Grossman:2016
-You've used 10 entries,
+You've used 15 entries,
             2871 wiz_defined-function locations,
-            668 strings with 6806 characters,
-and the built_in function-call counts, 7710 in all, are:
-= -- 785
-> -- 182
-< -- 14
-+ -- 69
-- -- 58
-* -- 534
-:= -- 1033
-add.period$ -- 20
-call.type$ -- 10
-change.case$ -- 66
-chr.to.int$ -- 11
-cite$ -- 11
-duplicate$ -- 747
-empty$ -- 599
-format.name$ -- 95
-if$ -- 1560
+            700 strings with 7683 characters,
+and the built_in function-call counts, 10848 in all, are:
+= -- 1098
+> -- 245
+< -- 24
++ -- 94
+- -- 76
+* -- 732
+:= -- 1478
+add.period$ -- 30
+call.type$ -- 15
+change.case$ -- 96
+chr.to.int$ -- 16
+cite$ -- 16
+duplicate$ -- 1037
+empty$ -- 857
+format.name$ -- 129
+if$ -- 2202
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 71
-newline$ -- 49
-num.names$ -- 50
-pop$ -- 339
+missing$ -- 103
+newline$ -- 69
+num.names$ -- 75
+pop$ -- 455
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 85
 quote$ -- 0
-skip$ -- 171
+skip$ -- 257
 stack$ -- 0
-substring$ -- 717
-swap$ -- 170
+substring$ -- 982
+swap$ -- 250
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 164
 warning$ -- 1
-while$ -- 53
+while$ -- 77
 width$ -- 0
-write$ -- 125
+write$ -- 182
 (There was 1 warning)

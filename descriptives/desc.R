@@ -39,7 +39,7 @@ covs = data[, c("muni_code", "VOX2019_04", "VOX2016_06",
   "PP2019_04", "PP2016_06", "PSOE2019_04", "PSOE2016_06",
   "fs_rm_2001s2_2018s2_bin", "l_fs_2016_06",
   "part2019_04", "part2016_06", "lpop2011", "major_2015_izq", "unemp_2016")] %>%
-  filter(!is.na(VOX2016_06) & l_fs_2016_06 > 0) %>%
+  filter(l_fs_2016_06 > 0) %>%
   rename(
     "Vox April 2019" = `VOX2019_04`,
     "Vox June 2016" = `VOX2016_06`,
@@ -55,8 +55,11 @@ covs = data[, c("muni_code", "VOX2019_04", "VOX2016_06",
     "Leftist mayor 2015" = `major_2015_izq`,
     "Unemployment 2016" = `unemp_2016`)
 
-muni_inc = covs$muni_code
+not_vox = is.na(covs[, which(names(covs) == "Vox June 2016")])
+muni_inc_all = covs$muni_code[!not_vox]
+muni_inc_rest = covs$muni_code[not_vox]
 covs = covs[, -which(names(covs) == "muni_code")]
+covs = covs[!not_vox, ]
 
 # Create table df
 descs = vector()
@@ -114,18 +117,34 @@ shpEA = shpEA[!shpEA$NAME_2 %in% c("santa cruz de tenerife", "las palmas"),]
 shpEA = rbind(shpEA, ci)
 shp2 = spTransform(shpEA, CRS("+init=epsg:4326"))
 
-# Get whole country
+# Get whole country and provinces
 c = gUnaryUnion(shp2)
 
 # Mark municipalities in the sample
-shp2$sample = ifelse(shp2@data$muni_code %in% muni_inc, TRUE, FALSE)
+shp2$sample = ifelse(shp2@data$muni_code %in% muni_inc_all, TRUE, FALSE)
+shp2$sample_full = ifelse(shp2@data$muni_code %in% muni_inc_rest, TRUE, FALSE)
 
 # Plot
 pdf("descriptives/output/map.pdf", width = 10, height = 8)
 # Base map, grey borders
 plot(shp2, col = "white", border = "grey", lwd = 0.25)
 # Municipalities in the sample
-plot(shp2[shp2$sample,], col = gray(0.5), border = "grey", lwd = 0.25, add = TRUE)
+plot(shp2[shp2$sample,], col =  gray(0.5), border = "grey", lwd = 0.25, add = TRUE)
+# Country profile
+plot(c, border = grey(0.5), lwd = 0.5, add = TRUE)
+# Canary Islands box
+segments(x0 = -1.85, y0 = 34.1, y1 = 36, col = grey(0.5), lwd = 2, lty = "dashed")
+segments(x0 = -0.5, x1 = 4, y0 = 36.75, col = grey(0.5), lwd = 2, lty = "dashed")
+segments(x0 = -1.85, y0 = 36, x1 = -0.5, y1 = 36.75, col = grey(0.5), lwd = 2, lty = "dashed")
+dev.off()
+
+# Plot
+pdf("descriptives/output/map_full.pdf", width = 10, height = 8)
+# Base map, grey borders
+plot(shp2, col = "white", border = "grey", lwd = 0.25)
+# Municipalities in the sample
+plot(shp2[shp2$sample|shp2$sample_full,],
+  col =  gray(0.5), border = "grey", lwd = 0.25, add = TRUE)
 # Country profile
 plot(c, border = grey(0.5), lwd = 0.5, add = TRUE)
 # Canary Islands box
@@ -160,7 +179,7 @@ pft = round(prop.table(ft, 1)*100,0)
 
 sample_trt = c(
   "\\begin{table}[!htbp] \\centering",
-  paste0("\\caption{DiD sample classification}"),
+  paste0("\\caption{Sample classification}"),
   paste0("\\label{tab:sample_trt}"),
   "\\small",
   "\\begin{tabular}{lcc}",
@@ -171,11 +190,11 @@ sample_trt = c(
   "\\cline{2-3} \\\\[-1.8ex]",
   paste0("No & ", paste(ft[1,], collapse = " & "), " \\\\"),
   paste0(" & ", paste(paste0("(", pft[1,], "\\%)"), collapse = " & "), " \\\\"),
-  paste0("Yes (DiD sample) \\hspace{2cm} & ", paste(ft[2,], collapse = " & "), " \\\\"),
+  paste0("Yes \\hspace{3cm} & ", paste(ft[2,], collapse = " & "), " \\\\"),
   paste0(" & ", paste(paste0("(", pft[2,], "\\%)"), collapse = " & "), " \\\\"),
   "\\\\[-1.8ex]\\hline",
   "\\hline \\\\[-1.8ex]",
-  "\\multicolumn{3}{c}{\\parbox[t]{0.55\\textwidth}{\\textit{Note:} Row percentages. Changes in 2016--2018 refer to the period between 01/07/2016 and 31/12/2018.}}\\\\",
+  "\\multicolumn{3}{c}{\\parbox[t]{0.55\\textwidth}{\\textit{Note:} Row percentages. Changes in 2016--2018 refer to the period between 30/06/2016 and 31/12/2018.}}\\\\",
   "\\end{tabular}",
   "\\end{table}")
 

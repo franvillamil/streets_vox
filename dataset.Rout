@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=dataset/dataset.R'
 
 
-Attaching package: ‘dplyr’
+Attache Paket: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -28,4 +28,3 @@ The following objects are masked from ‘package:base’:
  [1] "muniSpain" "stringr"   "tidyr"     "dplyr"     "stats"     "graphics" 
  [7] "grDevices" "utils"     "datasets"  "methods"   "base"     
 
-There were 50 or more warnings (use warnings() to see the first 50)

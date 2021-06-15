@@ -62,10 +62,84 @@ my_stargazer(dest_file = "main_models/output/tab_cs.tex",
 
 
 # ------------------------------
-# Difference-in-Differences
+# Basic Differences
 
 # Keep it to the same sapmle as Vox models
 mc = unique(subset(dl_VOX, election %in% c("2016_06", "2019_04"))$muni_code)
+
+# Basic decomposition
+deco_did = rbind(
+  dl_VOX %>%
+    filter(muni_code %in% mc & election %in% c("2016_06", "2019_04")) %>%
+    group_by(fs_rm_2016s2_2018s2_bin, election) %>%
+    summarize(s = mean(VOX_share, na.rm=T)) %>%
+    mutate(party = "Vox"),
+  dl_PP %>%
+    filter(muni_code %in% mc & election %in% c("2016_06", "2019_04")) %>%
+    group_by(fs_rm_2016s2_2018s2_bin, election) %>%
+    summarize(s = mean(PP_share, na.rm=T)) %>%
+    mutate(party = "PP"),
+  dl_PSOE %>%
+    filter(muni_code %in% mc & election %in% c("2016_06", "2019_04")) %>%
+    group_by(fs_rm_2016s2_2018s2_bin, election) %>%
+    summarize(s = mean(PSOE_share, na.rm=T)) %>%
+    mutate(party = "PSOE")) %>%
+  pivot_wider(names_from = "election", names_prefix = "e", values_from = "s") %>%
+  rename(trt = fs_rm_2016s2_2018s2_bin)
+
+deco_did_c = subset(deco_did, trt == 0) %>%
+  rename(e2016_06_c = e2016_06, e2019_04_c = e2019_04)
+deco_did_t = subset(deco_did, trt == 1) %>%
+  rename(e2016_06_t = e2016_06, e2019_04_t = e2019_04)
+
+deco_did = cbind(deco_did_c[, -1], deco_did_t[, -c(1,2)]) %>%
+  mutate(
+    e2016_06_t = round(e2016_06_t, 2),
+    e2016_06_c = round(e2016_06_c, 2),
+    e2019_04_t = round(e2019_04_t, 2),
+    e2019_04_c = round(e2019_04_c, 2)) %>%
+  mutate(delta_0 = e2016_06_t - e2016_06_c,
+    delta_1 = e2019_04_t - e2019_04_c) %>%
+  mutate(dd = round(delta_1 - delta_0, 2))
+
+deco_did = deco_did[, c("party",
+  "e2016_06_c", "e2016_06_t", "delta_0",
+  "e2019_04_c", "e2019_04_t", "delta_1", "dd")]
+
+names(deco_did) = c("Party",
+  "$Control$", "$Treated$", "$\\Delta$",
+  "$Control$", "$Treated$", "$\\Delta$",
+  "$\\Delta_{2019} - \\Delta_{2016}$")
+
+# Write tex table
+fileconnection = file("main_models/output/did_deco.tex")
+writeLines(
+  paste0(
+    "\\begin{table}[!htbp] \\centering", "\n",
+    "\\caption{Mean electoral share in sample}", "\n",
+    "\\label{tab:did_deco}", "\n",
+    "\\small", "\n",
+    paste0("\\begin{tabular}{l", strrep("c", ncol(deco_did)-1), "}"), "\n",
+    "\\\\[-1.8ex]\\hline", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    "\\\\[-1.8ex]", "\n",
+    "& \\multicolumn{3}{c}{June 2016} & \\multicolumn{3}{c}{April 2019} & \\\\\\\\[-1.8]", "\n",
+    "\\cline{2-7}\\\\[-1.8ex]", "\n",
+    paste(names(deco_did), collapse = " & "), " \\\\", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    paste(deco_did[1,], collapse = " & "), " \\\\", "\n",
+    paste(deco_did[2,], collapse = " & "), " \\\\", "\n",
+    paste(deco_did[3,], collapse = " & "), " \\\\", "\n",
+    "\\hline", "\n",
+    "\\hline \\\\[-1.8ex]", "\n",
+    "\\end{tabular}", "\n",
+    "\\end{table}", "\n"
+  ), fileconnection)
+close(fileconnection)
+
+# ------------------------------
+# Difference-in-Differences models
+
 
 did_VOX0 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   factor(ccaa),

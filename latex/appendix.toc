@@ -1,9 +1,9 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {A1}Francoist street names}{2}{section.1}%
 \contentsline {section}{\numberline {A2}Descriptives}{4}{section.2}%
-\contentsline {section}{\numberline {A3}DiD sample and treatment strength}{6}{section.3}%
-\contentsline {section}{\numberline {A4}Descriptives on Francoist street name removals}{8}{section.4}%
-\contentsline {section}{\numberline {A5}Comparing treated vs control and sample vs out-of-sample}{11}{section.5}%
-\contentsline {section}{\numberline {A6}Additional cross-sectional analysis}{17}{section.6}%
-\contentsline {section}{\numberline {A7}Robustness tests (difference-in-differences)}{21}{section.7}%
-\contentsline {section}{\numberline {A8}First-difference models}{26}{section.8}%
+\contentsline {section}{\numberline {A3}DiD sample and treatment strength}{7}{section.3}%
+\contentsline {section}{\numberline {A4}Descriptives on Francoist street name removals}{9}{section.4}%
+\contentsline {section}{\numberline {A5}Comparing treated vs control and sample vs out-of-sample}{12}{section.5}%
+\contentsline {section}{\numberline {A6}Cross-sectional analysis}{18}{section.6}%
+\contentsline {section}{\numberline {A7}Robustness tests (difference-in-differences)}{23}{section.7}%
+\contentsline {section}{\numberline {A8}First-difference models}{28}{section.8}%
