@@ -5,3 +5,19 @@ Replication files for '[Do TJ policies cause backlash? Evidence from street name
 **Taskflow**
 
 ![taskflow](taskflow/workflow.jpeg)
+
+### Instructions
+
+There are two options to replicate the results:
+
+1. Download the whole repository and run each file separately. The taskflow graph above helps identifying which scripts should be run first.
+2. From the command line (Unix/macOS), you can do a full replication from scratch using the following script, which downloads the repository, cleans up all output files, and runs all scripts again:
+
+```shell
+git clone https://github.com/franvillamil/cuarteles_militares
+cd cuarteles_militares
+make clean
+make
+```
+
+In addition to `R`, you need to have `git` and [pdfcrop](https://manpages.ubuntu.com/manpages/precise/man1/pdfcrop.1.html) installed.
