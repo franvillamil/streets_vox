@@ -123,7 +123,7 @@ writeLines(
     "\\\\[-1.8ex]\\hline", "\n",
     "\\hline \\\\[-1.8ex]", "\n",
     "\\\\[-1.8ex]", "\n",
-    "& \\multicolumn{3}{c}{June 2016} & \\multicolumn{3}{c}{April 2019} & \\\\\\\\[-1.8]", "\n",
+    "& \\multicolumn{3}{c}{June 2016} & \\multicolumn{3}{c}{April 2019} & \\\\\\\\[-1.8ex]", "\n",
     "\\cline{2-7}\\\\[-1.8ex]", "\n",
     paste(names(deco_did), collapse = " & "), " \\\\", "\n",
     "\\hline \\\\[-1.8ex]", "\n",
