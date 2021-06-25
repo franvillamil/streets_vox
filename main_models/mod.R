@@ -173,7 +173,7 @@ my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
   model_list = main_did,
   omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
   label = "tab:main_did",
-  title = "Francoist street name removal and increase in electoral support for parties",
+  title = "Francoist street name removal and change in electoral support for parties",
   dep.var.labels = c("VOX", "VOX", "PP", "PP", "PSOE", "PSOE"),
   order = c("Constant"),
   covariate.labels = c("(Intercept)",
@@ -184,7 +184,7 @@ my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
     c("Controls", paste0("\\multicolumn{1}{c}{", rep(c("No", "Yes"), 3), "}")),
     c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", length(main_did)))
     ),
-  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Only municipalities that had at least one street with a Francoist name in $t_{0}$ were included in the sample.}")
+  notes_table = "\\parbox[t]{1\\textwidth}{\\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Only municipalities that had at least one street with a Francoist name in $t_{0}$ were included in the sample.}")
 
 # ------------------------------
 # Simulation (DiD)
@@ -221,12 +221,12 @@ sim_PSOE_est = calculate_did_estimate(depvar_label = "PSOE",
 sim = rbind(sim_VOX_est, sim_PP_est, sim_PSOE_est)
 
 # DiD estimates plot
-pdf("main_models/output/DiD_estimates.pdf", width = 5.5, height = 3)
+pdf("main_models/output/DiD_estimates.pdf", width = 5, height = 2.75)
 ggplot(sim, aes(x = depvar, y = mean)) +
   geom_point(shape = 1, size = 2) +
   geom_errorbar(aes(ymin = lwr, ymax = upr), width = 0) +
   geom_errorbar(aes(ymin = lwr90, ymax = upr90), size = 1.1, width = 0) +
-  geom_text(aes(label = round(mean, 2)), nudge_x = 0.15, size = 3) +
+  geom_text(aes(label = round(mean, 2)), nudge_x = 0.2, size = 3) +
   theme_classic() +
   theme(axis.text.y = element_text(size = 12),
     panel.background = element_blank(),
@@ -235,6 +235,6 @@ ggplot(sim, aes(x = depvar, y = mean)) +
     axis.ticks.y = element_blank()) +
   geom_hline(yintercept = 0, linetype = "dotted") +
   labs(x = "",
-    y = "\nIncrease in (%) vote share 2016-2019 due to\nFrancoist street name removal") +
+    y = "\nChange in (%) vote share 2016-2019 due to\nFrancoist street name removal") +
   coord_flip()
 dev.off()
