@@ -50,7 +50,8 @@
 \clubpenalty=10000
 
 \title{\Large Do TJ policies cause backlash?\\Evidence from street name changes in Spain}
-\author{Francisco Villamil\footnote{Juan March Institute--Carlos III University of Madrid} \and Laia Balcells\footnote{Georgetown University}}
+\author{}
+% \author{Francisco Villamil\footnote{Juan March Institute--Carlos III University of Madrid} \and Laia Balcells\footnote{Georgetown University}}
 \date{\today}
 
 % for word counting --------
@@ -203,10 +204,9 @@ We obtained the data from the Spanish Ministry of Interior\footnote{Results are 
 and calculated the share of valid votes for Vox in each municipality in the 2016 and 2019 general elections.\footnote{See section~\ref{app:timeline_elections} in the Appendix for a timeline of elections in Spain.}
 
 In addition, we also examine the electoral share of two mainstream parties, the Popular Party (\textit{Partido Popular}, PP), at the right, and the socialist party (\textit{Partido Socialista Obrero Español}, PSOE), at the left, to capture local shifts in political preferences.
-%Specifically, given that we are interested in a potential authoritarian backlash among conservative individuals, we want to explore whether the removal of Francoist street names is related to a general shift to the right or an increase in political polarization.
 
 We include a series of control variables at the local level.
-In particular, we include turnout in the April 2019 elections, (logged) population from the 2011 census, the (logged) number of Francoist street names in June 2016, the unemployment rate in January 2016, and a binary indicator of whether a leftist mayor won the May 2015 municipal elections.
+In particular, we include turnout in the June 2016 elections, (logged) population from the 2011 census, the (logged) number of Francoist street names in June 2016, the unemployment rate in January 2016, and a binary indicator of whether a leftist mayor won the May 2015 municipal elections.
 In addition, we also include fixed effects at the region level (Autonomous Communities).
 We show summary statistics of all variables in the Appendix (section~\ref{app:descriptives}).
 
@@ -227,15 +227,12 @@ The effect of street name removals is captured by $\beta_3$, the interaction bet
 
 As argued above, we only examine municipalities that still had Francoist street names in June 2016. Table~\ref{tab:sample_trt} shows how many of them renamed Francoist streets during the period of study.
 To use the same sample across the models for each party, we limit the sample to municipalities where Vox participated in June 2016.\footnote{Vox was a relatively new party in 2016 and did not field candidates in some provinces.}
-%we exclude from the sample municipalities where Vox did not participate in June 2016 elections, which leaves us with a total of 1169 municipalities.
 In the Appendix, we include detailed information about the sample and both treatment and control groups (sections~\ref{app:descriptives}-\ref{app:treated_vs_control_vs_outsample}), and show models for PP and PSOE using the full sample (section~\ref{app:robustness_did}).
 
 \input{tab/tab_sample_trt.tex}
 
-Focusing on municipalities that still had Francoist street names in 2016 implies that the DiD sample is more rightist than the average in Spain.\footnote{Municipalities that still had not changed Francoist names by late 2018 were portrayed as the `resistance' to the LHM \citep{Blanco-Elipe:2018aa}. Their dodging of the LHM was possible because of delays in the legal procedures or some form of `foot-dragging' by local authorities.} 
-%This makes the sample a hard test for our hypothesis, as the control group is comprised of municipalities where ``latent Francoism'' is more likely, and thus where Vox could likely grow more between 2016 and 2019.
+Focusing on municipalities that still had Francoist street names in 2016 implies that the DiD sample is more rightist than the average in Spain.\footnote{Municipalities that still had not changed Francoist names by late 2018 were portrayed as the `resistance' to the LHM \citep{Blanco-Elipe:2018aa}. Their dodging of the LHM was possible because of delays in the legal procedures or some form of `foot-dragging' by local authorities.}
 In the Appendix, we compare municipalities in the sample to those out of the sample (section~\ref{app:treated_vs_control_vs_outsample}).
-%, and include a test of the parallel trends assumption (section~\ref{app:robustness_did}).
 
 \section*{Results}
 
@@ -264,11 +261,10 @@ Second, removing Francoist street names is related to a decrease in electoral su
 
 Our findings could be confounded if Francoist street renaming was driven by the same factors also explaining a shift to far-right preferences.
 One possibility is that these street name changes took place in more conservative areas where Spanish nationalism was stronger.
-%We believe that any selection bias in the sample should be in the opposite direction from the results.
 In this case, we should see different trends before 2016 between municipalities that later removed Francoist street names and those that did not.
 Figure~\ref{fig:par_trends_norm} shows normalized electoral trends among control and treated groups for PP and Vox.
-Even though data for Vox only goes as far back as December 2015 elections, there are no distinct pre-treatment trends for the two parties for which we find an effect of Francoist street renaming.
-We show more detailed tests of the parallel trends assumption in the Appendix (section~\ref{app:robustness_did}).
+Although data for Vox only goes six months back in time, there are no distinct trends for the two parties for which we find an effect of Francoist street renaming before June 2016.
+We show data on pre-treatment trends in the Appendix (section~\ref{app:robustness_did}), even though a strict test of the parallel trends assumption is impossible given the absence of previous data on Vox, which emerged in 2014.
 
 \begin{figure*}[htb!]
 \centering
@@ -279,7 +275,6 @@ We show more detailed tests of the parallel trends assumption in the Appendix (s
 
 \end{figure*}
 
-
 In the Appendix, we include several additional analyses. We present cross-sectional models (section~\ref{app:crosssec}) using the independent variable in continuous form, tracking Francoist street name removals during different periods (including changes between 2001 and 2019), and using both support for Vox in the November 2019 elections as well as the change in support between April and November 2019 as dependent variables.
 The results are coherent with the DiD analyses. They also show that Francoist street name removals account for Vox's growth between 2016 and 2019 but not for the changes between April and November 2019, which suggests that any local effect due to a backlash over the politics of memory took place mainly during the period we analyze.
 
@@ -289,21 +284,12 @@ In every case, results do not significantly change when using alternative specif
 
 \section*{Conclusion}
 
-%In this article, we have explored the political effect of the removal of Francoist street names in Spain.
-%Our results suggest that this policy can cause a backlash. 
-
 Using local-level data, we analyze the political effect of Francoist street renaming in Spain and find evidence in favor of a backlash hypothesis. In the short-term, Francoist street name removals increase support for a far-right party, Vox, which has recently gained steam with a discourse grounded in an authoritarian and an exclusionary version of Spanish nationalism. Vox has grown in these places at the expense of the traditional conservative party, PP, but of the main left-wing party, PSOE, pointing to a process of asymmetric polarization resulting from this policy.
 
-The results from our analyses echo recent debates about symbolic TJ policies and memories of past conflicts in other countries. Our goal is not to take a normative stand against these policies. Despite potential short-term backlash effects, we believe that they can be highly beneficial in the long run. That is, these measures could well contribute to national reconciliation down the road. Moreover, TJ symbolic policies might have these unintended effects only where some political parties take electoral advantage of this issue. Asymmetric polarization does not have to be an automatic outcome of these policies and actions of other political parties can perhaps palliate it. For example, by countering narratives or compensating the aggrieved in other ways (i.e., relocating these symbols into a museum), interested political and social actors could limit the extent to which this discontentment can be opportunistically exploited by more extreme parties. The extent to which such remedial policies can work is nonetheless out of the scope of this paper. 
+The results from our analyses echo recent debates about symbolic TJ policies and memories of past conflicts in other countries. Our goal is not to take a normative stand against these policies. Despite potential short-term backlash effects, we believe that they can be highly beneficial in the long run. That is, these measures could well contribute to national reconciliation down the road. Moreover, TJ symbolic policies might have these unintended effects only where some political parties take electoral advantage of this issue. Asymmetric polarization does not have to be an automatic outcome of these policies and actions of other political parties can perhaps palliate it. For example, by countering narratives or compensating the aggrieved in other ways (i.e., relocating these symbols into a museum), interested political and social actors could limit the extent to which this discontentment can be opportunistically exploited by more extreme parties. The extent to which such remedial policies can work is nonetheless out of the scope of this paper.
 
 Finally, while we have focused on the removals of symbols, other TJ policies might not have similar backlash effects. For instance, recent research shows that TJ museums can promote reconciliation \citep{Balcells:2020aa}, and that reparations can increase political engagement among victims \citep{voytas:2021}. The overall effect of TJ might depend on the balance between different measures \citep{Olsen:2010aa, Loyle:2017aa}.
 Overall, this article contributes to an open and lively scholarly debate on the effectiveness of TJ policies.
-
-%Far from arguing against these types of policies, we think it is important to be aware of these potentially undesired effects when designing transitional justice policies. Specifically, two aspects merit further attention:
- %Moreover, even if it is the case that the removal of public symbols might cause backlash, this might not be the case for
-
-%All in all, this article focuses on a relatively unexplored question. Exploiting recent political events in Spain, we offer empirical evidence suggesting that, in the short run, symbolic transitional justice policies might have an unintended effect: an increased support for political actors siding with the former regime or perpetrators of violence.
-
 
 \newpage
 \begingroup

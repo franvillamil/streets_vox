@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 {\catcode`\|=0\catcode`\#=12\catcode`\@=11\catcode`\\=12
 |immediate|write|@auxout{\expandafter\ifx\csname
@@ -74,6 +74,12 @@ De~Brito AB, Enr{\'\i}quez CG \harvardand{} Aguilar P \harvardyearleft
 Elster J \harvardyearleft 2004\harvardyearright{} \emph{Closing the books:
   Transitional justice in historical perspective}.
 \newblock Cambridge University Press.
+
+\harvarditem{Ezquiaga}{2021}{Ezquiaga2021}
+Ezquiaga M \harvardyearleft 2021\harvardyearright{} Los militares franquistas
+  vuelven a 17 calles de {O}viedo.
+\newblock El País, March 25, 2021. Available at https://bit.ly/3qoGW05
+  (accessed 24/06/2021).
 
 \harvarditem{Fuente}{1980}{Fuente:1980aa}
 Fuente I \harvardyearleft 1980\harvardyearright{} {General{\'\i}simo se

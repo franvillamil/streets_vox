@@ -52,7 +52,7 @@ The following object is masked from ‘package:dplyr’:
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Wed, Oct 06, 2021 - 13:08:23
+% Date and time: Wed, Oct 06, 2021 - 13:58:25
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and electoral support for Vox} 
@@ -93,7 +93,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.283} & \multicolumn{1}{c}{0.310} & \mult
 `summarise()` has grouped output by 'fs_rm_2016s2_2018s2_bin'. You can override using the `.groups` argument.
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Wed, Oct 06, 2021 - 13:08:23
+% Date and time: Wed, Oct 06, 2021 - 13:58:25
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for parties} 

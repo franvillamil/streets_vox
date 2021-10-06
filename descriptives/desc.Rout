@@ -116,7 +116,7 @@ null device
           1 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Wed, Oct 06, 2021 - 13:08:16
+% Date and time: Wed, Oct 06, 2021 - 13:58:18
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2016} 
@@ -166,7 +166,7 @@ Akaike Inf. Crit. & \multicolumn{1}{c}{6,625.822} & \multicolumn{1}{c}{6,839.057
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Wed, Oct 06, 2021 - 13:08:16
+% Date and time: Wed, Oct 06, 2021 - 13:58:18
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2001} 
