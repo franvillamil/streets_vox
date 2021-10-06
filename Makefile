@@ -6,15 +6,15 @@
 
 raw_streets = download_str/output/V_072001.csv download_str/output/V_012011.csv download_str/output/V_072011.csv download_str/output/V_012012.csv download_str/output/V_072012.csv download_str/output/V_012013.csv download_str/output/V_072013.csv download_str/output/V_012014.csv download_str/output/V_072014.csv download_str/output/V_012015.csv download_str/output/V_072015.csv download_str/output/V_012016.csv download_str/output/V_072016.csv download_str/output/V_012017.csv download_str/output/V_072017.csv download_str/output/V_012018.csv download_str/output/V_072018.csv download_str/output/V_012019.csv download_str/output/V_072019.csv download_str/output/V_012020.csv download_str/output/V_072020.csv
 agg_streets = str_agg/output/fs.csv str_agg/output/fs_prov.csv str_agg/output/fs_all.csv
-dataset = dataset/output/data.csv dataset/output/dl_VOX.csv dataset/output/dl_PP.csv dataset/output/dl_PSOE.csv
-out_main_mod = main_models/output/DiD_estimates.pdf main_models/output/tab_main_did.tex main_models/output/tab_cs.tex
-out_robust = robust/output/tab_cs_limited_2011.tex robust/output/tab_cs_all_2011.tex robust/output/tab_cs_change.tex robust/output/tab_vox_robustness.tex robust/output/tab_psoe_robustness.tex robust/output/tab_pp_robustness.tex robust/output/tab_logit_fs_rm.tex
-out_desc = descriptives/output/francoist_name_list.tex descriptives/output/changes_by_year.pdf descriptives/output/fs_by_year.pdf descriptives/output/changes_by_prov.pdf descriptives/output/fs_by_prov.pdf descriptives/output/ttest_sample_fs2016.tex descriptives/output/ttest_sample_fs2001.tex descriptives/output/tab_insample.tex descriptives/output/tab_insample2001.tex descriptives/output/trt_strength.pdf descriptives/output/trt_remaining.pdf descriptives/output/trt_strength_st2016.pdf descriptives/output/mean_trt_treated.tex descriptives/output/par_trends_norm.pdf descriptives/output/tab_descriptives.tex descriptives/output/map.pdf descriptives/output/map_full.pdf
+dataset = dataset/dataset.Rout
+out_main_mod = main_models/mod.Rout
+out_robust = robust/rob.Rout
+out_desc = descriptives/desc.Rout
 
 # ------------------------
 # Main recipes
 
-all: empirics taskflow
+all: empirics taskflow latex
 empirics: $(dataset) $(out_desc) $(out_main_mod) $(out_robust)
 
 clean:
@@ -26,44 +26,46 @@ taskflow:
 	dot -Grankdir=LR -Tpdf taskflow/dependency_list.txt -o taskflow/workflow.pdf
 	sips -s format jpeg taskflow/workflow.pdf --out taskflow/workflow.jpeg
 
+latex:
+	cp */output/*.pdf writing/img
+	cp */output/*.tex writing/tab
+
 # ------------------------
 # Data
 
 $(raw_streets): download_str/download.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 str_changes/output/changes.csv: str_changes/str_chg.R $(raw_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 $(agg_streets): str_agg/agg.R input/calles_franquistas.txt str_changes/output/changes.csv $(raw_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 download_elec/output/elec.csv: download_elec/elec.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 $(dataset): dataset/dataset.R input/unemployment_01_2019.csv input/unemployment_01_2016.csv input/major_izq_muni.csv input/INE_census.csv str_agg/output/fs.csv download_elec/output/elec.csv
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 # ------------------------
 # Analyses and descriptives
 
 $(out_main_mod): main_models/mod.R func/functions_did.R func/my_stargazer.R $(dataset)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 $(out_robust): robust/rob.R $(dataset) func/my_stargazer.R
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
 $(out_desc): descriptives/desc.R input/calles_franquistas.txt str_changes/output/changes.csv $(agg_streets)
 	mkdir -p $(<D)/output
-	Rscript --no-save --verbose $< 2>&1 | tee $(<F)out
+	Rscript --no-save --verbose $< 2>&1 | tee $<out
 	pdfcrop descriptives/output/map.pdf descriptives/output/map.pdf
 	pdfcrop descriptives/output/map_full.pdf descriptives/output/map_full.pdf
-
-# cp */output/*.pdf writing/img;cp */output/*.tex writing/tab

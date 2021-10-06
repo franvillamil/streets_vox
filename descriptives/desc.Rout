@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=descriptives/desc.R'
 
 
-Attache Paket: ‘dplyr’
+Attaching package: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,21 +19,21 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attache Paket: ‘MASS’
+Attaching package: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
     select
 
-Lade nötiges Paket: sp
-rgdal: version: 1.5-16, (SVN revision 1050)
+Loading required package: sp
+rgdal: version: 1.5-23, (SVN revision 1121)
 Geospatial Data Abstraction Library extensions to R successfully loaded
 Loaded GDAL runtime: GDAL 2.4.2, released 2019/06/28
 Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/gdal
 GDAL binary built with GEOS: FALSE 
 Loaded PROJ runtime: Rel. 5.2.0, September 15th, 2018, [PJ_VERSION: 520]
 Path to PROJ shared files: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/proj
-Linking to sp version:1.4-2
+Linking to sp version:1.4-5
 Overwritten PROJ_LIB was /Library/Frameworks/R.framework/Versions/3.6/Resources/library/rgdal/proj
 rgeos version: 0.5-5, (SVN revision 640)
  GEOS runtime version: 3.7.2-CAPI-1.11.2 
@@ -106,7 +106,6 @@ null device
           1 
 null device 
           1 
-`summarise()` ungrouping output (override with `.groups` argument)
 null device 
           1 
 null device 
@@ -117,7 +116,7 @@ null device
           1 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:07
+% Date and time: Wed, Oct 06, 2021 - 13:08:16
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2016} 
@@ -167,7 +166,7 @@ Akaike Inf. Crit. & \multicolumn{1}{c}{6,625.822} & \multicolumn{1}{c}{6,839.057
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:08
+% Date and time: Wed, Oct 06, 2021 - 13:08:16
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Voting for PP/PSOE and having a Francoist street name in June 2001} 
@@ -221,6 +220,6 @@ null device
           1 
 null device 
           1 
-`summarise()` regrouping output by 'party', 'election_date' (override with `.groups` argument)
+`summarise()` has grouped output by 'party', 'election_date'. You can override using the `.groups` argument.
 null device 
           1 

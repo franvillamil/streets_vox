@@ -25,7 +25,6 @@ dl_PSOE = read.csv("dataset/output/dl_PSOE.csv")
 # ------------------------------
 # Cross-sectional models
 
-
 m_cs1 = lm(VOX2019_04 ~ l_fs_rm_2001s2_2018s2 +
   unemp_2019 + part2019_04 + lpop2011 + factor(ccaa),
   data = subset(data, fs_2001_06 > 0))
@@ -41,7 +40,6 @@ m_cs3 = lm(VOX2019_04 ~ fs_rm_2001s2_2018s2_bin +
 m_cs4 = lm(VOX2019_11 ~ fs_rm_2001s2_2018s2_bin +
   unemp_2019 + part2019_11 + lpop2011 + factor(ccaa),
   data = subset(data, fs_2001_06 > 0))
-
 
 my_stargazer(dest_file = "main_models/output/tab_cs.tex",
   model_list = list(m_cs1, m_cs2, m_cs3, m_cs4),
@@ -154,24 +152,22 @@ did_PSOE0 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
   data = subset(dl_PSOE, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_VOX1 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_VOX, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PP1 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_PP, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 did_PSOE1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_PSOE, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 main_did = list(did_VOX0, did_VOX1, did_PP0, did_PP1, did_PSOE0, did_PSOE1)
 
-
-
 my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
   model_list = main_did,
-  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016", "part2016_06"),
   label = "tab:main_did",
   title = "Francoist street name removal and change in electoral support for parties",
   dep.var.labels = c("VOX", "VOX", "PP", "PP", "PSOE", "PSOE"),
@@ -191,9 +187,10 @@ my_stargazer(dest_file = "main_models/output/tab_main_did.tex",
 
 # Extra variables for simulation
 extra_vars = data.frame(major_2015_izq = 0,
-  lpop2011 = mean(data$lpop2011, na.rm = T),
-  l_fs_2016_06 = mean(data$l_fs_2016_06, na.rm = T),
-  unemp_2016 = mean(data$unemp_2016, na.rm = T))
+  lpop2011 = mean(data$lpop2011, na.rm = TRUE),
+  l_fs_2016_06 = mean(data$l_fs_2016_06, na.rm = TRUE),
+  unemp_2016 = mean(data$unemp_2016, na.rm = TRUE),
+  part2016_06 = mean(data$part2016_06, na.rm = TRUE))
 
 # Setting a seed
 set.seed(304261)

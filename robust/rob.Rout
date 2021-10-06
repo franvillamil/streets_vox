@@ -2,7 +2,7 @@ running
   '/Library/Frameworks/R.framework/Versions/3.6/Resources/bin/R --slave --no-restore --no-save --file=robust/rob.R'
 
 
-Attache Paket: ‘dplyr’
+Attaching package: ‘dplyr’
 
 The following objects are masked from ‘package:stats’:
 
@@ -19,29 +19,33 @@ Please cite as:
  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
 
 
-Attache Paket: ‘MASS’
+Attaching package: ‘MASS’
 
 The following object is masked from ‘package:dplyr’:
 
     select
 
-Lade nötiges Paket: zoo
+Loading required package: zoo
 
-Attache Paket: ‘zoo’
+Attaching package: ‘zoo’
 
 The following objects are masked from ‘package:base’:
 
     as.Date, as.Date.numeric
 
-Lade nötiges Paket: mice
+Loading required package: mice
 
-Attache Paket: ‘mice’
+Attaching package: ‘mice’
+
+The following object is masked from ‘package:stats’:
+
+    filter
 
 The following objects are masked from ‘package:base’:
 
     cbind, rbind
 
-* miceadds 3.9-14 (2020-05-09 11:27:27)
+* miceadds 3.11-6 (2021-01-21 11:48:47)
 [[1]]
 [1] "dplyr"     "stats"     "graphics"  "grDevices" "utils"     "datasets" 
 [7] "methods"   "base"     
@@ -84,7 +88,7 @@ The following objects are masked from ‘package:base’:
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:20
+% Date and time: Wed, Oct 06, 2021 - 13:08:27
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for Vox during 2019} 
@@ -118,7 +122,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.075} & \multicolumn{1}{c}{0.125} \\
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:27
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018)} 
@@ -154,7 +158,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.440} & \multicolumn{1}{c}{0.497} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:27
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox and Francoist street name removal (2011--2018), limited sample} 
@@ -190,7 +194,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.260} & \multicolumn{1}{c}{0.287} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:27
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods} 
@@ -224,7 +228,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.283} & \multicolumn{1}{c}{0.284} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:27
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Electoral support for Vox in 2019 and Francoist street name removal across different periods (in continuous form)} 
@@ -258,7 +262,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.282} & \multicolumn{1}{c}{0.283} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for Vox} 
@@ -286,7 +290,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{-0.005} & \multicolumn{1}{c}{0.200} & \mul
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:21
+% Date and time: Wed, Oct 06, 2021 - 13:08:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{First differences model on change in support for PP} 
@@ -314,7 +318,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.038} & \multicolumn{1}{c}{0.170} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:22
+% Date and time: Wed, Oct 06, 2021 - 13:08:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for Vox} 
@@ -325,32 +329,32 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.038} & \multicolumn{1}{c}{0.170} & \mult
 \hline \\[-1.8ex] 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
 \hline \\[-1.8ex] 
- (Intercept) & -0.968^{**} & -0.969^{**} & -0.929^{**} & 0.127 \\ 
-  & (0.326) & (0.326) & (0.324) & (0.399) \\ 
-  Francoist street name removal & -0.078 & -0.066 & -0.163 & -0.231 \\ 
-  & (0.220) & (0.215) & (0.188) & (0.253) \\ 
-  Election December 2015 & -0.101 & -0.102 & -0.109 & -0.119 \\ 
-  & (0.148) & (0.149) & (0.144) & (0.159) \\ 
+ (Intercept) & 1.999^{*} & 1.972^{*} & 2.012^{*} & 4.931^{***} \\ 
+  & (0.953) & (0.952) & (0.953) & (1.154) \\ 
+  Francoist street name removal & -0.053 & -0.053 & -0.146 & -0.200 \\ 
+  & (0.220) & (0.215) & (0.188) & (0.252) \\ 
+  Election December 2015 & -0.105 & -0.105 & -0.112 & -0.127 \\ 
+  & (0.148) & (0.149) & (0.144) & (0.158) \\ 
   Election April 2019 & 12.319^{***} & 12.305^{***} & 12.300^{***} & 12.898^{***} \\ 
-  & (0.142) & (0.144) & (0.139) & (0.153) \\ 
-  Francoist removal $\times$ Dec 2015 & -0.019 & -0.011 & 0.021 & -0.048 \\ 
-  & (0.314) & (0.306) & (0.253) & (0.362) \\ 
+  & (0.142) & (0.143) & (0.138) & (0.152) \\ 
+  Francoist removal $\times$ Dec 2015 & -0.020 & -0.015 & 0.018 & -0.043 \\ 
+  & (0.313) & (0.306) & (0.253) & (0.361) \\ 
   Francoist removal $\times$ April 2019 & 0.724^{*} & 0.735^{*} & 0.746^{**} & 0.789^{*} \\ 
-  & (0.299) & (0.293) & (0.244) & (0.347) \\ 
+  & (0.299) & (0.292) & (0.244) & (0.346) \\ 
  \hline \\[-1.8ex] 
 Controls & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
 CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
 Observations & \multicolumn{1}{c}{3,303} & \multicolumn{1}{c}{3,303} & \multicolumn{1}{c}{3,303} & \multicolumn{1}{c}{2,259} \\ 
-R$^{2}$ & \multicolumn{1}{c}{0.802} & \multicolumn{1}{c}{0.802} & \multicolumn{1}{c}{0.802} & \multicolumn{1}{c}{0.844} \\ 
-Adjusted R$^{2}$ & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.843} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.803} & \multicolumn{1}{c}{0.803} & \multicolumn{1}{c}{0.803} & \multicolumn{1}{c}{0.846} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.844} \\ 
 \hline 
 \hline \\[-1.8ex] 
-\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (December 2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
+\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (December 2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
 \end{tabular} 
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:22
+% Date and time: Wed, Oct 06, 2021 - 13:08:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for PP} 
@@ -361,48 +365,48 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.801} & \multicolumn{1}{c}{0.801} & \mult
 \hline \\[-1.8ex] 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
 \hline \\[-1.8ex] 
- (Intercept) & 49.323^{***} & 49.312^{***} & 49.484^{***} & 43.384^{***} \\ 
-  & (0.593) & (0.594) & (0.589) & (0.751) \\ 
-  Francoist street name removal & 1.009^{*} & 0.974^{+} & 0.841^{+} & 0.634 \\ 
-  & (0.511) & (0.502) & (0.436) & (0.695) \\ 
-  Election March 2000 & 8.091^{***} & 8.015^{***} & 8.132^{***} & 8.539^{***} \\ 
+ (Intercept) & 43.725^{***} & 43.657^{***} & 43.846^{***} & 41.813^{***} \\ 
+  & (1.522) & (1.522) & (1.521) & (2.101) \\ 
+  Francoist street name removal & 0.987^{+} & 0.963^{+} & 0.823^{+} & 0.624 \\ 
+  & (0.511) & (0.501) & (0.436) & (0.695) \\ 
+  Election March 2000 & 8.090^{***} & 8.014^{***} & 8.132^{***} & 8.539^{***} \\ 
   & (0.374) & (0.379) & (0.363) & (0.428) \\ 
   Election March 2004 & 3.291^{***} & 3.273^{***} & 3.310^{***} & 3.614^{***} \\ 
-  & (0.374) & (0.379) & (0.363) & (0.428) \\ 
+  & (0.374) & (0.379) & (0.362) & (0.428) \\ 
   Election March 2008 & 4.267^{***} & 4.264^{***} & 4.218^{***} & 6.074^{***} \\ 
-  & (0.374) & (0.379) & (0.363) & (0.428) \\ 
+  & (0.374) & (0.379) & (0.362) & (0.428) \\ 
   Election November 2011 & 10.569^{***} & 10.561^{***} & 10.538^{***} & 12.127^{***} \\ 
-  & (0.374) & (0.379) & (0.363) & (0.428) \\ 
+  & (0.374) & (0.379) & (0.362) & (0.428) \\ 
   Election December 2015 & -4.075^{***} & -4.063^{***} & -4.039^{***} & -4.218^{***} \\ 
-  & (0.374) & (0.379) & (0.363) & (0.428) \\ 
-  Election April 2019 & -17.382^{***} & -17.343^{***} & -17.379^{***} & -17.657^{***} \\ 
-  & (0.376) & (0.381) & (0.364) & (0.428) \\ 
-  Francoist removal $\times$ March 2000 & -0.106 & 0.161 & -0.241 & 0.132 \\ 
-  & (0.711) & (0.698) & (0.594) & (0.970) \\ 
+  & (0.374) & (0.379) & (0.362) & (0.428) \\ 
+  Election April 2019 & -17.381^{***} & -17.343^{***} & -17.379^{***} & -17.657^{***} \\ 
+  & (0.376) & (0.380) & (0.364) & (0.428) \\ 
+  Francoist removal $\times$ March 2000 & -0.105 & 0.161 & -0.240 & 0.132 \\ 
+  & (0.711) & (0.697) & (0.593) & (0.970) \\ 
   Francoist removal $\times$ March 2004 & 0.741 & 0.754 & 0.634 & 0.674 \\ 
-  & (0.711) & (0.697) & (0.594) & (0.970) \\ 
+  & (0.711) & (0.697) & (0.593) & (0.970) \\ 
   Francoist removal $\times$ March 2008 & -0.631 & -0.581 & -0.430 & -0.087 \\ 
-  & (0.711) & (0.697) & (0.594) & (0.970) \\ 
+  & (0.711) & (0.697) & (0.593) & (0.970) \\ 
   Francoist removal $\times$ Nov 2011 & -0.425 & -0.369 & -0.295 & 0.040 \\ 
-  & (0.711) & (0.697) & (0.594) & (0.970) \\ 
+  & (0.711) & (0.697) & (0.593) & (0.970) \\ 
   Francoist removal $\times$ Dec 2015 & -0.007 & -0.049 & -0.132 & -0.158 \\ 
-  & (0.711) & (0.697) & (0.594) & (0.970) \\ 
-  Francoist removal $\times$ April 2019 & -1.422^{*} & -1.466^{*} & -1.352^{*} & -1.781^{+} \\ 
-  & (0.712) & (0.699) & (0.594) & (0.970) \\ 
+  & (0.711) & (0.697) & (0.593) & (0.970) \\ 
+  Francoist removal $\times$ April 2019 & -1.423^{*} & -1.466^{*} & -1.352^{*} & -1.781^{+} \\ 
+  & (0.712) & (0.698) & (0.594) & (0.970) \\ 
  \hline \\[-1.8ex] 
 Controls & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
 CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
 Observations & \multicolumn{1}{c}{11,325} & \multicolumn{1}{c}{11,325} & \multicolumn{1}{c}{11,325} & \multicolumn{1}{c}{5,502} \\ 
-R$^{2}$ & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.718} \\ 
-Adjusted R$^{2}$ & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.717} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.684} & \multicolumn{1}{c}{0.684} & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.718} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.683} & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.717} \\ 
 \hline 
 \hline \\[-1.8ex] 
-\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
+\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
 \end{tabular} 
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:23
+% Date and time: Wed, Oct 06, 2021 - 13:08:28
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Francoist street name removal and change in electoral support for PSOE} 
@@ -413,9 +417,9 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \mult
 \hline \\[-1.8ex] 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
 \hline \\[-1.8ex] 
- (Intercept) & 43.175^{***} & 43.245^{***} & 43.096^{***} & 51.206^{***} \\ 
-  & (0.562) & (0.564) & (0.559) & (0.705) \\ 
-  Francoist street name removal & -0.564 & -0.786 & -0.037 & 0.310 \\ 
+ (Intercept) & 42.613^{***} & 42.699^{***} & 42.595^{***} & 46.737^{***} \\ 
+  & (1.440) & (1.441) & (1.440) & (1.970) \\ 
+  Francoist street name removal & -0.566 & -0.788 & -0.039 & 0.281 \\ 
   & (0.490) & (0.481) & (0.415) & (0.654) \\ 
   Election March 2000 & 6.449^{***} & 6.420^{***} & 6.456^{***} & 7.318^{***} \\ 
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
@@ -423,23 +427,23 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.682} & \multicolumn{1}{c}{0.682} & \mult
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
   Election March 2008 & -5.501^{***} & -5.565^{***} & -5.396^{***} & -6.722^{***} \\ 
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
-  Election November 2011 & -9.073^{***} & -9.160^{***} & -9.044^{***} & -10.212^{***} \\ 
+  Election November 2011 & -9.073^{***} & -9.160^{***} & -9.044^{***} & -10.213^{***} \\ 
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
   Election December 2015 & -9.755^{***} & -9.839^{***} & -9.682^{***} & -10.713^{***} \\ 
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
   Election April 2019 & -5.127^{***} & -5.184^{***} & -5.066^{***} & -6.637^{***} \\ 
   & (0.357) & (0.361) & (0.346) & (0.403) \\ 
-  Francoist removal $\times$ March 2000 & -1.026 & -0.863 & -0.994^{+} & -1.004 \\ 
+  Francoist removal $\times$ March 2000 & -1.025 & -0.863 & -0.994^{+} & -1.003 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
-  Francoist removal $\times$ March 2004 & -0.477 & -0.232 & -0.632 & -0.737 \\ 
+  Francoist removal $\times$ March 2004 & -0.476 & -0.232 & -0.632 & -0.736 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
-  Francoist removal $\times$ March 2008 & 0.402 & 0.595 & 0.021 & -0.208 \\ 
+  Francoist removal $\times$ March 2008 & 0.402 & 0.596 & 0.021 & -0.208 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
-  Francoist removal $\times$ Nov 2011 & 1.120^{+} & 1.344^{*} & 0.959^{+} & 0.418 \\ 
+  Francoist removal $\times$ Nov 2011 & 1.121^{+} & 1.344^{*} & 0.959^{+} & 0.419 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
-  Francoist removal $\times$ Dec 2015 & 1.234^{+} & 1.443^{*} & 0.916 & 0.158 \\ 
+  Francoist removal $\times$ Dec 2015 & 1.235^{+} & 1.443^{*} & 0.916 & 0.159 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
-  Francoist removal $\times$ April 2019 & 0.801 & 0.946 & 0.551 & 0.139 \\ 
+  Francoist removal $\times$ April 2019 & 0.801 & 0.946 & 0.551 & 0.140 \\ 
   & (0.677) & (0.664) & (0.563) & (0.911) \\ 
  \hline \\[-1.8ex] 
 Controls & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
@@ -449,12 +453,12 @@ R$^{2}$ & \multicolumn{1}{c}{0.572} & \multicolumn{1}{c}{0.572} & \multicolumn{1
 Adjusted R$^{2}$ & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.669} \\ 
 \hline 
 \hline \\[-1.8ex] 
-\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
+\multicolumn{5}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}} \\ 
 \end{tabular} 
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:23
+% Date and time: Wed, Oct 06, 2021 - 13:08:29
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Main models using conventional, robust or clustered SE} 
@@ -467,19 +471,19 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.570} & \multicolumn{1}{c}{0.570} & \mult
  & \multicolumn{2}{c}{} & \multicolumn{2}{c}{Het. Robust SE} & \multicolumn{2}{c}{Clustered SE} \\ 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\ 
 \hline \\[-1.8ex] 
- (Intercept) & -1.470^{**} & 54.479^{***} & -1.470^{***} & 54.479^{***} & -1.470^{***} & 54.479^{***} \\ 
-  & (0.451) & (0.988) & (0.434) & (1.121) & (0.432) & (1.466) \\ 
-  Francoist st name removal & -0.132 & 1.324^{*} & -0.132 & 1.324^{*} & -0.132 & 1.324^{*} \\ 
-  & (0.262) & (0.574) & (0.128) & (0.633) & (0.129) & (0.665) \\ 
+ (Intercept) & 2.748^{*} & 46.305^{***} & 2.748^{*} & 46.305^{***} & 2.748^{*} & 46.305^{***} \\ 
+  & (1.337) & (2.932) & (1.367) & (3.375) & (1.334) & (4.502) \\ 
+  Francoist st name removal & -0.098 & 1.257^{*} & -0.098 & 1.257^{*} & -0.098 & 1.257^{+} \\ 
+  & (0.262) & (0.574) & (0.130) & (0.628) & (0.130) & (0.659) \\ 
   Election April 2019 & 12.319^{***} & -17.350^{***} & 12.319^{***} & -17.350^{***} & 12.319^{***} & -17.350^{***} \\ 
-  & (0.167) & (0.366) & (0.160) & (0.361) & (0.171) & (0.188) \\ 
+  & (0.167) & (0.366) & (0.159) & (0.361) & (0.171) & (0.188) \\ 
   Removal $\times$ April 2019 & 0.724^{*} & -1.731^{*} & 0.724^{+} & -1.731^{*} & 0.724^{+} & -1.731^{***} \\ 
-  & (0.352) & (0.771) & (0.381) & (0.782) & (0.403) & (0.431) \\ 
+  & (0.351) & (0.769) & (0.381) & (0.777) & (0.403) & (0.431) \\ 
  \hline \\[-1.8ex] 
 CCAA Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
 Observations & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} & \multicolumn{1}{c}{2,310} \\ 
-R$^{2}$ & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} & \multicolumn{1}{c}{0.768} & \multicolumn{1}{c}{0.703} \\ 
-Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.769} & \multicolumn{1}{c}{0.705} & \multicolumn{1}{c}{0.769} & \multicolumn{1}{c}{0.705} & \multicolumn{1}{c}{0.769} & \multicolumn{1}{c}{0.705} \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.767} & \multicolumn{1}{c}{0.702} & \multicolumn{1}{c}{0.767} & \multicolumn{1}{c}{0.702} & \multicolumn{1}{c}{0.767} & \multicolumn{1}{c}{0.702} \\ 
 \hline 
 \hline \\[-1.8ex] 
 \multicolumn{7}{c}{\parbox[t]{0.85\textwidth}{\textit{Note:} $+ p<0.1; * p<0.05; ** p<0.01; *** p<0.001$. Clustered SE at the level of municipalities.}} \\ 
@@ -487,7 +491,7 @@ Adjusted R$^{2}$ & \multicolumn{1}{c}{0.766} & \multicolumn{1}{c}{0.701} & \mult
 \end{table} 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Fri, Jun 25, 2021 - 11:32:23
+% Date and time: Wed, Oct 06, 2021 - 13:08:29
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \caption{Logit regression on Francoist street name removal (2016--2018)} 

@@ -249,19 +249,19 @@ my_stargazer(dest_file = "robust/output/tab_firstdiff_pp.tex",
 
 # Also including elections before 2016
 did_VOX_alt1 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_VOX)
 # Extending DV to first half of 2019
 did_VOX_alt2 = lm(VOX_share ~ fs_rm_2016s2_2019s1_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_VOX)
 # Using DV as continuous (log n changes)
 did_VOX_alt3 = lm(VOX_share ~ l_fs_rm_2016s2_2018s2 * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_VOX)
 # Also municipalities where VOX got votes in 2016
 did_VOX_alt4 = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_VOX, muni_code %in% VOX2016_above0))
 
 # Change coefficient names to plot together in stargazer
@@ -280,7 +280,7 @@ names(did_VOX_alt4_m$coefficients) = gsub("fs_rm_2016s2_2018s2_bin", "fsn_remova
 
 my_stargazer(dest_file = "robust/output/tab_vox_robustness.tex",
   model_list = list(did_VOX_alt1_m, did_VOX_alt2_m, did_VOX_alt3_m, did_VOX_alt4_m),
-  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016", "part2016_06"),
   label = "tab:vox_robustness",
   title = "Francoist street name removal and change in electoral support for Vox",
   order = c("Constant"),
@@ -296,22 +296,22 @@ my_stargazer(dest_file = "robust/output/tab_vox_robustness.tex",
     c("Controls", rep("\\multicolumn{1}{c}{Yes}", 4)),
     c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 4))
     ),
-  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (December 2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (December 2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
 
 # ------------------------------
 # DiD models (PP)
 
 did_PP_alt1 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PP)
 did_PP_alt2 = lm(PP_share ~ fs_rm_2016s2_2019s1_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PP)
 did_PP_alt3 = lm(PP_share ~ l_fs_rm_2016s2_2018s2 * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PP)
 did_PP_alt4 = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_PP, muni_code %in% VOX2016_above0))
 
 # Change coefficient names to plot together in stargazer
@@ -330,7 +330,7 @@ names(did_PP_alt4_m$coefficients) = gsub("fs_rm_2016s2_2018s2_bin", "fsn_removal
 
 my_stargazer(dest_file = "robust/output/tab_pp_robustness.tex",
   model_list = list(did_PP_alt1_m, did_PP_alt2_m, did_PP_alt3_m, did_PP_alt4_m),
-  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+  omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016", "part2016_06"),
   label = "tab:pp_robustness",
   covariate.labels = c("(Intercept)",
     "Francoist street name removal",
@@ -354,22 +354,22 @@ my_stargazer(dest_file = "robust/output/tab_pp_robustness.tex",
     c("Controls", rep("\\multicolumn{1}{c}{Yes}", 4)),
     c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 4))
     ),
-  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+  notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
 
 # ------------------------------
 # DiD models (PSOE)
 
 did_PSOE_alt1 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PSOE)
 did_PSOE_alt2 = lm(PSOE_share ~ fs_rm_2016s2_2019s1_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PSOE)
 did_PSOE_alt3 = lm(PSOE_share ~ l_fs_rm_2016s2_2018s2 * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = dl_PSOE)
 did_PSOE_alt4 = lm(PSOE_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_PSOE, muni_code %in% VOX2016_above0))
 
 # Change coefficient names to plot together in stargazer
@@ -388,7 +388,7 @@ names(did_PSOE_alt4_m$coefficients))
 
 my_stargazer(dest_file = "robust/output/tab_psoe_robustness.tex",
 model_list = list(did_PSOE_alt1_m, did_PSOE_alt2_m, did_PSOE_alt3_m, did_PSOE_alt4_m),
-omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016", "part2016_06"),
 label = "tab:psoe_robustness",
 covariate.labels = c("(Intercept)",
   "Francoist street name removal",
@@ -412,7 +412,7 @@ add.lines=list(
   c("Controls", rep("\\multicolumn{1}{c}{Yes}", 4)),
   c("CCAA Fixed Effects", rep("\\multicolumn{1}{c}{Yes}", 4))
   ),
-notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
+notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05$; ** $p<0.01$; *** $p<0.001$. All models also include elections before June 2016 (2000--2015). Model 2 extends the DV (name removal) to the first half of 2019. Model 3 uses the IV in continuous form (logged number of changes). Model 4 restricts the sample to municipalities where Vox got more than 0 votes. Controls include a dummy for a leftist major elected in 2015 local elections, logged population in 2011, logged number of Francoist streets in $t_{0}$, turnout in June 2016 elections, and the unemployment rate in January 2016. Only municipalities that had at least one street with a Francoist name in $t_{0}$ (June 2016) were included in the sample.}")
 
 # ------------------------------
 # Trying different SEs (R&R response memo)
@@ -421,17 +421,17 @@ notes_table = "\\parbox[t]{0.85\\textwidth}{\\textit{Note:} + $p<0.1$; * $p<0.05
 mc = unique(subset(dl_VOX, election %in% c("2016_06", "2019_04"))$muni_code)
 
 did_VOX_se = lm(VOX_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_VOX, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 did_PP_se = lm(PP_share ~ fs_rm_2016s2_2018s2_bin * factor(election) +
-  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + factor(ccaa),
+  major_2015_izq + lpop2011 + l_fs_2016_06 + unemp_2016 + part2016_06 + factor(ccaa),
   data = subset(dl_PP, muni_code %in% mc & election %in% c("2016_06", "2019_04")))
 
 m_se = list(did_VOX_se, did_PP_se)
 filecon = file("robust/output/tab_models_se.tex")
 writeLines(
   stargazer(rep(m_se, 3),
-    omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016"),
+    omit = c("ccaa", "major_2015_izq", "lpop2011", "l_fs_2016_06", "unemp_2016", "part2016_06"),
     title = "Main models using conventional, robust or clustered SE",
     label = "tab:models_se",
     order = "Constant",
