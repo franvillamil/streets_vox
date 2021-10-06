@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: rap.bst
+Database file #1: REF.bib
+Warning--there's a number but no volume in Grossman:2016
+You've used 31 entries,
+            2871 wiz_defined-function locations,
+            810 strings with 11020 characters,
+and the built_in function-call counts, 23845 in all, are:
+= -- 2461
+> -- 509
+< -- 48
++ -- 205
+- -- 157
+* -- 1651
+:= -- 3177
+add.period$ -- 62
+call.type$ -- 31
+change.case$ -- 204
+chr.to.int$ -- 32
+cite$ -- 32
+duplicate$ -- 2270
+empty$ -- 1877
+format.name$ -- 274
+if$ -- 4843
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 223
+newline$ -- 133
+num.names$ -- 155
+pop$ -- 960
+preamble$ -- 1
+purify$ -- 176
+quote$ -- 0
+skip$ -- 525
+stack$ -- 0
+substring$ -- 2342
+swap$ -- 586
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 360
+warning$ -- 1
+while$ -- 174
+width$ -- 0
+write$ -- 374
+(There was 1 warning)
