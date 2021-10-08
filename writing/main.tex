@@ -93,7 +93,7 @@ Our design exploits some of the changes brought about in Spain by the 2007 Law o
 
 Traditional conservative parties in Spain have generally opposed TJ policies and have been adamant about sticking to the `pact of forgetting' that characterized the transition to democracy in the late 1970s \citep[e.g.][]{Fuente:1980aa}.
 Yet, the Spanish far-right is more resolute in exonerating the Francoist regime and defending its memory.
-In response to recent TJ policies promoted by a left-wing government, Vox has fiercely tried to capitalize on discontentment among Spaniards who do not support such policies.\footnote{Originated in 2013 from a split in the traditional right-wing party PP (Partido Popular), Vox promotes a discourse based on authoritarian conservatism and a hard-line version of Spanish nationalism. It shares with other populist right-wing parties in Europe a nativist ideology and a rejection of immigration, gender policies, and the social welfare state \citep{Turnbull-Dugarte:2019aa, Turnbull-Dugarte:2020aa}.} This party has been vocally opposed to the removal of Francoist symbols from public spaces or to the transfer of Francisco Franco's remains from the Valley of the Fallen's mausoleum to a private grave \citep{Taladrid:2019aa}. Vox has characterized the LHM as an instrument of leftist propaganda, has claimed that Spain's national unity is the path to overcome historical divisions, and has unabashedly whitewashed Francisco Franco's figure. However, we do not know whether this strategy has electorally benefited Vox or not, and identifying causality is thorny because of confounding events. For example, during the 2017 secessionist crisis in Catalonia, Vox was actively involved in the judicial prosecution of separatist leaders, posing as the true guarantor of Spanish territorial unity.
+In response to recent TJ policies promoted by a left-wing government, Vox has fiercely tried to capitalize on discontentment among Spaniards who do not support such policies.\footnote{Originated in 2013 from a split in the traditional right-wing party PP (Partido Popular), Vox promotes a discourse based on authoritarian conservatism and a hard-line version of Spanish nationalism. It shares with other populist right-wing parties in Europe a nativist ideology and a rejection of immigration, gender policies, and the social welfare state \citep{Turnbull-Dugarte:2019aa, Turnbull-Dugarte:2020aa}.} This party has been vocally opposed to the removal of Francoist symbols from public spaces or to the transfer of Francisco Franco's remains from the Valley of the Fallen's mausoleum to a private grave \citep{Taladrid:2019aa}. Vox has characterized the LHM as an instrument of leftist propaganda, has claimed that Spain's national unity is the path to overcome historical divisions, and has unabashedly whitewashed Francisco Franco's figure. However, we do not know whether this strategy has electorally benefited Vox or not, and identifying causality is thorny because of confounding events. For example, during the 2017 secessionist crisis in Catalonia, Vox was actively involved in the judicial prosecution of separatist leaders, posing as the true guarantor of Spanish territorial unity. The latter probably had an impact on its territorial performance in the 2019 elections.
 
 %We aim to shade some light on this question.
 %Originated from a split within the mainstream right-wing party (Partido Popular), Vox represents a hard version of Spanish nationalism.
@@ -213,7 +213,7 @@ We show summary statistics of all variables in the Appendix (section~\ref{app:de
 \subsection*{Models}
 
 We run OLS regressions on the electoral support for Vox, PP, and PSOE in the June 2016 and April 2019 elections as dependent variables, using an indicator of Francoist street name removal between June 2016 and December 2018 as our main independent variable.
-We define the model as:
+We define the DiD model as:
 
 \begin{equation}
 \begin{split}
@@ -226,7 +226,7 @@ Where $Y_{it}$ is the share of support for Vox in municipality $i$ and election 
 The effect of street name removals is captured by $\beta_3$, the interaction between the $t_{1}$ (April 2019) and treatment (Francoist street name removal) indicators.
 
 As argued above, we only examine municipalities that still had Francoist street names in June 2016. Table~\ref{tab:sample_trt} shows how many of them renamed Francoist streets during the period of study.
-To use the same sample across the models for each party, we limit the sample to municipalities where Vox participated in June 2016.\footnote{Vox was a relatively new party in 2016 and did not field candidates in some provinces.}
+Moreover, we limit the sample to municipalities where Vox participated in June 2016.\footnote{Vox was a relatively new party in 2016 and did not field candidates in some provinces.}
 In the Appendix, we include detailed information about the sample and both treatment and control groups (sections~\ref{app:descriptives}-\ref{app:treated_vs_control_vs_outsample}), and show models for PP and PSOE using the full sample (section~\ref{app:robustness_did}).
 
 \input{tab/tab_sample_trt.tex}
@@ -264,7 +264,7 @@ One possibility is that these street name changes took place in more conservativ
 In this case, we should see different trends before 2016 between municipalities that later removed Francoist street names and those that did not.
 Figure~\ref{fig:par_trends_norm} shows normalized electoral trends among control and treated groups for PP and Vox.
 Although data for Vox only goes six months back in time, there are no distinct trends for the two parties for which we find an effect of Francoist street renaming before June 2016.
-We show data on pre-treatment trends in the Appendix (section~\ref{app:robustness_did}), even though a strict test of the parallel trends assumption is impossible given the absence of previous data on Vox, which emerged in 2014.
+We show data on pre-treatment trends in the Appendix (section~\ref{app:robustness_did}), even though a strict test of the parallel trends assumption is not possible given the absence of previous data on Vox, which emerged in 2014.
 
 \begin{figure*}[htb!]
 \centering
@@ -280,15 +280,15 @@ The results are coherent with the DiD analyses. They also show that Francoist st
 
 Finally, we test the robustness of the DiD results to different specifications (section~\ref{app:robustness_did}), in particular: including the primary independent variable in continuous form (logged number of street name removals), excluding from the sample municipalities where Vox did not have any votes in 2016, and changing the independent variable so it also includes street renamings registered in the first half of 2019.
 We also show results from first-difference models (section~\ref{app:first_diff}).
-In every case, results do not significantly change when using alternative specifications and support the main findings.
+Results do not significantly change when using alternative specifications and support the main findings.
 
 \section*{Conclusion}
 
 Using local-level data, we analyze the political effect of Francoist street renaming in Spain and find evidence in favor of a backlash hypothesis. In the short-term, Francoist street name removals increase support for a far-right party, Vox, which has recently gained steam with a discourse grounded in an authoritarian and an exclusionary version of Spanish nationalism. Vox has grown in these places at the expense of the traditional conservative party, PP, but of the main left-wing party, PSOE, pointing to a process of asymmetric polarization resulting from this policy.
 
-The results from our analyses echo recent debates about symbolic TJ policies and memories of past conflicts in other countries. Our goal is not to take a normative stand against these policies. Despite potential short-term backlash effects, we believe that they can be highly beneficial in the long run. That is, these measures could well contribute to national reconciliation down the road. Moreover, TJ symbolic policies might have these unintended effects only where some political parties take electoral advantage of this issue. Asymmetric polarization does not have to be an automatic outcome of these policies and actions of other political parties can perhaps palliate it. For example, by countering narratives or compensating the aggrieved in other ways (i.e., relocating these symbols into a museum), interested political and social actors could limit the extent to which this discontentment can be opportunistically exploited by more extreme parties. The extent to which such remedial policies can work is nonetheless out of the scope of this paper.
+The results from our analyses echo recent debates about symbolic TJ policies and memories of past conflicts in other countries. Our goal is not to take a normative stand against these policies. Despite potential short-term backlash effects, we believe that they can be highly beneficial in the long run (these measures could well contribute to national reconciliation down the road). Moreover, TJ symbolic policies might have these unintended effects only where some political parties take electoral advantage of this issue. In other words, asymmetric polarization does not have to be an automatic outcome of these policies and actions of other political parties can perhaps palliate it. For example, by countering narratives or compensating the aggrieved in other ways (i.e., relocating these symbols into a museum), interested political and social actors could limit the extent to which this discontentment can be opportunistically exploited by more extreme parties. The extent to which such remedial policies can work is nonetheless out of the scope of this paper.
 
-Finally, while we have focused on the removals of symbols, other TJ policies might not have similar backlash effects. For instance, recent research shows that TJ museums can promote reconciliation \citep{Balcells:2020aa}, and that reparations can increase political engagement among victims \citep{voytas:2021}. The overall effect of TJ might depend on the balance between different measures \citep{Olsen:2010aa, Loyle:2017aa}.
+Finally, while we have focused on the removals of symbols, other TJ policies might not have similar backlash effects. For instance, recent research shows that TJ museums can promote reconciliation \citep{Balcells:2020aa}, and that reparations can increase political engagement among victims \citep{voytas:2021}. The average impact of TJ will depend on how the effects of the  different measures add up \citep{Olsen:2010aa, Loyle:2017aa}.
 Overall, this article contributes to an open and lively scholarly debate on the effectiveness of TJ policies.
 
 \newpage
