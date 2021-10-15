@@ -28,8 +28,8 @@ There are two options to replicate the results:
 2. From the command line (Unix/macOS), you can do a full replication from scratch using the following script, which downloads the repository, cleans up all output files, and runs all scripts again:
 
 ```shell
-git clone https://github.com/franvillamil/cuarteles_militares
-cd cuarteles_militares
+git clone https://github.com/franvillamil/streets_vox
+cd streets_vox
 make clean
 make
 ```

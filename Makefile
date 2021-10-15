@@ -19,7 +19,7 @@ empirics: $(dataset) $(out_desc) $(out_main_mod) $(out_robust)
 
 clean:
 	rm -rvf */output/*
-	rm -rvf *.Rout
+	rm -rvf */*.Rout
 
 taskflow:
 	Rscript --no-save --verbose taskflow/create_dependency_graph.R
@@ -27,6 +27,7 @@ taskflow:
 	sips -s format jpeg taskflow/workflow.pdf --out taskflow/workflow.jpeg
 
 latex:
+	mkdir -p writing/img writing/tab
 	cp */output/*.pdf writing/img
 	cp */output/*.tex writing/tab
 
