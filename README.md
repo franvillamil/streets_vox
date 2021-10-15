@@ -2,11 +2,25 @@ Replication files for '[Do TJ policies cause backlash? Evidence from street name
 
 > Memories of old conflicts often shape domestic politics long after these conflicts end. Contemporary debates about past civil wars and/or repressive regimes in different parts of the world suggest that these are sensitive topics that might increase political polarization, particularly when transitional justice policies are implemented and political parties mobilize discontentment with such policies. One such policy recently debated in Spain is removing public symbols linked to a past civil war and subsequent authoritarian regime (i.e., Francoism). However, the empirical evidence on its impact is still limited. This article attempts to fill this gap by examining the political consequences of street renaming. Using a difference-in-differences approach, we show that the removal of Francoist street names has contributed to an increase of electoral support for a new far-right party, Vox, mainly at the expense of a traditional right-wing conservative party, PP. Our results suggest that revisiting the past can cause a backlash among those ideologically aligned with the perpetrator, and that some political parties can capitalize on this.
 
-**Taskflow**
+[Google Scholar page](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=G10YqfQAAAAJ&authuser=1&citation_for_view=G10YqfQAAAAJ:qjMakFHDy7sC)
 
-![taskflow](taskflow/workflow.jpeg)
+```
+@article{villamilbalcells2021,
+  title={Do TJ policies cause backlash? Evidence from street name changes in Spain},
+  author={Villamil, Francisco and Balcells, Laia},
+  journal={Research \& Politics},
+  year={2021},
+  volume={},
+  issue={},
+  pages={}
+}
+```
 
 ### Instructions
+
+The code in this repository is organized in tasks, each in one folder. Some tasks are dependent on the output of previous tasks:
+
+![taskflow](taskflow/workflow.jpeg)
 
 There are two options to replicate the results:
 
