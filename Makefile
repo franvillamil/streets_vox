@@ -4,8 +4,8 @@
 # ------------------------
 # Variables
 
-raw_streets = download_str/output/V_072001.csv download_str/output/V_012011.csv download_str/output/V_072011.csv download_str/output/V_012012.csv download_str/output/V_072012.csv download_str/output/V_012013.csv download_str/output/V_072013.csv download_str/output/V_012014.csv download_str/output/V_072014.csv download_str/output/V_012015.csv download_str/output/V_072015.csv download_str/output/V_012016.csv download_str/output/V_072016.csv download_str/output/V_012017.csv download_str/output/V_072017.csv download_str/output/V_012018.csv download_str/output/V_072018.csv download_str/output/V_012019.csv download_str/output/V_072019.csv download_str/output/V_012020.csv download_str/output/V_072020.csv
-agg_streets = str_agg/output/fs.csv str_agg/output/fs_prov.csv str_agg/output/fs_all.csv
+raw_streets = download_str/download.Rout
+agg_streets = str_agg/agg.Rout
 dataset = dataset/dataset.Rout
 out_main_mod = main_models/mod.Rout
 out_robust = robust/rob.Rout
@@ -50,7 +50,7 @@ download_elec/output/elec.csv: download_elec/elec.R
 	mkdir -p $(<D)/output
 	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
-$(dataset): dataset/dataset.R input/unemployment_01_2019.csv input/unemployment_01_2016.csv input/major_izq_muni.csv input/INE_census.csv str_agg/output/fs.csv download_elec/output/elec.csv
+$(dataset): dataset/dataset.R input/unemployment_01_2019.csv input/unemployment_01_2016.csv input/major_izq_muni.csv input/INE_census.csv $(agg_streets) download_elec/output/elec.csv
 	mkdir -p $(<D)/output
 	Rscript --no-save --verbose $< 2>&1 | tee $<out
 
