@@ -10,9 +10,9 @@ Replication files for '[Do TJ policies cause backlash? Evidence from street name
   author={Villamil, Francisco and Balcells, Laia},
   journal={Research \& Politics},
   year={2021},
-  volume={},
-  issue={},
-  pages={}
+  volume={8},
+  issue={4},
+  pages={20531680211058550}
 }
 ```
 
