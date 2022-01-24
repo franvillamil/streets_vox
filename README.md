@@ -11,7 +11,7 @@ Replication files for '[Do TJ policies cause backlash? Evidence from street name
   journal={Research \& Politics},
   year={2021},
   volume={8},
-  issue={4},
+  number={4},
   pages={20531680211058550}
 }
 ```
