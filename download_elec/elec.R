@@ -6,16 +6,14 @@ pkg = c("tidyr", "dplyr")
 if (length(setdiff(pkg, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(pkg, rownames(installed.packages())))}
 # muniSpain and elecciones (Github)
-if(!all(c("muniSpain", "elecciones") %in% rownames(installed.packages()))){
+if(!all(c("muniSpain", "infoelectoral") %in% rownames(installed.packages()))){
   if(!"devtools" %in% rownames(installed.packages())){install.packages("devtools")}
   library(devtools)
   install_github("franvillamil/muniSpain")
-  install_github("hmeleiro/elecciones")
+  install_github("rOpenSpain/infoelectoral")
 }
 # Load
-lapply(c(pkg, "muniSpain", "elecciones"), library, character.only = TRUE)
-
-# -------------------------
+lapply(c(pkg, "muniSpain", "infoelectoral"), library, character.only = TRUE)
 
 # Alternative names
 PP_alt = c("PP", "PP-FORO", "PP-PAR", "UPN-PP", "PP-EU", "P.P.", "P.P-E.U.", "PP-UPM")
@@ -31,10 +29,11 @@ elec_clean = function(rawdf, label){
     mutate(siglas = ifelse(siglas %in% PP_alt, "PP", siglas)) %>%
     mutate(siglas = ifelse(siglas %in% PSOE_alt, "PSOE", siglas)) %>%
     filter(siglas %in% c("PP", "VOX", "PSOE")) %>%
-    rename(muni_code = CODIGOINE, censo = censo.INE) %>%
+    mutate(muni_code=paste0(codigo_provincia,codigo_municipio)) %>% 
+    rename(censo = censo_ine) %>%
     mutate(
-      validos = candidaturas + blancos,
-      votantes = candidaturas + blancos + nulos) %>%
+      validos = votos_candidaturas + votos_blancos,
+      votantes = votos_candidaturas + votos_blancos + votos_nulos) %>%
     select(muni_code, votantes, validos, censo, siglas, votos) %>%
     pivot_wider(names_from = "siglas", values_from = "votos") %>%
     mutate(
@@ -54,14 +53,14 @@ elec_clean = function(rawdf, label){
 # -------------------------
 
 # Download
-e19_11r = municipios(tipoeleccion = "generales", yr = 2019, mes = "11")
-e19_04r = municipios(tipoeleccion = "generales", yr = 2019, mes = "04")
-e16_06r = municipios(tipoeleccion = "generales", yr = 2016, mes = "06")
-e15_12r = municipios(tipoeleccion = "generales", yr = 2015, mes = "12")
-e11_11r = municipios(tipoeleccion = "generales", yr = 2011, mes = "11")
-e08_03r = municipios(tipoeleccion = "generales", yr = 2008, mes = "03")
-e04_03r = municipios(tipoeleccion = "generales", yr = 2004, mes = "03")
-e00_03r = municipios(tipoeleccion = "generales", yr = 2000, mes = "03")
+e19_11r = municipios(tipo_eleccion = "congreso", anno = 2019, mes = "11")
+e19_04r = municipios(tipo_eleccion = "congreso", anno = 2019, mes = "04")
+e16_06r = municipios(tipo_eleccion = "congreso", anno = 2016, mes = "06")
+e15_12r = municipios(tipo_eleccion = "congreso", anno = 2015, mes = "12")
+e11_11r = municipios(tipo_eleccion = "congreso", anno = 2011, mes = "11")
+e08_03r = municipios(tipo_eleccion = "congreso", anno = 2008, mes = "03")
+e04_03r = municipios(tipo_eleccion = "congreso", anno = 2004, mes = "03")
+e00_03r = municipios(tipo_eleccion = "congreso", anno = 2000, mes = "03")
 
 # Clean
 e19_11 = elec_clean(e19_11r, "2019_11")
