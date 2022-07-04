@@ -27,6 +27,7 @@ dl_PSOE = read.csv("dataset/output/dl_PSOE.csv")
 VOX2016_above0 = subset(data, VOX2016_06 > 0)$muni_code
 dl_VOX$election = relevel(factor(dl_VOX$election), ref = "2016_06")
 dl_PP$election = relevel(factor(dl_PP$election), ref = "2016_06")
+dl_PSOE$election = relevel(factor(dl_PSOE$election), ref = "2016_06")
 
 # First diff models, new variables
 data = data %>%
